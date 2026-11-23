@@ -86,9 +86,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="w01_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-</head>
+<style id="rlab-nav-style">
+html{scroll-padding-top:64px}
+.rlab-nav{position:sticky;top:0;z-index:2000;background:#181C62;color:#fff;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  padding:8px 12px;font:15px/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.rlab-nav a,.rlab-nav select{color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:8px;
+  padding:6px 12px;text-decoration:none;font:inherit}
+.rlab-nav a:hover,.rlab-nav a:focus{background:rgba(255,255,255,.25);outline:none}
+.rlab-nav a.home{background:#C8102E;border-color:#C8102E;font-weight:600}
+.rlab-nav .here{font-weight:600;padding:0 4px}
+.rlab-nav .sp{flex:1}
+.rlab-nav select{max-width:100%;min-width:0;flex:0 1 auto}
+.rlab-nav select option{color:#1d1d1f}
+.rlab-nav a.off{opacity:.35;pointer-events:none}
+#quarto-margin-sidebar,.sidebar.margin-sidebar{top:64px !important}
+@media (max-width:700px){.rlab-nav .label{display:none}.rlab-nav .sp{display:none}.rlab-nav select{order:10;flex:1 1 100%;width:100%}
+  .rlab-nav{gap:6px;padding:6px 8px}.rlab-nav a,.rlab-nav select{padding:5px 10px}}
+</style></head>
 
-<body class="quarto-light">
+<body class="quarto-light"><nav class="rlab-nav" aria-label="AB1202 R Lab"><a class="home" href="../index.html">⌂ All weeks</a><a class="off">‹</a><span class="here">Week 1</span><a href="../w02/w02.html" title="Week 2"><span class="label">Week 2</span> ›</a><select aria-label="Go to a week" onchange="location.href=this.value"><option value="../w01/w01.html" selected>Week 1 · Describing data and probability basics</option><option value="../w02/w02.html">Week 2 · Conditional probability and Bayes' rule</option><option value="../w03/w03.html">Week 3 · Random variables and distributions</option><option value="../w04/w04.html">Week 4 · Expected values</option><option value="../w05/w05.html">Week 5 · Bivariate distributions and correlation</option><option value="../w06/w06.html">Week 6 · Sampling and the central limit theorem</option><option value="../w07/w07.html">Week 7 · Confidence intervals and sample size</option><option value="../w08/w08.html">Week 8 · Hypothesis testing and error probabilities</option><option value="../w09/w09.html">Week 9 · Testing in practice and practical significance</option><option value="../w10/w10.html">Week 10 · Regression analysis I</option><option value="../w11/w11.html">Week 11 · Regression analysis II and causation</option><option value="../w12/w12.html">Week 12 · Simulation analysis</option></select><span class="sp"></span><a href="../console/index.html">R console</a></nav><script>try{localStorage.setItem("ab1202-rlab-last","w01")}catch(e){}</script>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -154,7 +170,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSZWFkIHRoZSBkYXRhIGZpbGUgaW50byBSIGFuZCBjYWxsIGl0IFwiaG90ZWxzXCIuXG4jIFRoZSBmaWxlIGhvdGVscy5jc3YgbXVzdCBiZSBpbiB5b3VyIHdvcmtpbmcgZm9sZGVyIChTdHVkZW50IEhhbmRib29rLCBQYXJ0IDMpLlxuaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKVxuIyBORVc6IFwiPC1cIiBtZWFucyBcInN0b3JlIHRoZSByZXN1bHQgdW5kZXIgdGhpcyBuYW1lXCIuIFJlYWQgaXQgYXMgXCJob3RlbHMgZ2V0cyAuLi5cIi5cbmRpbShob3RlbHMpIn0=
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSZWFkIHRoZSBkYXRhIGZpbGUgaW50byBSIGFuZCBjYWxsIGl0IFwiaG90ZWxzXCIuXG4jIFRoZSBmaWxlIGhvdGVscy5jc3YgbXVzdCBiZSBpbiB5b3VyIHdvcmtpbmcgZm9sZGVyIChTdHVkZW50IEhhbmRib29rLCBQYXJ0IDMpLlxuaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKVxuIyBORVc6IFwiPC1cIiBtZWFucyBcInN0b3JlIHRoZSByZXN1bHQgdW5kZXIgdGhpcyBuYW1lXCIuIFJlYWQgaXQgYXMgXCJob3RlbHMgZ2V0cyAuLi5cIi5cbm5yb3coaG90ZWxzKSAgICMgdGhlIG51bWJlciBvZiBib29raW5nczogUiBpcyByZWFkeSB3aGVuIHlvdSBzZWUgMTE3NDI1In0=
 </script>
 </div>
 </section>

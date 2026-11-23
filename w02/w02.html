@@ -115,9 +115,25 @@ window.Quarto = {
 };
 </script>
 
-</head>
+<style id="rlab-nav-style">
+html{scroll-padding-top:64px}
+.rlab-nav{position:sticky;top:0;z-index:2000;background:#181C62;color:#fff;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  padding:8px 12px;font:15px/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.rlab-nav a,.rlab-nav select{color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:8px;
+  padding:6px 12px;text-decoration:none;font:inherit}
+.rlab-nav a:hover,.rlab-nav a:focus{background:rgba(255,255,255,.25);outline:none}
+.rlab-nav a.home{background:#C8102E;border-color:#C8102E;font-weight:600}
+.rlab-nav .here{font-weight:600;padding:0 4px}
+.rlab-nav .sp{flex:1}
+.rlab-nav select{max-width:100%;min-width:0;flex:0 1 auto}
+.rlab-nav select option{color:#1d1d1f}
+.rlab-nav a.off{opacity:.35;pointer-events:none}
+#quarto-margin-sidebar,.sidebar.margin-sidebar{top:64px !important}
+@media (max-width:700px){.rlab-nav .label{display:none}.rlab-nav .sp{display:none}.rlab-nav select{order:10;flex:1 1 100%;width:100%}
+  .rlab-nav{gap:6px;padding:6px 8px}.rlab-nav a,.rlab-nav select{padding:5px 10px}}
+</style></head>
 
-<body class="quarto-light">
+<body class="quarto-light"><nav class="rlab-nav" aria-label="AB1202 R Lab"><a class="home" href="../index.html">⌂ All weeks</a><a href="../w01/w01.html" title="Week 1">‹ <span class="label">Week 1</span></a><span class="here">Week 2</span><a href="../w03/w03.html" title="Week 3"><span class="label">Week 3</span> ›</a><select aria-label="Go to a week" onchange="location.href=this.value"><option value="../w01/w01.html">Week 1 · Describing data and probability basics</option><option value="../w02/w02.html" selected>Week 2 · Conditional probability and Bayes' rule</option><option value="../w03/w03.html">Week 3 · Random variables and distributions</option><option value="../w04/w04.html">Week 4 · Expected values</option><option value="../w05/w05.html">Week 5 · Bivariate distributions and correlation</option><option value="../w06/w06.html">Week 6 · Sampling and the central limit theorem</option><option value="../w07/w07.html">Week 7 · Confidence intervals and sample size</option><option value="../w08/w08.html">Week 8 · Hypothesis testing and error probabilities</option><option value="../w09/w09.html">Week 9 · Testing in practice and practical significance</option><option value="../w10/w10.html">Week 10 · Regression analysis I</option><option value="../w11/w11.html">Week 11 · Regression analysis II and causation</option><option value="../w12/w12.html">Week 12 · Simulation analysis</option></select><span class="sp"></span><a href="../console/index.html">R console</a></nav><script>try{localStorage.setItem("ab1202-rlab-last","w02")}catch(e){}</script>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -182,7 +198,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbmRpbShob3RlbHMpIn0=
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbm5yb3coaG90ZWxzKSAgICMgdGhlIG51bWJlciBvZiBib29raW5nczogUiBpcyByZWFkeSB3aGVuIHlvdSBzZWUgMTE3NDI1In0=
 </script>
 </div>
 </section>
@@ -204,7 +220,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBBIHR3by13YXkgdGFibGUg
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSdW4gdzAyLXRhYmxlIGZpcnN0LiBDb25kaXRpb25hbCBwcm9iYWJpbGl0eSA9IGEgY291bnQgZGl2aWRlZCBieSBpdHMgUk9XIHRvdGFsLlxuY291bnRzJGNhbmNlbGxlZCAvIGNvdW50cyR0b3RhbCAgICMgUChjYW5jZWxsZWQgfCBkZXBvc2l0IHR5cGUpLCBvbmUgbnVtYmVyIHBlciByb3dcbmNvdW50cyRzdGF5ZWQgLyBjb3VudHMkdG90YWwgICAgICAjIFAoc3RheWVkIHwgZGVwb3NpdCB0eXBlKTsgZWFjaCByb3cncyB0d28gc2hhcmVzIGFkZCB0byAxIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSdW4gdzAyLXRhYmxlIGZpcnN0LiBDb25kaXRpb25hbCBwcm9iYWJpbGl0eSA9IGEgY291bnQgZGl2aWRlZCBieSBpdHMgUk9XIHRvdGFsLlxucF9jYW5jZWxsZWQgPC0gY291bnRzJGNhbmNlbGxlZCAvIGNvdW50cyR0b3RhbCAgICMgUChjYW5jZWxsZWQgfCBkZXBvc2l0IHR5cGUpOiBvbmUgc2hhcmUgcGVyIHJvd1xucF9zdGF5ZWQgICAgPC0gY291bnRzJHN0YXllZCAvIGNvdW50cyR0b3RhbCAgICAgICMgUChzdGF5ZWQgfCBkZXBvc2l0IHR5cGUpXG5ieV9kZXBvc2l0IDwtIGRhdGEuZnJhbWUoZGVwb3NpdCA9IGNvdW50cyRkZXBvc2l0LCAgICAgICMgZWFjaCBzaGFyZSBiZXNpZGUgaXRzIGRlcG9zaXQgdHlwZVxuICAgICAgICAgICAgICAgICAgICAgICAgIHBfY2FuY2VsbGVkLCBwX3N0YXllZClcbmJ5X2RlcG9zaXQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGVhY2ggcm93J3MgdHdvIHNoYXJlcyBhZGQgdG8gMSJ9
 </script>
 </div>
 <div>
@@ -220,7 +236,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBUaGUgc2FtZSBjb25kaXRp
 
 </div>
 <script type="webr-6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSdW4gdzAyLXRhYmxlIGZpcnN0LiBUaGUgb3RoZXIgd2F5IHJvdW5kOiBkaXZpZGUgYnkgdGhlIENPTFVNTiB0b3RhbC5cbmNvdW50cyRjYW5jZWxsZWQgLyBzdW0oY291bnRzJGNhbmNlbGxlZCkgICAjIFAoZGVwb3NpdCB0eXBlIHwgY2FuY2VsbGVkKTogdGhlc2UgYWRkIHRvIDEgZG93biB0aGUgY29sdW1uXG5jb3VudHMkc3RheWVkIC8gc3VtKGNvdW50cyRzdGF5ZWQpICAgICAgICAgIyBQKGRlcG9zaXQgdHlwZSB8IHN0YXllZCkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSdW4gdzAyLXRhYmxlIGZpcnN0LiBUaGUgb3RoZXIgd2F5IHJvdW5kOiBkaXZpZGUgYnkgdGhlIENPTFVNTiB0b3RhbC5cbmdpdmVuX2NhbmNlbGxlZCA8LSBjb3VudHMkY2FuY2VsbGVkIC8gc3VtKGNvdW50cyRjYW5jZWxsZWQpICAgIyBQKGRlcG9zaXQgdHlwZSB8IGNhbmNlbGxlZClcbmdpdmVuX3N0YXllZCAgICA8LSBjb3VudHMkc3RheWVkIC8gc3VtKGNvdW50cyRzdGF5ZWQpICAgICAgICAgIyBQKGRlcG9zaXQgdHlwZSB8IHN0YXllZClcbmJ5X291dGNvbWUgPC0gZGF0YS5mcmFtZShkZXBvc2l0ID0gY291bnRzJGRlcG9zaXQsXG4gICAgICAgICAgICAgICAgICAgICAgICAgZ2l2ZW5fY2FuY2VsbGVkLCBnaXZlbl9zdGF5ZWQpXG5ieV9vdXRjb21lICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgZWFjaCBjb2x1bW4gYWRkcyB0byAxIn0=
 </script>
 </div>
 <p><strong>Independent or not?</strong></p>

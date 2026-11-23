@@ -115,9 +115,25 @@ window.Quarto = {
 };
 </script>
 
-</head>
+<style id="rlab-nav-style">
+html{scroll-padding-top:64px}
+.rlab-nav{position:sticky;top:0;z-index:2000;background:#181C62;color:#fff;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  padding:8px 12px;font:15px/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.rlab-nav a,.rlab-nav select{color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:8px;
+  padding:6px 12px;text-decoration:none;font:inherit}
+.rlab-nav a:hover,.rlab-nav a:focus{background:rgba(255,255,255,.25);outline:none}
+.rlab-nav a.home{background:#C8102E;border-color:#C8102E;font-weight:600}
+.rlab-nav .here{font-weight:600;padding:0 4px}
+.rlab-nav .sp{flex:1}
+.rlab-nav select{max-width:100%;min-width:0;flex:0 1 auto}
+.rlab-nav select option{color:#1d1d1f}
+.rlab-nav a.off{opacity:.35;pointer-events:none}
+#quarto-margin-sidebar,.sidebar.margin-sidebar{top:64px !important}
+@media (max-width:700px){.rlab-nav .label{display:none}.rlab-nav .sp{display:none}.rlab-nav select{order:10;flex:1 1 100%;width:100%}
+  .rlab-nav{gap:6px;padding:6px 8px}.rlab-nav a,.rlab-nav select{padding:5px 10px}}
+</style></head>
 
-<body class="quarto-light">
+<body class="quarto-light"><nav class="rlab-nav" aria-label="AB1202 R Lab"><a class="home" href="../index.html">⌂ All weeks</a><a href="../w07/w07.html" title="Week 7">‹ <span class="label">Week 7</span></a><span class="here">Week 8</span><a href="../w09/w09.html" title="Week 9"><span class="label">Week 9</span> ›</a><select aria-label="Go to a week" onchange="location.href=this.value"><option value="../w01/w01.html">Week 1 · Describing data and probability basics</option><option value="../w02/w02.html">Week 2 · Conditional probability and Bayes' rule</option><option value="../w03/w03.html">Week 3 · Random variables and distributions</option><option value="../w04/w04.html">Week 4 · Expected values</option><option value="../w05/w05.html">Week 5 · Bivariate distributions and correlation</option><option value="../w06/w06.html">Week 6 · Sampling and the central limit theorem</option><option value="../w07/w07.html">Week 7 · Confidence intervals and sample size</option><option value="../w08/w08.html" selected>Week 8 · Hypothesis testing and error probabilities</option><option value="../w09/w09.html">Week 9 · Testing in practice and practical significance</option><option value="../w10/w10.html">Week 10 · Regression analysis I</option><option value="../w11/w11.html">Week 11 · Regression analysis II and causation</option><option value="../w12/w12.html">Week 12 · Simulation analysis</option></select><span class="sp"></span><a href="../console/index.html">R console</a></nav><script>try{localStorage.setItem("ab1202-rlab-last","w08")}catch(e){}</script>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -182,7 +198,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbmRpbShob3RlbHMpIn0=
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbm5yb3coaG90ZWxzKSAgICMgdGhlIG51bWJlciBvZiBib29raW5nczogUiBpcyByZWFkeSB3aGVuIHlvdSBzZWUgMTE3NDI1In0=
 </script>
 </div>
 </section>
@@ -195,7 +211,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBXZWVrIDcncyBicmlkZ2U6IGEgcmFuZG9tIHNhbXBsZSBvZiAyMDAgYm9va2luZ3MuXG5zZXQuc2VlZCg4KVxueSA8LSBzYW1wbGUoaG90ZWxzJGlzX2NhbmNlbGVkLCAyMDApXG5zdW0oeSkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGhvdyBtYW55IGNhbmNlbGxlZFxubWVhbih5KSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyB0aGUgc2hhcmUgdGhhdCBjYW5jZWxsZWQifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBUaGUgbWFuYWdlciBzYXlzIGZld2VyIHRoYW4gMzAlIG9mIGJvb2tpbmdzIGNhbmNlbC4gQ2hlY2sgd2l0aCBhIHJhbmRvbSBzYW1wbGUgb2YgMjAwIGJvb2tpbmdzLlxuc2V0LnNlZWQoOClcbnkgPC0gc2FtcGxlKGhvdGVscyRpc19jYW5jZWxlZCwgMjAwKVxuc3VtKHkpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBob3cgbWFueSBjYW5jZWxsZWRcbm1lYW4oeSkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdGhlIHNoYXJlIHRoYXQgY2FuY2VsbGVkIn0=
 </script>
 </div>
 <div>
@@ -275,7 +291,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4X2NvcmUiLCJleF9h
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY29yZSJ9LCJjb2RlIjoicmVzb3J0IDwtIGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIl1cbnNldC5zZWVkKDgpOyByIDwtIHNhbXBsZShyZXNvcnQsIDIwMClcbnBoYXQgPC0gbWVhbihyKVxueiA8LSAocGhhdCAtIHAwKSAvIHNxcnQocDAgKiAoMSAtIHAwKSAvIF9fX19fXylcbmMocGhhdCA9IHBoYXQsIHogPSB6LCBjcml0aWNhbCA9IHFub3JtKDAuOTUpKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY29yZSJ9LCJjb2RlIjoicmVzb3J0IDwtIGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIl1cbnNldC5zZWVkKDgpXG5yIDwtIHNhbXBsZShyZXNvcnQsIDIwMClcbnBoYXQgPC0gbWVhbihyKVxueiA8LSAocGhhdCAtIHAwKSAvIHNxcnQocDAgKiAoMSAtIHAwKSAvIF9fX19fXylcbmMocGhhdCA9IHBoYXQsIHogPSB6LCBjcml0aWNhbCA9IHFub3JtKDAuOTUpKSJ9
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_core">
@@ -283,10 +299,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY29yZSJ9LCJjb2Rl
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_core">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>resort <span class="ot">&lt;-</span> hotels<span class="sc">$</span>is_canceled[hotels<span class="sc">$</span>hotel <span class="sc">==</span> <span class="st">"Resort Hotel"</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>); r <span class="ot">&lt;-</span> <span class="fu">sample</span>(resort, <span class="dv">200</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>phat <span class="ot">&lt;-</span> <span class="fu">mean</span>(r)                                   <span class="co"># 0.240</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (phat <span class="sc">-</span> p0) <span class="sc">/</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> <span class="dv">200</span>)      <span class="co"># -1.85</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">phat =</span> phat, <span class="at">z =</span> z, <span class="at">critical =</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>))     <span class="co"># z is far below 1.645: do not reject</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">sample</span>(resort, <span class="dv">200</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>phat <span class="ot">&lt;-</span> <span class="fu">mean</span>(r)                                   <span class="co"># 0.240</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (phat <span class="sc">-</span> p0) <span class="sc">/</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> <span class="dv">200</span>)      <span class="co"># -1.85</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">phat =</span> phat, <span class="at">z =</span> z, <span class="at">critical =</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>))     <span class="co"># z is far below 1.645: do not reject</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>No evidence against her claim. (The true resort share is 0.281: a correct decision.)</p>
 </div>
 </section>
@@ -298,7 +315,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY29yZSJ9LCJjb2Rl
 
 </div>
 <script type="webr-13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYXBwbGllZCJ9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkYWRyW2hvdGVscyRob3RlbCA9PSBcIkNpdHkgSG90ZWxcIl1cbnNldC5zZWVkKDgpOyB4IDwtIHNhbXBsZShjaXR5LCA0MClcbnQudGVzdCh4LCBtdSA9IF9fX19fXykkcC52YWx1ZVxuc2V0LnNlZWQoOCk7IHgyMDAgPC0gc2FtcGxlKGNpdHksIDIwMClcbnQudGVzdCh4MjAwLCBtdSA9IDEwMCkkcC52YWx1ZVxubWVhbihjaXR5KSAgICAgICAgIyB0aGUgdHJ1dGgsIGtub3duIGhlcmUifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYXBwbGllZCJ9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkYWRyW2hvdGVscyRob3RlbCA9PSBcIkNpdHkgSG90ZWxcIl1cbnNldC5zZWVkKDgpXG54IDwtIHNhbXBsZShjaXR5LCA0MClcbnQudGVzdCh4LCBtdSA9IF9fX19fXykkcC52YWx1ZVxuc2V0LnNlZWQoOClcbngyMDAgPC0gc2FtcGxlKGNpdHksIDIwMClcbnQudGVzdCh4MjAwLCBtdSA9IDEwMCkkcC52YWx1ZVxubWVhbihjaXR5KSAgICAgICAgIyB0aGUgdHJ1dGgsIGtub3duIGhlcmUifQ==
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_applied">
@@ -306,11 +323,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYXBwbGllZCJ9LCJj
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_applied">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>city <span class="ot">&lt;-</span> hotels<span class="sc">$</span>adr[hotels<span class="sc">$</span>hotel <span class="sc">==</span> <span class="st">"City Hotel"</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>); x <span class="ot">&lt;-</span> <span class="fu">sample</span>(city, <span class="dv">40</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="dv">100</span>)<span class="sc">$</span>p.value        <span class="co"># 0.361: do not reject</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>); x200 <span class="ot">&lt;-</span> <span class="fu">sample</span>(city, <span class="dv">200</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x200, <span class="at">mu =</span> <span class="dv">100</span>)<span class="sc">$</span>p.value     <span class="co"># 0.0005: reject</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(city)                         <span class="co"># 106.87: so 40 bookings made a Type II error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sample</span>(city, <span class="dv">40</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x, <span class="at">mu =</span> <span class="dv">100</span>)<span class="sc">$</span>p.value        <span class="co"># 0.361: do not reject</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x200 <span class="ot">&lt;-</span> <span class="fu">sample</span>(city, <span class="dv">200</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x200, <span class="at">mu =</span> <span class="dv">100</span>)<span class="sc">$</span>p.value     <span class="co"># 0.0005: reject</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(city)                         <span class="co"># 106.87: so 40 bookings made a Type II error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="challenge" class="level3 tier-challenge">

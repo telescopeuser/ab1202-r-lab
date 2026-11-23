@@ -18,6 +18,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,-app
 header{background:var(--navy);color:#fff;padding:8px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 header strong{font-size:1.05rem}
 header a{color:#fff}
+header a.homebtn{background:#C8102E;border-radius:8px;padding:5px 12px;text-decoration:none;font-weight:600;font-size:.9rem}
 #status{font-size:.85rem;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#dfe2ff}
 #status.busy{background:var(--gold);color:#1d1d1f}
 #status.ready{background:var(--teal);color:#fff}
@@ -72,12 +73,12 @@ input[type=file]{display:none}
 </head>
 <body>
 <header>
+  <a class="homebtn" href="../index.html">⌂ All weeks</a>
   <strong>AB1202 R console</strong>
   <span id="status">Starting R…</span>
   <span class="note">Base R · works offline once installed</span>
   <span class="spacer"></span>
   <button id="restart" title="Stop a long run and start a fresh R session (your script stays)">Restart R</button>
-  <a href="../index.html">All weeks</a>
 </header>
 <main>
   <section id="editorPane" aria-label="Script">

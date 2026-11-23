@@ -1,42 +1,111 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AB1202 R Lab</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><meta name="theme-color" content="#181C62">
 <style>
-:root{--navy:#181C62;--red:#C8102E;--bg:#ffffff;--fg:#1d1d1f;--muted:#5c5f73;--line:#d9dceb;--card:#f6f7fb}
-@media (prefers-color-scheme: dark){:root{--bg:#12142e;--fg:#eef0ff;--muted:#aeb3d6;--line:#2c3060;--card:#1b1e44}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
-header{background:var(--navy);color:#fff;padding:18px 16px} header h1{margin:0;font-size:1.4rem} header p{margin:4px 0 0;color:#cfd3f5}
-main{max-width:980px;margin:0 auto;padding:16px} .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-a.card{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);text-decoration:none}
-a.card strong{color:var(--red)} a.card:hover{border-color:var(--red)} .note{color:var(--muted);font-size:.95rem}
+:root{--navy:#181C62;--red:#C8102E;--teal:#0F7C80;--bg:#ffffff;--fg:#1d1d1f;--muted:#5c5f73;--line:#d9dceb;--card:#f6f7fb;--hi:#fff4f5}
+@media (prefers-color-scheme: dark){:root{--bg:#12142e;--fg:#eef0ff;--muted:#aeb3d6;--line:#2c3060;--card:#1b1e44;--hi:#2a1830}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:18px 16px}
+.wrap{max-width:1040px;margin:0 auto}
+header h1{margin:0;font-size:1.5rem} header p{margin:4px 0 0;color:#cfd3f5}
+.top{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.spacer{flex:1}
+.ver{font-size:.8rem;color:#cfd3f5;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:2px 10px}
+button,.btn{font:inherit;border-radius:8px;padding:8px 14px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;text-decoration:none;display:inline-block}
+header .btn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff}
+main{padding:16px}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0 20px}
+a.tile{display:block;padding:16px;border-radius:12px;text-decoration:none;color:#fff;background:var(--red)}
+a.tile.console{background:var(--navy)}
+a.tile strong{font-size:1.15rem;display:block} a.tile span{opacity:.9}
+h2{font-size:1.1rem;margin:20px 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+a.card{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);text-decoration:none}
+a.card:hover,a.card:focus{border-color:var(--red);outline:none}
+a.card .n{flex:none;width:34px;height:34px;border-radius:8px;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+a.card.last{border-color:var(--red);background:var(--hi)}
+a.card.last .n{background:var(--red)}
+.note{color:var(--muted);font-size:.95rem}
 #offline{padding:10px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);margin:12px 0}
+details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:12px 0;background:var(--card)}
+summary{cursor:pointer;font-weight:600}
+@media (max-width:600px){header h1{font-size:1.25rem}}
 </style></head><body>
-<header><h1>AB1202 R Lab</h1><p>Base R in your browser: the alternative to RStudio. Nothing to install; works offline once saved.</p></header>
-<main>
+<header><div class="wrap top">
+  <div><h1>AB1202 R Lab</h1><p>Base R in your browser: the alternative to RStudio. Nothing to install; works offline once saved.</p></div>
+  <span class="spacer"></span>
+  <span class="ver">Version 0.16 (2026-11-23)</span>
+  <button id="installBtn" class="btn" hidden>Install the app</button>
+</div></header>
+<main class="wrap">
 <div id="offline">Checking whether the app is saved for offline use…</div>
-<p class="note"><strong>Install it:</strong> in Chrome or Edge, use the install icon in the address bar (or the menu: <em>Install AB1202 R Lab</em>). On a Mac in Safari: <em>File → Add to Dock</em>. The first visit downloads R (about 60 MB) once.</p>
-<p><a class="card" href="console/index.html"><strong>R console</strong><br>Script, console, plots and files, with the course data loaded as <code>hotels.csv</code></a></p>
-<div class="grid"><a class="card" href="w01/w01.html"><strong>Week 1</strong><br>Describing data and probability basics</a>
-<a class="card" href="w02/w02.html"><strong>Week 2</strong><br>Conditional probability and Bayes' rule</a>
-<a class="card" href="w03/w03.html"><strong>Week 3</strong><br>Random variables and distributions</a>
-<a class="card" href="w04/w04.html"><strong>Week 4</strong><br>Expected values</a>
-<a class="card" href="w05/w05.html"><strong>Week 5</strong><br>Bivariate distributions and correlation</a>
-<a class="card" href="w06/w06.html"><strong>Week 6</strong><br>Sampling and the central limit theorem</a>
-<a class="card" href="w07/w07.html"><strong>Week 7</strong><br>Confidence intervals and sample size</a>
-<a class="card" href="w08/w08.html"><strong>Week 8</strong><br>Hypothesis testing and error probabilities</a>
-<a class="card" href="w09/w09.html"><strong>Week 9</strong><br>Testing in practice and practical significance</a>
-<a class="card" href="w10/w10.html"><strong>Week 10</strong><br>Regression analysis I</a>
-<a class="card" href="w11/w11.html"><strong>Week 11</strong><br>Regression analysis II and causation</a>
-<a class="card" href="w12/w12.html"><strong>Week 12</strong><br>Simulation analysis</a></div>
+<div class="big">
+  <a class="tile" id="continue" href="w01/w01.html" hidden><strong id="continueTitle">Continue</strong><span id="continueSub">Back to the week you opened last</span></a>
+  <a class="tile console" href="console/index.html"><strong>R console</strong><span>Script, console, plots and files, with the course data loaded as hotels.csv</span></a>
+</div>
+<h2>The weekly labs</h2>
+<div class="grid"><a class="card" href="w01/w01.html" data-week="w01" data-label="Week 1" data-title="Describing data and probability basics"><span class="n">1</span><span><strong>Week 1</strong><br>Describing data and probability basics</span></a>
+<a class="card" href="w02/w02.html" data-week="w02" data-label="Week 2" data-title="Conditional probability and Bayes' rule"><span class="n">2</span><span><strong>Week 2</strong><br>Conditional probability and Bayes' rule</span></a>
+<a class="card" href="w03/w03.html" data-week="w03" data-label="Week 3" data-title="Random variables and distributions"><span class="n">3</span><span><strong>Week 3</strong><br>Random variables and distributions</span></a>
+<a class="card" href="w04/w04.html" data-week="w04" data-label="Week 4" data-title="Expected values"><span class="n">4</span><span><strong>Week 4</strong><br>Expected values</span></a>
+<a class="card" href="w05/w05.html" data-week="w05" data-label="Week 5" data-title="Bivariate distributions and correlation"><span class="n">5</span><span><strong>Week 5</strong><br>Bivariate distributions and correlation</span></a>
+<a class="card" href="w06/w06.html" data-week="w06" data-label="Week 6" data-title="Sampling and the central limit theorem"><span class="n">6</span><span><strong>Week 6</strong><br>Sampling and the central limit theorem</span></a>
+<a class="card" href="w07/w07.html" data-week="w07" data-label="Week 7" data-title="Confidence intervals and sample size"><span class="n">7</span><span><strong>Week 7</strong><br>Confidence intervals and sample size</span></a>
+<a class="card" href="w08/w08.html" data-week="w08" data-label="Week 8" data-title="Hypothesis testing and error probabilities"><span class="n">8</span><span><strong>Week 8</strong><br>Hypothesis testing and error probabilities</span></a>
+<a class="card" href="w09/w09.html" data-week="w09" data-label="Week 9" data-title="Testing in practice and practical significance"><span class="n">9</span><span><strong>Week 9</strong><br>Testing in practice and practical significance</span></a>
+<a class="card" href="w10/w10.html" data-week="w10" data-label="Week 10" data-title="Regression analysis I"><span class="n">10</span><span><strong>Week 10</strong><br>Regression analysis I</span></a>
+<a class="card" href="w11/w11.html" data-week="w11" data-label="Week 11" data-title="Regression analysis II and causation"><span class="n">11</span><span><strong>Week 11</strong><br>Regression analysis II and causation</span></a>
+<a class="card" href="w12/w12.html" data-week="w12" data-label="Week 12" data-title="Simulation analysis"><span class="n">12</span><span><strong>Week 12</strong><br>Simulation analysis</span></a></div>
+<details>
+  <summary>How to install the app and use it offline</summary>
+  <p class="note"><strong>Chrome or Edge:</strong> use the install icon at the right of the address bar, or the <em>Install the app</em> button above. <strong>Safari on a Mac:</strong> <em>File → Add to Dock</em>. The first visit downloads R (about 100 MB) once; later updates download only what changed.</p>
+  <p class="note">When you are online, the app checks for a newer version each time you open it. Every lab page has a bar at the top: <em>All weeks</em> brings you back here.</p>
+</details>
+<details>
+  <summary>How a lab page works</summary>
+  <p class="note">Press <strong>Run Code</strong> on a cell; change the code and run it again (you cannot break anything). The first cell loads the data by itself. Pick your tier in Part 2: Core, Applied or Challenge. Each exercise has a <strong>Hint</strong> and a <strong>Solution</strong>.</p>
+</details>
 <p class="note">RStudio on your laptop is the main way to do the labs and the R handout. This app runs the same base R and gives the same numbers.<br>
 Hotel booking data: Antonio, Almeida and Nunes (2019), Data in Brief, CC BY 4.0. R in the browser: webR (MIT licence; R is GPL, source at github.com/r-wasm/webr).</p>
 </main>
 <script>
 const box = document.getElementById("offline");
+// Continue where you left off (kept in this browser only)
+try {
+  const last = localStorage.getItem("ab1202-rlab-last");
+  if (last) {
+    const card = document.querySelector('a.card[data-week="' + last + '"]');
+    if (card) {
+      card.classList.add("last");
+      const c = document.getElementById("continue");
+      c.href = card.getAttribute("href"); c.hidden = false;
+      document.getElementById("continueTitle").textContent = "Continue: " + card.dataset.label;
+      document.getElementById("continueSub").textContent = card.dataset.title;
+    }
+  }
+} catch (e) {}
+// "Install the app" button, where the browser offers it
+let deferred = null;
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; document.getElementById("installBtn").hidden = false; });
+document.getElementById("installBtn").onclick = async () => { if (deferred) { deferred.prompt(); deferred = null; document.getElementById("installBtn").hidden = true; } };
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").then(() => navigator.serviceWorker.ready).then(() => {
-    navigator.serviceWorker.addEventListener("message", (e) => { if (e.data && e.data.saved !== undefined) box.textContent = e.data.saved
-      ? "Saved for offline use: the app now works with no internet." : "Saving for offline use… " + e.data.done + " of " + e.data.total + " files"; });
-    navigator.serviceWorker.controller ? navigator.serviceWorker.controller.postMessage("status") : box.textContent = "Saving for offline use… reload this page once it finishes.";
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloading = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {   // a new version has taken over: show it
+    if (hadController && !reloading) { reloading = true; box.textContent = "Updated to the latest version."; location.reload(); }
+  });
+  navigator.serviceWorker.addEventListener("message", (e) => {
+    if (!e.data || e.data.saved === undefined) return;
+    box.textContent = e.data.saved ? "Saved for offline use: the app now works with no internet."
+      : "Saving for offline use… " + e.data.done + " of " + e.data.total + " files";
+  });
+  navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then((reg) => {
+    reg.update().catch(() => {});                                         // look for a newer version now
+    reg.addEventListener("updatefound", () => { if (hadController) box.textContent = "Updating to the latest version… the app keeps working meanwhile."; });
+    return navigator.serviceWorker.ready;
+  }).then(() => {
+    if (navigator.serviceWorker.controller) navigator.serviceWorker.controller.postMessage("status");
+    else box.textContent = "Saving for offline use… reload this page once it finishes.";
   }).catch(() => { box.textContent = "This browser cannot save the app for offline use; it still works while online."; });
 } else { box.textContent = "This browser cannot save the app for offline use; it still works while online."; }
 </script></body></html>

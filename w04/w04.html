@@ -115,9 +115,25 @@ window.Quarto = {
 };
 </script>
 
-</head>
+<style id="rlab-nav-style">
+html{scroll-padding-top:64px}
+.rlab-nav{position:sticky;top:0;z-index:2000;background:#181C62;color:#fff;display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  padding:8px 12px;font:15px/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.rlab-nav a,.rlab-nav select{color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:8px;
+  padding:6px 12px;text-decoration:none;font:inherit}
+.rlab-nav a:hover,.rlab-nav a:focus{background:rgba(255,255,255,.25);outline:none}
+.rlab-nav a.home{background:#C8102E;border-color:#C8102E;font-weight:600}
+.rlab-nav .here{font-weight:600;padding:0 4px}
+.rlab-nav .sp{flex:1}
+.rlab-nav select{max-width:100%;min-width:0;flex:0 1 auto}
+.rlab-nav select option{color:#1d1d1f}
+.rlab-nav a.off{opacity:.35;pointer-events:none}
+#quarto-margin-sidebar,.sidebar.margin-sidebar{top:64px !important}
+@media (max-width:700px){.rlab-nav .label{display:none}.rlab-nav .sp{display:none}.rlab-nav select{order:10;flex:1 1 100%;width:100%}
+  .rlab-nav{gap:6px;padding:6px 8px}.rlab-nav a,.rlab-nav select{padding:5px 10px}}
+</style></head>
 
-<body class="quarto-light">
+<body class="quarto-light"><nav class="rlab-nav" aria-label="AB1202 R Lab"><a class="home" href="../index.html">⌂ All weeks</a><a href="../w03/w03.html" title="Week 3">‹ <span class="label">Week 3</span></a><span class="here">Week 4</span><a href="../w05/w05.html" title="Week 5"><span class="label">Week 5</span> ›</a><select aria-label="Go to a week" onchange="location.href=this.value"><option value="../w01/w01.html">Week 1 · Describing data and probability basics</option><option value="../w02/w02.html">Week 2 · Conditional probability and Bayes' rule</option><option value="../w03/w03.html">Week 3 · Random variables and distributions</option><option value="../w04/w04.html" selected>Week 4 · Expected values</option><option value="../w05/w05.html">Week 5 · Bivariate distributions and correlation</option><option value="../w06/w06.html">Week 6 · Sampling and the central limit theorem</option><option value="../w07/w07.html">Week 7 · Confidence intervals and sample size</option><option value="../w08/w08.html">Week 8 · Hypothesis testing and error probabilities</option><option value="../w09/w09.html">Week 9 · Testing in practice and practical significance</option><option value="../w10/w10.html">Week 10 · Regression analysis I</option><option value="../w11/w11.html">Week 11 · Regression analysis II and causation</option><option value="../w12/w12.html">Week 12 · Simulation analysis</option></select><span class="sp"></span><a href="../console/index.html">R console</a></nav><script>try{localStorage.setItem("ab1202-rlab-last","w04")}catch(e){}</script>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -182,7 +198,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbmRpbShob3RlbHMpIn0=
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbm5yb3coaG90ZWxzKSAgICMgdGhlIG51bWJlciBvZiBib29raW5nczogUiBpcyByZWFkeSB3aGVuIHlvdSBzZWUgMTE3NDI1In0=
 </script>
 </div>
 </section>
@@ -284,7 +300,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY29yZSJ9LCJjb2Rl
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYXBwbGllZCJ9LCJjb2RlIjoicmVzb3J0IDwtIGhvdGVsc1tob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIiwgXVxucF9yIDwtIG1lYW4ocmVzb3J0JGlzX2NhbmNlbGVkKTsgUl9yIDwtIG1lYW4ocmVzb3J0JHJldmVudWUpXG54IDwtIGMoUl9yLCAwKTsgcHggPC0gYygxIC0gcF9yLCBwX3IpXG5FWCA8LSBzdW0oeCAqIHB4KTsgU0QgPC0gc3FydChzdW0oKHggLSBFWCleMiAqIHB4KSlcbjIwICogRVhcbl9fX19fXyAqIFNEIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYXBwbGllZCJ9LCJjb2RlIjoicmVzb3J0IDwtIGhvdGVsc1tob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIiwgXVxucF9yIDwtIG1lYW4ocmVzb3J0JGlzX2NhbmNlbGVkKVxuUl9yIDwtIG1lYW4ocmVzb3J0JHJldmVudWUpXG54IDwtIGMoUl9yLCAwKVxucHggPC0gYygxIC0gcF9yLCBwX3IpXG5FWCA8LSBzdW0oeCAqIHB4KVxuU0QgPC0gc3FydChzdW0oKHggLSBFWCleMiAqIHB4KSlcbjIwICogRVhcbl9fX19fXyAqIFNEIn0=
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_applied">
@@ -292,11 +308,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYXBwbGllZCJ9LCJj
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_applied">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>resort <span class="ot">&lt;-</span> hotels[hotels<span class="sc">$</span>hotel <span class="sc">==</span> <span class="st">"Resort Hotel"</span>, ]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>is_canceled); R_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>revenue)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(R_r, <span class="dv">0</span>); px <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">-</span> p_r, p_r)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>EX <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> px); SD <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> EX)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> px))   <span class="co"># SD 199.43</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">*</span> EX                                               <span class="co"># 6,383.26</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">20</span>) <span class="sc">*</span> SD                                         <span class="co"># 891.89; 20 * SD would be 3,988.64</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>is_canceled)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>R_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>revenue)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(R_r, <span class="dv">0</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>px <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">-</span> p_r, p_r)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>EX <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> px)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>SD <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((x <span class="sc">-</span> EX)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> px))   <span class="co"># SD 199.43</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">*</span> EX                                               <span class="co"># 6,383.26</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">20</span>) <span class="sc">*</span> SD                                         <span class="co"># 891.89; 20 * SD would be 3,988.64</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="challenge" class="level3 tier-challenge">
@@ -307,7 +326,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfYXBwbGllZCJ9LCJj
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY2hhbGxlbmdlIn0sImNvZGUiOiJyZXNvcnQgPC0gaG90ZWxzW2hvdGVscyRob3RlbCA9PSBcIlJlc29ydCBIb3RlbFwiLCBdXG5wX3IgPC0gbWVhbihyZXNvcnQkaXNfY2FuY2VsZWQpOyBSX3IgPC0gbWVhbihyZXNvcnQkcmV2ZW51ZSlcbkVYIDwtICgxIC0gcF9yKSAqIFJfclxuZm9yIChkIGluIGMoMC4yLCAwLjMpKSB7XG4gIEVYZCA8LSBfX19fX19cbiAgcHJpbnQoYyhkID0gZCwgZ2FpbiA9IEVYZCAtIEVYLCBicmVha2V2ZW4gPSAxIC0gRVggLyBFWGQpKVxufSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY2hhbGxlbmdlIn0sImNvZGUiOiJyZXNvcnQgPC0gaG90ZWxzW2hvdGVscyRob3RlbCA9PSBcIlJlc29ydCBIb3RlbFwiLCBdXG5wX3IgPC0gbWVhbihyZXNvcnQkaXNfY2FuY2VsZWQpXG5SX3IgPC0gbWVhbihyZXNvcnQkcmV2ZW51ZSlcbkVYIDwtICgxIC0gcF9yKSAqIFJfclxuZm9yIChkIGluIGMoMC4yLCAwLjMpKSB7XG4gIEVYZCA8LSBfX19fX19cbiAgcHJpbnQoYyhkID0gZCwgZ2FpbiA9IEVYZCAtIEVYLCBicmVha2V2ZW4gPSAxIC0gRVggLyBFWGQpKVxufSJ9
 </script>
 </div>
 <div class="hint webr-ojs-exercise exercise-hint d-none" data-exercise="ex_challenge">
@@ -315,12 +334,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfY2hhbGxlbmdlIn0s
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_challenge">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>resort <span class="ot">&lt;-</span> hotels[hotels<span class="sc">$</span>hotel <span class="sc">==</span> <span class="st">"Resort Hotel"</span>, ]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>is_canceled); R_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>revenue)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>EX <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> p_r) <span class="sc">*</span> R_r</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (d <span class="cf">in</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>)) {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  EXd <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> p_r) <span class="sc">*</span> R_r <span class="sc">+</span> p_r <span class="sc">*</span> d <span class="sc">*</span> R_r</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">c</span>(<span class="at">d =</span> d, <span class="at">gain =</span> EXd <span class="sc">-</span> EX, <span class="at">breakeven =</span> <span class="dv">1</span> <span class="sc">-</span> EX <span class="sc">/</span> EXd))   <span class="co"># 20%: 0.072; 30%: 0.105</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>is_canceled)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>R_r <span class="ot">&lt;-</span> <span class="fu">mean</span>(resort<span class="sc">$</span>revenue)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>EX <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> p_r) <span class="sc">*</span> R_r</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (d <span class="cf">in</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>)) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  EXd <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">-</span> p_r) <span class="sc">*</span> R_r <span class="sc">+</span> p_r <span class="sc">*</span> d <span class="sc">*</span> R_r</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">c</span>(<span class="at">d =</span> d, <span class="at">gain =</span> EXd <span class="sc">-</span> EX, <span class="at">breakeven =</span> <span class="dv">1</span> <span class="sc">-</span> EX <span class="sc">/</span> EXd))   <span class="co"># 20%: 0.072; 30%: 0.105</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A larger deposit can afford more walk-aways, but it is also likely to cause more. Test the smaller one first, on part of the bookings, and measure.</p>
 </div>
 </section>
