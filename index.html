@@ -24,8 +24,6 @@ h2{font-size:1.1rem;margin:20px 0 8px}
 a.card{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);text-decoration:none}
 a.card:hover,a.card:focus{border-color:var(--red);outline:none}
 a.card .n{flex:none;width:34px;height:34px;border-radius:8px;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-a.card.last{border-color:var(--red);background:var(--hi)}
-a.card.last .n{background:var(--red)}
 .note{color:var(--muted);font-size:.95rem}
 #offline{padding:10px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);margin:12px 0}
 details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:12px 0;background:var(--card)}
@@ -41,7 +39,6 @@ summary{cursor:pointer;font-weight:600}
 <main class="wrap">
 <div id="offline">Checking whether the app is saved for offline use…</div>
 <div class="big">
-  <a class="tile" id="continue" href="w01/w01.html" hidden><strong id="continueTitle">Continue</strong><span id="continueSub">Back to the week you opened last</span></a>
   <a class="tile console" href="console/index.html"><strong>R console</strong><span>Script, console, plots and files, with the course data loaded as hotels.csv</span></a>
 </div>
 <h2>The weekly labs</h2>
@@ -71,20 +68,6 @@ Hotel booking data: Antonio, Almeida and Nunes (2019), Data in Brief, CC BY 4.0.
 </main>
 <script>
 const box = document.getElementById("offline");
-// Continue where you left off (kept in this browser only)
-try {
-  const last = localStorage.getItem("ab1202-rlab-last");
-  if (last) {
-    const card = document.querySelector('a.card[data-week="' + last + '"]');
-    if (card) {
-      card.classList.add("last");
-      const c = document.getElementById("continue");
-      c.href = card.getAttribute("href"); c.hidden = false;
-      document.getElementById("continueTitle").textContent = "Continue: " + card.dataset.label;
-      document.getElementById("continueSub").textContent = card.dataset.title;
-    }
-  }
-} catch (e) {}
 // "Install the app" button: hidden once the app is installed (opened from the Dock, Start menu or home screen);
 // in a browser tab it installs directly where the browser allows it (Chrome, Edge), otherwise it opens the steps.
 const installBtn = document.getElementById("installBtn");
