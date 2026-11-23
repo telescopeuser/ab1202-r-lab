@@ -11,6 +11,7 @@ header h1{margin:0;font-size:1.5rem} header p{margin:4px 0 0;color:#cfd3f5}
 .top{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .spacer{flex:1}
 .ver{font-size:.8rem;color:#cfd3f5;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:2px 10px}
+[hidden]{display:none !important}   /* the hidden attribute must win over display rules below */
 button,.btn{font:inherit;border-radius:8px;padding:8px 14px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;text-decoration:none;display:inline-block}
 header .btn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff}
 main{padding:16px}
@@ -56,9 +57,9 @@ summary{cursor:pointer;font-weight:600}
 <a class="card" href="w10/w10.html" data-week="w10" data-label="Week 10" data-title="Regression analysis I"><span class="n">10</span><span><strong>Week 10</strong><br>Regression analysis I</span></a>
 <a class="card" href="w11/w11.html" data-week="w11" data-label="Week 11" data-title="Regression analysis II and causation"><span class="n">11</span><span><strong>Week 11</strong><br>Regression analysis II and causation</span></a>
 <a class="card" href="w12/w12.html" data-week="w12" data-label="Week 12" data-title="Simulation analysis"><span class="n">12</span><span><strong>Week 12</strong><br>Simulation analysis</span></a></div>
-<details>
+<details id="installHelp">
   <summary>How to install the app and use it offline</summary>
-  <p class="note"><strong>Chrome or Edge:</strong> use the install icon at the right of the address bar, or the <em>Install the app</em> button above. <strong>Safari on a Mac:</strong> <em>File → Add to Dock</em>. The first visit downloads R (about 100 MB) once; later updates download only what changed.</p>
+  <p class="note"><strong>Chrome or Edge:</strong> the <em>Install the app</em> button above, or the install icon at the right of the address bar. <strong>Safari on a Mac:</strong> <em>File → Add to Dock</em>. <strong>iPhone or iPad:</strong> <em>Share → Add to Home Screen</em>. <strong>Android:</strong> the browser menu → <em>Install app</em>. Once installed, open it from your Dock, Start menu or home screen. The first visit downloads R (about 100 MB) once; later updates download only what changed.</p>
   <p class="note">When you are online, the app checks for a newer version each time you open it. Every lab page has a bar at the top: <em>All weeks</em> brings you back here.</p>
 </details>
 <details>
@@ -84,10 +85,24 @@ try {
     }
   }
 } catch (e) {}
-// "Install the app" button, where the browser offers it
+// "Install the app" button: hidden once the app is installed (opened from the Dock, Start menu or home screen);
+// in a browser tab it installs directly where the browser allows it (Chrome, Edge), otherwise it opens the steps.
+const installBtn = document.getElementById("installBtn");
+const standalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
 let deferred = null;
-window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; document.getElementById("installBtn").hidden = false; });
-document.getElementById("installBtn").onclick = async () => { if (deferred) { deferred.prompt(); deferred = null; document.getElementById("installBtn").hidden = true; } };
+if (!standalone) installBtn.hidden = false;
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; if (!standalone) installBtn.hidden = false; });
+window.addEventListener("appinstalled", () => { deferred = null; installBtn.hidden = true; });
+installBtn.onclick = async () => {
+  if (deferred) {
+    deferred.prompt();
+    const choice = await deferred.userChoice; deferred = null;
+    if (choice.outcome === "accepted") installBtn.hidden = true;
+  } else {
+    const help = document.getElementById("installHelp");
+    help.open = true; help.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+};
 if ("serviceWorker" in navigator) {
   const hadController = !!navigator.serviceWorker.controller;
   let reloading = false;
