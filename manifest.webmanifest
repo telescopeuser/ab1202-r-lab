@@ -1,0 +1,23 @@
+{
+ "name": "AB1202 R Lab",
+ "short_name": "AB1202 R",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#181C62",
+ "theme_color": "#181C62",
+ "description": "Base R in the browser for AB1202 Statistics & Analysis; works offline.",
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

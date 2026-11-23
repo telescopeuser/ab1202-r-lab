@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AB1202 R Lab</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><meta name="theme-color" content="#181C62">
+<style>
+:root{--navy:#181C62;--red:#C8102E;--bg:#ffffff;--fg:#1d1d1f;--muted:#5c5f73;--line:#d9dceb;--card:#f6f7fb}
+@media (prefers-color-scheme: dark){:root{--bg:#12142e;--fg:#eef0ff;--muted:#aeb3d6;--line:#2c3060;--card:#1b1e44}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:18px 16px} header h1{margin:0;font-size:1.4rem} header p{margin:4px 0 0;color:#cfd3f5}
+main{max-width:980px;margin:0 auto;padding:16px} .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+a.card{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);text-decoration:none}
+a.card strong{color:var(--red)} a.card:hover{border-color:var(--red)} .note{color:var(--muted);font-size:.95rem}
+#offline{padding:10px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);margin:12px 0}
+</style></head><body>
+<header><h1>AB1202 R Lab</h1><p>Base R in your browser: the alternative to RStudio. Nothing to install; works offline once saved.</p></header>
+<main>
+<div id="offline">Checking whether the app is saved for offline use…</div>
+<p class="note"><strong>Install it:</strong> in Chrome or Edge, use the install icon in the address bar (or the menu: <em>Install AB1202 R Lab</em>). On a Mac in Safari: <em>File → Add to Dock</em>. The first visit downloads R (about 60 MB) once.</p>
+<p><a class="card" href="console/index.html"><strong>R console</strong><br>Base R with the course data loaded as <code>hotels.csv</code></a></p>
+<div class="grid"><a class="card" href="w01/w01.html"><strong>Week 1</strong><br>Describing data and probability basics</a>
+<a class="card" href="w02/w02.html"><strong>Week 2</strong><br>Conditional probability and Bayes' rule</a>
+<a class="card" href="w03/w03.html"><strong>Week 3</strong><br>Random variables and distributions</a>
+<a class="card" href="w04/w04.html"><strong>Week 4</strong><br>Expected values</a>
+<a class="card" href="w05/w05.html"><strong>Week 5</strong><br>Bivariate distributions and correlation</a>
+<a class="card" href="w06/w06.html"><strong>Week 6</strong><br>Sampling and the central limit theorem</a>
+<a class="card" href="w07/w07.html"><strong>Week 7</strong><br>Confidence intervals and sample size</a>
+<a class="card" href="w08/w08.html"><strong>Week 8</strong><br>Hypothesis testing and error probabilities</a>
+<a class="card" href="w09/w09.html"><strong>Week 9</strong><br>Testing in practice and practical significance</a>
+<a class="card" href="w10/w10.html"><strong>Week 10</strong><br>Regression analysis I</a>
+<a class="card" href="w11/w11.html"><strong>Week 11</strong><br>Regression analysis II and causation</a>
+<a class="card" href="w12/w12.html"><strong>Week 12</strong><br>Simulation analysis</a></div>
+<p class="note">RStudio on your laptop is the main way to do the labs and the R handout. This app runs the same base R and gives the same numbers.<br>
+Hotel booking data: Antonio, Almeida and Nunes (2019), Data in Brief, CC BY 4.0. R in the browser: webR (MIT licence; R is GPL, source at github.com/r-wasm/webr).</p>
+</main>
+<script>
+const box = document.getElementById("offline");
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").then(() => navigator.serviceWorker.ready).then(() => {
+    navigator.serviceWorker.addEventListener("message", (e) => { if (e.data && e.data.saved !== undefined) box.textContent = e.data.saved
+      ? "Saved for offline use: the app now works with no internet." : "Saving for offline use… " + e.data.done + " of " + e.data.total + " files"; });
+    navigator.serviceWorker.controller ? navigator.serviceWorker.controller.postMessage("status") : box.textContent = "Saving for offline use… reload this page once it finishes.";
+  }).catch(() => { box.textContent = "This browser cannot save the app for offline use; it still works while online."; });
+} else { box.textContent = "This browser cannot save the app for offline use; it still works while online."; }
+</script></body></html>

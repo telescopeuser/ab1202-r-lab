@@ -1,0 +1,117 @@
+Package: base64enc
+Version: 0.1-6
+Depends: R (>= 2.9.0)
+License: GPL-2 | GPL-3
+MD5sum: d5093b50096872598e6acc3c5d56b184
+Built: R 4.6.0; wasm32-unknown-emscripten; 2026-05-12 16:39:51 UTC;
+        unix
+File: base64enc_0.1-6.tgz
+Enhances: png
+
+Package: digest
+Version: 0.6.39
+Depends: R (>= 3.3.0)
+Imports: utils
+Suggests: tinytest, simplermarkdown, rbenchmark
+License: GPL (>= 2)
+MD5sum: dd041ecb4440c3188d8f7e7b4e411aa1
+Built: R 4.6.0; wasm32-unknown-emscripten; 2026-05-12 23:29:34 UTC;
+        unix
+File: digest_0.6.39.tgz
+
+Package: evaluate
+Version: 1.0.5
+Depends: R (>= 3.6.0)
+Suggests: callr, covr, ggplot2 (>= 3.3.6), lattice, methods, pkgload,
+        ragg (>= 1.4.0), rlang (>= 1.1.5), knitr, testthat (>= 3.0.0),
+        withr
+License: MIT + file LICENSE
+MD5sum: a2512b26c925426eda02cfa33fe3170e
+Built: R 4.6.0; ; 2026-05-13 02:04:08 UTC; unix
+File: evaluate_1.0.5.tgz
+
+Package: fastmap
+Version: 1.2.0
+Suggests: testthat (>= 2.1.1)
+License: MIT + file LICENSE
+MD5sum: c82b9058e1ff5341c0b08275e3d4946f
+Built: R 4.6.0; wasm32-unknown-emscripten; 2026-05-13 02:44:27 UTC;
+        unix
+File: fastmap_1.2.0.tgz
+
+Package: highr
+Version: 0.12
+Depends: R (>= 3.3.0)
+Imports: xfun (>= 0.18)
+Suggests: knitr, markdown, testit
+License: GPL
+MD5sum: e99608d3cf6075e29c6ce2139d2b226e
+Built: R 4.6.0; ; 2026-05-13 07:35:50 UTC; unix
+File: highr_0.12.tgz
+
+Package: htmltools
+Version: 0.5.9
+Depends: R (>= 2.14.1)
+Imports: base64enc, digest, fastmap (>= 1.1.0), grDevices, rlang (>=
+        1.0.0), utils
+Suggests: Cairo, markdown, ragg, shiny, testthat, withr
+License: GPL (>= 2)
+MD5sum: 074ba05bcbee88007e97a21573b42acd
+Built: R 4.6.0; wasm32-unknown-emscripten; 2026-05-13 07:55:04 UTC;
+        unix
+File: htmltools_0.5.9.tgz
+Enhances: knitr
+
+Package: knitr
+Version: 1.52
+Depends: R (>= 3.6.0)
+Imports: evaluate (>= 0.15), highr (>= 0.11), methods, tools, xfun (>=
+        0.52), yaml (>= 2.1.19)
+Suggests: bslib, DBI (>= 0.4-1), digest, formatR, gifski, gridSVG,
+        htmlwidgets (>= 0.7), jpeg, JuliaCall (>= 0.11.1), magick,
+        litedown (>= 0.10), otel, otelsdk, png, ragg (>= 1.5.0),
+        reticulate (>= 1.4), rgl (>= 0.95.1201), rlang, rmarkdown,
+        sass, showtext, styler (>= 1.2.0), targets (>= 0.6.0), testit,
+        tibble, tikzDevice (>= 0.10), tinytex (>= 0.56), webshot,
+        rstudioapi, svglite
+License: GPL
+MD5sum: 81d8d086076f1ea11ad24f449508ca70
+Built: R 4.6.0; ; 2026-10-10 05:14:11 UTC; unix
+File: knitr_1.52.tgz
+
+Package: rlang
+Version: 1.3.0
+Depends: R (>= 4.0.0)
+Imports: utils
+Suggests: cli (>= 3.1.0), covr, crayon, desc, fs, glue, knitr,
+        magrittr, methods, pillar, pkgload, rmarkdown, stats, testthat
+        (>= 3.3.2), tibble, usethis, vctrs (>= 0.2.3), withr
+License: MIT + file LICENSE
+MD5sum: a758fe02ecac28000732930e4d7fd69c
+Built: R 4.6.0; wasm32-unknown-emscripten; 2026-10-11 05:07:19 UTC;
+        unix
+File: rlang_1.3.0.tgz
+Enhances: winch
+
+Package: xfun
+Version: 0.61
+Depends: R (>= 3.2.0)
+Imports: grDevices, stats, tools
+Suggests: testit, parallel, codetools, methods, rstudioapi, tinytex (>=
+        0.30), mime, litedown (>= 0.6), commonmark, knitr (>= 1.50),
+        remotes, pak, curl, xml2, jsonlite, magick, yaml, data.table,
+        qs2
+License: MIT + file LICENSE
+MD5sum: 940a2109cb11acf10a942d78e425ee07
+Built: R 4.6.0; wasm32-unknown-emscripten; 2026-10-12 03:25:57 UTC;
+        unix
+File: xfun_0.61.tgz
+
+Package: yaml
+Version: 2.3.12
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
+License: BSD_3_clause + file LICENSE
+MD5sum: 91a473f8da540bf8ab9ab563ad3a88be
+Built: R 4.6.0; wasm32-unknown-emscripten; 2026-05-14 12:25:44 UTC;
+        unix
+File: yaml_2.3.12.tgz
