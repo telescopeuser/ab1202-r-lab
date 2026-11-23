@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AB1202 quiz R console</title>
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../icons/icon-192.png">
+<meta name="theme-color" content="#181C62">
+<style>
+/* AB1202 R console: script, console, plots, environment, files. Base R only (webR). MODE = "work" (R Lab) or "quiz" (locked). */
+:root{--navy:#181C62;--red:#C8102E;--teal:#0F7C80;--gold:#B7862B;--bg:#ffffff;--fg:#1d1d1f;--muted:#5c5f73;--line:#d9dceb;--pane:#f6f7fb;--code:#ffffff;--echo:#181C62;--err:#C8102E;--warn:#9a6a10;--sel:#e7e9f6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12142e;--fg:#eef0ff;--muted:#aeb3d6;--line:#2c3060;--pane:#1b1e44;--code:#15183a;--echo:#9fb0ff;--err:#ff7a8a;--warn:#f0c060;--sel:#262a5c}}
+:root[data-theme="dark"]{--bg:#12142e;--fg:#eef0ff;--muted:#aeb3d6;--line:#2c3060;--pane:#1b1e44;--code:#15183a;--echo:#9fb0ff;--err:#ff7a8a;--warn:#f0c060;--sel:#262a5c}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;display:flex;flex-direction:column}
+header{background:var(--navy);color:#fff;padding:8px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+header strong{font-size:1.05rem}
+header a{color:#fff}
+#status{font-size:.85rem;padding:2px 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#dfe2ff}
+#status.busy{background:var(--gold);color:#1d1d1f}
+#status.ready{background:var(--teal);color:#fff}
+.spacer{flex:1}
+.note{font-size:.85rem;color:#cfd3f5}
+button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--pane);color:var(--fg);border-radius:6px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+button:hover{border-color:var(--red)}
+button.primary{background:var(--red);border-color:var(--red);color:#fff}
+button:disabled{opacity:.5;cursor:default}
+header button{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:8px;padding:8px}
+section{display:flex;flex-direction:column;min-height:0;border:1px solid var(--line);border-radius:8px;background:var(--pane);overflow:hidden}
+#editorPane{grid-column:1;grid-row:1}
+#consolePane{grid-column:1;grid-row:2}
+#sidePane{grid-column:2;grid-row:1 / span 2}
+.bar{display:flex;gap:6px;align-items:center;padding:6px 8px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.bar .title{font-weight:600;margin-right:4px}
+.bar .hint{color:var(--muted);font-size:.8rem}
+.mono{font:14px/1.5 Menlo,Consolas,"Courier New",monospace}
+.editwrap{flex:1;min-height:0;display:flex;background:var(--code)}
+#gutter{margin:0;padding:8px 6px 8px 8px;text-align:right;color:var(--muted);user-select:none;overflow:hidden;border-right:1px solid var(--line);min-width:2.6em}
+#script{flex:1;border:0;outline:0;resize:none;padding:8px;background:var(--code);color:var(--fg);white-space:pre;overflow:auto;tab-size:2}
+#out{flex:1;min-height:0;overflow:auto;margin:0;padding:8px;background:var(--code);white-space:pre-wrap;word-break:break-word}
+#out .echo{color:var(--echo)}
+#out .err{color:var(--err)}
+#out .warn{color:var(--warn)}
+#out .info{color:var(--muted);font-style:italic}
+.prompt{display:flex;align-items:flex-start;border-top:1px solid var(--line);background:var(--code)}
+.prompt span{padding:6px 0 6px 8px;color:var(--echo)}
+#cmd{flex:1;border:0;outline:0;resize:none;padding:6px 8px;background:var(--code);color:var(--fg);height:2.2em;max-height:9em}
+.tabs{display:flex;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line)}
+.tabs button{border-radius:6px 6px 0 0;border-bottom:0;background:transparent}
+.tabs button[aria-selected="true"]{background:var(--code);border-color:var(--line);font-weight:600}
+.tabpanel{flex:1;min-height:0;display:none;flex-direction:column;background:var(--code)}
+.tabpanel.on{display:flex}
+#plotBox{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px;overflow:auto}
+#plotBox canvas{max-width:100%;max-height:100%;background:#fff;border-radius:4px}
+#plotBox .empty{color:var(--muted);text-align:center;padding:16px}
+table{border-collapse:collapse;width:100%;font-size:.85rem}
+th,td{text-align:left;padding:4px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--code)}
+td.v{font-family:Menlo,Consolas,monospace;font-size:.8rem;word-break:break-word}
+tr.click{cursor:pointer} tr.click:hover{background:var(--sel)}
+.scroll{flex:1;min-height:0;overflow:auto}
+.empty{color:var(--muted);padding:12px}
+input[type=file]{display:none}
+@media (max-width: 900px){
+  main{display:flex;flex-direction:column}
+  #editorPane{height:42vh;flex:none} #consolePane{height:42vh;flex:none} #sidePane{height:70vh;flex:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <strong>AB1202 quiz · R console</strong>
+  <span id="status">Starting R…</span>
+  <span class="note">Base R only · no files · nothing is saved when you close it</span>
+  <span class="spacer"></span>
+  <button id="restart" title="Stop a long run and start a fresh R session (your script stays)">Restart R</button>
+  
+</header>
+<main>
+  <section id="editorPane" aria-label="Script">
+    <div class="bar">
+      <span class="title">Script</span>
+      <button class="primary" id="runLine" disabled title="Run the current line or the selection">Run line</button>
+      <button id="runAll" disabled title="Run the whole script">Run all</button>
+      <span class="work-only"><button id="openBtn" title="Open an .R file from your computer">Open</button>
+      <button id="saveBtn" title="Save the script as an .R file">Save</button>
+      <input type="file" id="openFile" accept=".R,.r,.txt"></span>
+      <span class="hint">Ctrl+Enter (Mac: Cmd+Enter) runs a line · add Shift to run all</span>
+    </div>
+    <div class="editwrap">
+      <pre id="gutter" class="mono" aria-hidden="true">1</pre>
+      <textarea id="script" class="mono" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="R script"></textarea>
+    </div>
+  </section>
+  <section id="consolePane" aria-label="Console">
+    <div class="bar"><span class="title">Console</span><button id="clearOut">Clear</button><span class="hint">Enter runs · Shift+Enter new line · ↑ ↓ history</span></div>
+    <pre id="out" class="mono" aria-live="polite"></pre>
+    <div class="prompt mono"><span>&gt;</span><textarea id="cmd" class="mono" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Console input" disabled></textarea></div>
+  </section>
+  <section id="sidePane" aria-label="Plots and objects">
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="plots">Plots</button>
+      <button role="tab" aria-selected="false" data-tab="envt">Environment</button>
+      <button role="tab" aria-selected="false" data-tab="files" class="work-only">Files</button>
+    </div>
+    <div class="tabpanel on" id="tab-plots">
+      <div class="bar"><button id="prevPlot" disabled>‹</button><span id="plotCount" class="hint">No plots yet</span><button id="nextPlot" disabled>›</button>
+        <button id="savePlot" class="work-only" disabled>Save PNG</button><button id="clearPlots" disabled>Clear</button></div>
+      <div id="plotBox"><div class="empty">Plots appear here, e.g. <code>hist(rnorm(1000))</code></div></div>
+    </div>
+    <div class="tabpanel" id="tab-envt">
+      <div class="bar"><span class="hint">Objects you have made. Click one to see its structure.</span><button id="clearEnv">Remove all</button></div>
+      <div class="scroll" id="envList"><div class="empty">Nothing yet.</div></div>
+    </div>
+    <div class="tabpanel work-only" id="tab-files">
+      <div class="bar"><button id="uploadBtn">Upload</button><input type="file" id="uploadFile" multiple><span class="hint">Files R can read, e.g. <code>read.csv("hotels.csv")</code></span></div>
+      <div class="scroll" id="fileList"><div class="empty">…</div></div>
+    </div>
+  </section>
+</main>
+
+<script type="text/plain" id="rsetup">
+local({
+  options(warn = 1, max.print = 5000, width = 80)
+  e <- attach(NULL, name = "ab1202")
+  e$.ab1202_run <- function(code) {
+    exprs <- tryCatch(parse(text = code, keep.source = TRUE), error = function(err) {
+      cat("Error: ", sub("^<text>:", "line ", conditionMessage(err)), "\n", sep = "", file = stderr()); NULL })
+    if (is.null(exprs)) return(invisible())
+    src <- attr(exprs, "srcref")
+    for (i in seq_along(exprs)) {
+      lines <- if (!is.null(src)) as.character(src[[i]]) else deparse(exprs[[i]])
+      cat(paste0("\001", c("> ", rep("+ ", length(lines) - 1)), lines), sep = "\n")
+      top <- function(cl) is.null(cl) || (is.call(cl) && identical(cl[[1]], quote(eval)))  # our own wrapper: report as top level
+      ok <- tryCatch(withCallingHandlers({
+        r <- withVisible(eval(exprs[[i]], globalenv()))
+        if (r$visible) print(r$value)
+        TRUE
+      }, warning = function(w) {
+        cl <- conditionCall(w)
+        cat(if (top(cl)) "Warning: " else paste0("Warning in ", deparse(cl, nlines = 1L), " : "), conditionMessage(w), "\n", sep = "", file = stderr())
+        invokeRestart("muffleWarning")
+      }), error = function(err) {
+        cl <- conditionCall(err)
+        cat(if (top(cl)) "Error: " else paste0("Error in ", deparse(cl, nlines = 1L), " : "), conditionMessage(err), "\n", sep = "", file = stderr())
+        FALSE
+      })
+      if (!ok) break
+    }
+    invisible()
+  }
+  e$.ab1202_env <- function() {
+    nm <- ls(globalenv())
+    if (!length(nm)) return("")
+    paste(vapply(nm, function(n) {
+      x <- get(n, envir = globalenv())
+      s <- tryCatch(utils::capture.output(utils::str(x, give.attr = FALSE, vec.len = 2, list.len = 3))[1], error = function(e) class(x)[1])
+      gsub("[\t\n]", " ", paste(n, class(x)[1], substr(trimws(s), 1, 90), sep = "\037"))
+    }, ""), collapse = "\036")
+  }
+  e$.ab1202_files <- function() {
+    f <- setdiff(list.files(all.files = FALSE), c("Rplots.pdf", "default.profraw"))  # webR's own working files
+    if (!length(f)) return("")
+    i <- file.info(f)
+    paste(paste(f, i$size, i$isdir, sep = "\037"), collapse = "\036")
+  }
+  e$View <- function(x, title) { print(utils::head(x, 20)); invisible(x) }
+  e$install.packages <- function(...) message("AB1202 uses base R only: no packages can be installed here.")
+  invisible()
+})
+</script>
+
+<script type="module">
+import { WebR } from "../webr/webr.mjs";
+const MODE = "quiz";            // "work" or "quiz"
+const STORE = "ab1202-rlab-script"; // work mode only: the script is kept in this browser
+const START = "# AB1202 quiz: base R only. Ctrl+Enter (Mac: Cmd+Enter) runs a line.\n\n";
+const $ = (id) => document.getElementById(id);
+if (MODE === "quiz") document.querySelectorAll(".work-only").forEach((el) => el.remove());
+
+// ---------- editor ----------
+const ed = $("script"), gutter = $("gutter");
+let saved = null;
+if (MODE === "work") { try { saved = localStorage.getItem(STORE); } catch (e) { saved = null; } }
+ed.value = saved !== null && saved !== "" ? saved : START;
+function numberLines() {
+  const n = ed.value.split("\n").length;
+  gutter.textContent = Array.from({ length: n }, (_, i) => i + 1).join("\n");
+  gutter.scrollTop = ed.scrollTop;
+}
+let saveTimer = null;
+ed.addEventListener("input", () => {
+  numberLines();
+  if (MODE === "work") { clearTimeout(saveTimer); saveTimer = setTimeout(() => { try { localStorage.setItem(STORE, ed.value); } catch (e) {} }, 400); }
+});
+ed.addEventListener("scroll", () => { gutter.scrollTop = ed.scrollTop; });
+numberLines();
+
+// The current line, extended while brackets are open or the line ends with an operator (as RStudio does).
+function balance(text) {
+  let depth = 0, q = null;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === "\\") i++; else if (c === q) q = null; continue; }
+    if (c === "#") { while (i < text.length && text[i] !== "\n") i++; continue; }
+    if (c === '"' || c === "'" || c === "`") q = c;
+    else if ("([{".includes(c)) depth++;
+    else if (")]}".includes(c)) depth--;
+  }
+  return depth;
+}
+const OPEN_END = /(\+|-|\*|\/|\^|,|<-|=|&|\||\|>|%[^%]*%|~)\s*(#.*)?$/;
+function codeAtCursor() {
+  const v = ed.value, s = ed.selectionStart, e = ed.selectionEnd;
+  if (e > s) return { code: v.slice(s, e), next: e };
+  const lines = v.split("\n");
+  let pos = 0, row = 0;
+  while (row < lines.length - 1 && pos + lines[row].length < s) { pos += lines[row].length + 1; row++; }
+  let end = row, code = lines[row];
+  while (end < lines.length - 1 && (balance(code) > 0 || OPEN_END.test(code))) { end++; code += "\n" + lines[end]; }
+  let next = 0; for (let r = 0; r <= end; r++) next += lines[r].length + 1;
+  return { code, next: Math.min(next, v.length) };
+}
+function runLine() {
+  const { code, next } = codeAtCursor();
+  if (ed.selectionEnd <= ed.selectionStart) { ed.selectionStart = ed.selectionEnd = next; }
+  if (code.trim()) run(code);
+}
+ed.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); e.shiftKey ? run(ed.value) : runLine(); }
+  else if (e.key === "Tab" && !e.shiftKey) {
+    e.preventDefault(); const s = ed.selectionStart;
+    ed.setRangeText("  ", s, ed.selectionEnd, "end"); ed.dispatchEvent(new Event("input"));
+  }
+});
+$("runLine").onclick = runLine;
+$("runAll").onclick = () => run(ed.value);
+if (MODE === "work") {
+  $("saveBtn").onclick = () => download(new Blob([ed.value], { type: "text/plain" }), "ab1202-script.R");
+  $("openBtn").onclick = () => $("openFile").click();
+  $("openFile").onchange = async (e) => { const f = e.target.files[0]; if (f) { ed.value = await f.text(); ed.dispatchEvent(new Event("input")); } e.target.value = ""; };
+}
+
+// ---------- console ----------
+const out = $("out"), cmd = $("cmd");
+const hist = []; let hpos = 0;
+function say(text, cls) {
+  const span = document.createElement("span");
+  if (cls) span.className = cls;
+  span.textContent = text.endsWith("\n") ? text : text + "\n";
+  out.appendChild(span);
+  while (out.childNodes.length > 4000) out.removeChild(out.firstChild);
+  out.scrollTop = out.scrollHeight;
+}
+cmd.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault(); const code = cmd.value;
+    if (!code.trim()) return;
+    hist.push(code); hpos = hist.length; cmd.value = ""; cmd.style.height = "";
+    run(code);
+  } else if (e.key === "ArrowUp" && !cmd.value.includes("\n") && hist.length) {
+    e.preventDefault(); hpos = Math.max(0, hpos - 1); cmd.value = hist[hpos];
+  } else if (e.key === "ArrowDown" && !cmd.value.includes("\n")) {
+    e.preventDefault(); hpos = Math.min(hist.length, hpos + 1); cmd.value = hpos < hist.length ? hist[hpos] : "";
+  }
+});
+cmd.addEventListener("input", () => { cmd.style.height = ""; cmd.style.height = Math.min(cmd.scrollHeight, 144) + "px"; });
+$("clearOut").onclick = () => { out.textContent = ""; };
+
+// ---------- plots ----------
+const plots = []; let shown = -1;
+function showPlot(i) {
+  const box = $("plotBox"); box.textContent = "";
+  if (i < 0 || !plots.length) {
+    box.innerHTML = '<div class="empty">Plots appear here, e.g. <code>hist(rnorm(1000))</code></div>';
+    $("plotCount").textContent = "No plots yet"; shown = -1;
+  } else {
+    shown = i; const c = document.createElement("canvas"); const b = plots[i];
+    c.width = b.width; c.height = b.height; c.getContext("2d").drawImage(b, 0, 0);
+    c.setAttribute("role", "img"); c.setAttribute("aria-label", "R plot " + (i + 1));
+    box.appendChild(c); $("plotCount").textContent = "Plot " + (i + 1) + " of " + plots.length;
+  }
+  $("prevPlot").disabled = shown <= 0; $("nextPlot").disabled = shown < 0 || shown >= plots.length - 1;
+  $("clearPlots").disabled = !plots.length; if ($("savePlot")) $("savePlot").disabled = shown < 0;
+}
+$("prevPlot").onclick = () => showPlot(shown - 1);
+$("nextPlot").onclick = () => showPlot(shown + 1);
+$("clearPlots").onclick = () => { plots.length = 0; showPlot(-1); };
+if ($("savePlot")) $("savePlot").onclick = () => { const c = $("plotBox").querySelector("canvas"); if (c) c.toBlob((b) => download(b, "ab1202-plot-" + (shown + 1) + ".png")); };
+function plotSize() {
+  const box = $("plotBox");
+  const w = Math.max(420, Math.min(900, box.clientWidth - 16 || 640));
+  const h = Math.max(320, Math.min(700, box.clientHeight - 16 || 480));
+  return { width: w, height: h };
+}
+
+// ---------- tabs ----------
+function tab(name) {
+  document.querySelectorAll(".tabs button").forEach((b) => b.setAttribute("aria-selected", b.dataset.tab === name ? "true" : "false"));
+  document.querySelectorAll(".tabpanel").forEach((p) => p.classList.toggle("on", p.id === "tab-" + name));
+}
+document.querySelectorAll(".tabs button").forEach((b) => { b.onclick = () => tab(b.dataset.tab); });
+
+// ---------- helpers ----------
+function download(blob, name) { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); }
+function rows(text) { return text ? text.split("\u001e").map((r) => r.split("\u001f")) : []; }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function status(text, cls) { const s = $("status"); s.textContent = text; s.className = cls || ""; }
+
+// ---------- R ----------
+let webR = null, shelter = null, busy = false;
+async function startR() {
+  status("Starting R…", "busy");
+  webR = new WebR({ baseUrl: "../webr/" });
+  await webR.init();
+  if (MODE === "work") {
+    try {
+      const data = await (await fetch("../data/hotels.csv.gz")).arrayBuffer();
+      await webR.FS.writeFile("/home/web_user/hotels.csv", new Uint8Array(data));
+    } catch (e) { say("The course data could not be loaded: " + e.message, "warn"); }
+  }
+  await webR.evalRVoid(document.getElementById("rsetup").textContent);
+  shelter = await new webR.Shelter();
+  busy = false; setReady(true); status("R is ready", "ready");
+  await refreshSide();
+}
+function setReady(on) { ["runLine", "runAll"].forEach((id) => { $(id).disabled = !on; }); cmd.disabled = !on; }
+async function run(code) {
+  if (!webR || !shelter) return;
+  if (busy) { say("R is still busy with the last run. Wait, or press Restart R.", "info"); return; }
+  busy = true; status("Running…", "busy"); $("runLine").disabled = $("runAll").disabled = true;
+  try {
+    await webR.objs.globalEnv.bind(".ab1202_code", code);
+    const res = await shelter.captureR(".ab1202_run(.ab1202_code)", { captureStreams: true, captureConditions: false, withAutoprint: false, captureGraphics: plotSize() });
+    for (const o of res.output) {
+      if (o.type === "stdout") { const t = String(o.data); t.startsWith("\u0001") ? say(t.slice(1), "echo") : say(t); }
+      else if (o.type === "stderr") { const t = String(o.data); say(t, /^Warning/.test(t) ? "warn" : "err"); }
+    }
+    if (res.images && res.images.length) { for (const img of res.images) plots.push(img); showPlot(plots.length - 1); tab("plots"); }
+  } catch (e) { say(String(e.message || e), "err"); }
+  finally {
+    try { await webR.evalRVoid("rm(list = intersect('.ab1202_code', ls(globalenv(), all.names = TRUE)), envir = globalenv())"); } catch (e) {}
+    try { await shelter.purge(); } catch (e) {}
+    busy = false; status("R is ready", "ready"); setReady(true);
+    refreshSide();
+  }
+}
+async function refreshSide() {
+  if (!webR) return;
+  try {
+    const env = rows(await webR.evalRString(".ab1202_env()"));
+    $("envList").innerHTML = env.length
+      ? "<table><thead><tr><th>Name</th><th>Type</th><th>Value</th></tr></thead><tbody>" +
+        env.map(([n, c, v]) => `<tr class="click" data-n="${esc(n)}"><td>${esc(n)}</td><td>${esc(c)}</td><td class="v">${esc(v)}</td></tr>`).join("") + "</tbody></table>"
+      : '<div class="empty">Nothing yet.</div>';
+    $("envList").querySelectorAll("tr.click").forEach((tr) => { tr.onclick = () => run("str(" + (/^[A-Za-z.][A-Za-z0-9._]*$/.test(tr.dataset.n) ? tr.dataset.n : "`" + tr.dataset.n + "`") + ")"); });
+    if (MODE === "work") {
+      const fl = rows(await webR.evalRString(".ab1202_files()"));
+      $("fileList").innerHTML = fl.length
+        ? "<table><thead><tr><th>File</th><th>Size</th><th></th></tr></thead><tbody>" +
+          fl.map(([n, s, d]) => `<tr><td>${esc(n)}${d === "TRUE" ? "/" : ""}</td><td>${d === "TRUE" ? "" : (Number(s) / 1024).toFixed(1) + " KB"}</td><td>${d === "TRUE" ? "" : `<button data-dl="${esc(n)}">Download</button> <button data-rm="${esc(n)}">Delete</button>`}</td></tr>`).join("") + "</tbody></table>"
+        : '<div class="empty">No files.</div>';
+      $("fileList").querySelectorAll("button[data-dl]").forEach((b) => { b.onclick = async () => { const bytes = await webR.FS.readFile("/home/web_user/" + b.dataset.dl); download(new Blob([bytes]), b.dataset.dl); }; });
+      $("fileList").querySelectorAll("button[data-rm]").forEach((b) => { b.onclick = async () => { await webR.FS.unlink("/home/web_user/" + b.dataset.rm); refreshSide(); }; });
+    }
+  } catch (e) { /* the side panel is a convenience; R itself keeps working */ }
+}
+$("clearEnv").onclick = () => run("rm(list = ls())");
+if (MODE === "work") {
+  $("uploadBtn").onclick = () => $("uploadFile").click();
+  $("uploadFile").onchange = async (e) => {
+    const files = Array.from(e.target.files || []);
+    for (const f of files) await webR.FS.writeFile("/home/web_user/" + f.name, new Uint8Array(await f.arrayBuffer()));
+    e.target.value = ""; if (files.length) say("Uploaded: " + files.map((f) => f.name).join(", "), "info"); refreshSide();
+  };
+}
+$("restart").onclick = async () => {
+  setReady(false); say("Restarting R: objects are cleared; your script stays.", "info");
+  try { if (webR) webR.close(); } catch (e) {}
+  webR = null; shelter = null; busy = false;
+  try { await startR(); } catch (e) { status("R could not start", ""); say(String(e.message || e), "err"); }
+};
+
+try { await startR(); }
+catch (e) { status("R could not start", ""); say("R could not start: " + (e.message || e) + ". Reload the page; if it keeps failing, use RStudio.", "err"); }
+</script>
+</body>
+</html>
