@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.38">
@@ -159,6 +159,8 @@ html{scroll-padding-top:64px}
   <li><a href="#r-2.6-your-tier-in-pairs" id="toc-r-2.6-your-tier-in-pairs" class="nav-link" data-scroll-target="#r-2.6-your-tier-in-pairs">R 2.6 · Your tier (in pairs)</a></li>
   <li><a href="#r-2.7-simulate-the-three-doors-block-5" id="toc-r-2.7-simulate-the-three-doors-block-5" class="nav-link" data-scroll-target="#r-2.7-simulate-the-three-doors-block-5">R 2.7 · Simulate the three doors (block 5)</a></li>
   <li><a href="#r-2.8-going-further-optional" id="toc-r-2.8-going-further-optional" class="nav-link" data-scroll-target="#r-2.8-going-further-optional">R 2.8 · Going further (optional)</a></li>
+  <li><a href="#check-your-ai-assistant-optional-5-min" id="toc-check-your-ai-assistant-optional-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</a></li>
+  <li><a href="#commands-to-know" id="toc-commands-to-know" class="nav-link" data-scroll-target="#commands-to-know">Commands to know</a></li>
   </ul>
 </nav>
 </div>
@@ -212,7 +214,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbm5yb3coaG90ZWxzKSAgICMgdGhlIG51bWJlciBvZiBib29raW5nczogUiBpcyByZWFkeSB3aGVuIHlvdSBzZWUgMTE3NDI1In0=
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMSDCtyBMb2FkIGFuZCBidWlsZCB0aGUgdGFibGVcbmhvdGVscyA8LSByZWFkLmNzdihcImhvdGVscy5jc3ZcIikgICAjIHRoZSBmaWxlIGZyb20gTlRVLUxlYXJuLCBzYXZlZCBpbiB5b3VyIHdvcmtpbmcgZm9sZGVyXG5ucm93KGhvdGVscykgICAjIHRoZSBudW1iZXIgb2YgYm9va2luZ3M6IFIgaXMgcmVhZHkgd2hlbiB5b3Ugc2VlIDExNzQyNSJ9
 </script>
 </div>
 </section>
@@ -225,6 +227,19 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90
 <script type="webr-3-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMSDCtyBMb2FkIGFuZCBidWlsZCB0aGUgdGFibGVcbiMgQSB0d28td2F5IHRhYmxlIG9mIGNvdW50czogZGVwb3NpdCB0eXBlIChyb3dzKSBieSBvdXRjb21lIChzdGF5ZWQgb3IgY2FuY2VsbGVkKS5cbmRlcG9zaXQgICA8LSBjKFwiTm8gRGVwb3NpdFwiLCBcIk5vbiBSZWZ1bmRcIiwgXCJSZWZ1bmRhYmxlXCIpICAgIyB0aGUgdGhyZWUgZGVwb3NpdCB0eXBlcyBpbiB0aGUgZGF0YVxuc3RheWVkICAgIDwtIG51bWVyaWMoMykgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIGFuIGVtcHR5IGxpc3QgZm9yIGVhY2ggY29sdW1uIG9mIHRoZSB0YWJsZVxuY2FuY2VsbGVkIDwtIG51bWVyaWMoMylcbmZvciAoaSBpbiAxOjMpIHtcbiAgcm93cyA8LSBob3RlbHMkZGVwb3NpdF90eXBlID09IGRlcG9zaXRbaV0gICAgICAgICAgICAgICAgIyBUUlVFIGZvciBib29raW5ncyB3aXRoIHRoaXMgZGVwb3NpdCB0eXBlXG4gIHN0YXllZFtpXSAgICA8LSBzdW0ocm93cyAmIGhvdGVscyRpc19jYW5jZWxlZCA9PSAwKSAgICAgICMgY291bnQ6IHRoaXMgdHlwZSBBTkQgc3RheWVkXG4gIGNhbmNlbGxlZFtpXSA8LSBzdW0ocm93cyAmIGhvdGVscyRpc19jYW5jZWxlZCA9PSAxKSAgICAgICMgY291bnQ6IHRoaXMgdHlwZSBBTkQgY2FuY2VsbGVkXG59XG5jb3VudHMgPC0gZGF0YS5mcmFtZShkZXBvc2l0LCBzdGF5ZWQsIGNhbmNlbGxlZCkgICAgICAgICAgICMgTkVXOiBkYXRhLmZyYW1lKCkgcHV0cyB0aGUgbGlzdHMgc2lkZSBieSBzaWRlIGFzIGEgdGFibGVcbmNvdW50cyR0b3RhbCA8LSBjb3VudHMkc3RheWVkICsgY291bnRzJGNhbmNlbGxlZCAgICAgICAgICAgIyBhZGQgYSBjb2x1bW46IHRoZSByb3cgdG90YWxzXG5jb3VudHNcbnN1bShjb3VudHMkc3RheWVkKSAgICAgICAgIyBjb2x1bW4gdG90YWw6IGFsbCBib29raW5ncyB0aGF0IHN0YXllZFxuc3VtKGNvdW50cyRjYW5jZWxsZWQpICAgICAjIGNvbHVtbiB0b3RhbDogYWxsIGJvb2tpbmdzIHRoYXQgY2FuY2VsbGVkXG5zdW0oY291bnRzJHRvdGFsKSAgICAgICAgICMgZ3JhbmQgdG90YWw6IGFsbCBib29raW5ncyJ9
 </script>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Rows are the deposit types; the columns <code>stayed</code> and <code>cancelled</code> count each outcome, and <code>total</code> is the row total. The three sums below the table are the column totals and the grand total.</p>
+</div>
 </div>
 </section>
 <section id="r-2.2-conditional-shares-condition-on-the-row-block-3-with-your-lecturer" class="level2">
@@ -245,6 +260,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMiDCtyBDb25kaXRp
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMiDCtyBDb25kaXRpb25hbCBzaGFyZXM6IGNvbmRpdGlvbiBvbiB0aGUgcm93XG4jIFRoZSBzYW1lIGNvbmRpdGlvbmFsIHNoYXJlcywgc3RyYWlnaHQgZnJvbSB0aGUgZGF0YToga2VlcCBvbmUgZGVwb3NpdCB0eXBlJ3Mgcm93cywgdGFrZSB0aGUgbWVhbiBvZiBpc19jYW5jZWxlZC5cbm1lYW4oaG90ZWxzJGlzX2NhbmNlbGVkW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJObyBEZXBvc2l0XCJdKSAgICAjIFAoY2FuY2VsbGVkIHwgbm8gZGVwb3NpdClcbm1lYW4oaG90ZWxzJGlzX2NhbmNlbGVkW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJOb24gUmVmdW5kXCJdKSAgICAjIFAoY2FuY2VsbGVkIHwgbm9uLXJlZnVuZGFibGUpXG5tZWFuKGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkZGVwb3NpdF90eXBlID09IFwiUmVmdW5kYWJsZVwiXSkgICAgIyBQKGNhbmNlbGxlZCB8IHJlZnVuZGFibGUpIn0=
 </script>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In each row, <code>p_cancelled</code> and <code>p_stayed</code> add to 1. Read the <code>p_cancelled</code> column: <span class="math inline">\(P(\text{cancel} \mid \text{deposit type})\)</span>. Non-refundable bookings cancel far <strong>more</strong> (99.4%): that is last week’s closing question answered.</p>
+</div>
+</div>
 </section>
 <section id="r-2.3-the-other-way-round-condition-on-the-column-block-3-with-your-lecturer" class="level2">
 <h2 class="anchored" data-anchor-id="r-2.3-the-other-way-round-condition-on-the-column-block-3-with-your-lecturer">R 2.3 · The other way round: condition on the column (block 3, with your lecturer)</h2>
@@ -258,6 +286,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMiDCtyBDb25kaXRp
 <script type="webr-6-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMyDCtyBUaGUgb3RoZXIgd2F5IHJvdW5kOiBjb25kaXRpb24gb24gdGhlIGNvbHVtblxuIyBSdW4gUiAyLjEgZmlyc3QuIFRoZSBvdGhlciB3YXkgcm91bmQ6IGRpdmlkZSBieSB0aGUgQ09MVU1OIHRvdGFsLlxuZ2l2ZW5fY2FuY2VsbGVkIDwtIGNvdW50cyRjYW5jZWxsZWQgLyBzdW0oY291bnRzJGNhbmNlbGxlZCkgICAjIFAoZGVwb3NpdCB0eXBlIHwgY2FuY2VsbGVkKVxuZ2l2ZW5fc3RheWVkICAgIDwtIGNvdW50cyRzdGF5ZWQgLyBzdW0oY291bnRzJHN0YXllZCkgICAgICAgICAjIFAoZGVwb3NpdCB0eXBlIHwgc3RheWVkKVxuYnlfb3V0Y29tZSA8LSBkYXRhLmZyYW1lKGRlcG9zaXQgPSBjb3VudHMkZGVwb3NpdCxcbiAgICAgICAgICAgICAgICAgICAgICAgICBnaXZlbl9jYW5jZWxsZWQsIGdpdmVuX3N0YXllZClcbmJ5X291dGNvbWUgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBlYWNoIGNvbHVtbiBhZGRzIHRvIDEifQ==
 </script>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now each column adds to 1. Read the <code>given_cancelled</code> column: of all cancellations, only 32.9% were non-refundable. <span class="math inline">\(P(A \mid B)\)</span> and <span class="math inline">\(P(B \mid A)\)</span> are different numbers.</p>
+</div>
 </div>
 </section>
 <section id="r-2.4-independent-or-not-6-min" class="level2">
@@ -282,6 +323,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMyDCtyBUaGUgb3Ro
 <script type="webr-7-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNCDCtyBJbmRlcGVuZGVudCBvciBub3Q/XG4jIEFyZSBob3RlbCBhbmQgY2FuY2VsbGluZyBpbmRlcGVuZGVudD9cbm1lYW4oaG90ZWxzJGlzX2NhbmNlbGVkKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgUChjYW5jZWxsZWQpLCBhbGwgYm9va2luZ3Ncbm1lYW4oaG90ZWxzJGlzX2NhbmNlbGVkW2hvdGVscyRob3RlbCA9PSBcIkNpdHkgSG90ZWxcIl0pICAgICAgICAgICAgIyBQKGNhbmNlbGxlZCB8IENpdHkpXG5tZWFuKGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIl0pICAgICAgICAgICMgUChjYW5jZWxsZWQgfCBSZXNvcnQpXG5jaXR5IDwtIGhvdGVscyRob3RlbCA9PSBcIkNpdHkgSG90ZWxcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgVFJVRSBmb3IgQ2l0eSBIb3RlbCBib29raW5nc1xuY2FuYyA8LSBob3RlbHMkaXNfY2FuY2VsZWQgPT0gMSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBUUlVFIGZvciBjYW5jZWxsZWQgYm9va2luZ3Ncbm1lYW4oY2l0eSAmIGNhbmMpICAgICAgICAgICMgUChDaXR5IGFuZCBjYW5jZWxsZWQpLCBmcm9tIHRoZSBkYXRhXG5tZWFuKGNpdHkpICogbWVhbihjYW5jKSAgICAjIHdoYXQgaXQgd291bGQgYmUgaWYgaG90ZWwgYW5kIG91dGNvbWUgd2VyZSBpbmRlcGVuZGVudCJ9
 </script>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If hotel and outcome were independent, <span class="math inline">\(P(\text{cancel} \mid \text{City})\)</span> would equal <span class="math inline">\(P(\text{cancel})\)</span>, and the last two numbers would be equal. They are not.</p>
+</div>
 </div>
 </section>
 <section id="r-2.5-total-probability-and-bayes-rule-6-min" class="level2">
@@ -315,6 +369,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNSDCtyBUb3RhbCBw
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNSDCtyBUb3RhbCBwcm9iYWJpbGl0eSBhbmQgQmF5ZXMnIHJ1bGVcbiMgQmF5ZXMnIHJ1bGU6IGZyb20gUChjYW5jZWxsZWQgfCBub24tcmVmdW5kYWJsZSkgdG8gUChub24tcmVmdW5kYWJsZSB8IGNhbmNlbGxlZCkuXG5wX25yIDwtIG1lYW4oaG90ZWxzJGRlcG9zaXRfdHlwZSA9PSBcIk5vbiBSZWZ1bmRcIikgICAgICAgICAgICAgICAgICAgICAgICMgUChub24tcmVmdW5kYWJsZSlcbnBfY19naXZlbl9uciA8LSBtZWFuKGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkZGVwb3NpdF90eXBlID09IFwiTm9uIFJlZnVuZFwiXSlcbnBfY19naXZlbl9uciAqIHBfbnIgLyBtZWFuKGhvdGVscyRpc19jYW5jZWxlZCkgICAgICAgICAgICAgICAgICAgICAgICAgICMgQmF5ZXM6IFAobm9uLXJlZnVuZGFibGUgfCBjYW5jZWxsZWQpXG5tZWFuKGhvdGVscyRkZXBvc2l0X3R5cGVbaG90ZWxzJGlzX2NhbmNlbGVkID09IDFdID09IFwiTm9uIFJlZnVuZFwiKSAgICAgICAjIGNoZWNrOiBjb3VudCBpdCBkaXJlY3RseSJ9
 </script>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The first number is <span class="math inline">\(P(\text{cancel})\)</span> rebuilt from the deposit groups. The last two are the same: Bayes’ rule and counting in the table agree.</p>
+</div>
+</div>
 </section>
 <section id="r-2.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-2.6-your-tier-in-pairs">R 2.6 · Your tier (in pairs)</h2>
@@ -330,7 +397,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBQKGNhbmNlbGxlZCB8IFJl
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -339,14 +406,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBQKGNhbmNlbGxlZCB8IFJl
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>mean(hotels$is_canceled[hotels$is_repeated_guest == 0])</code> for first stays; change <code>0</code> to <code>1</code> for returning guests.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -355,7 +422,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBQKGNhbmNlbGxlZCB8IFJl
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Core.</strong> <span class="math inline">\(P(\text{cancel} \mid \text{Resort}) = 0.281\)</span>. First-time guests 0.381, returning guests 0.162: returning guests cancel far less.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(hotels<span class="sc">$</span>is_canceled[hotels<span class="sc">$</span>hotel <span class="sc">==</span> <span class="st">"Resort Hotel"</span>])</span>
@@ -376,7 +443,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkaG90
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -385,14 +452,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkaG90
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>has_request &lt;- hotels$total_of_special_requests &gt; 0</code>, then <code>mean(hotels$is_canceled[has_request])</code>; and <code>!has_request</code> for bookings without one.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -401,7 +468,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkaG90
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Applied.</strong> Not independent: <span class="math inline">\(P(\text{cancel} \mid \text{City}) = 0.422\)</span> against <span class="math inline">\(P(\text{cancel}) = 0.375\)</span>; <span class="math inline">\(P(\text{City and cancel}) = 0.281\)</span> against 0.249. With a special request 0.220, without 0.483: a request signals a guest who plans to come (it does not make them come).</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>city <span class="ot">&lt;-</span> hotels<span class="sc">$</span>hotel <span class="sc">==</span> <span class="st">"City Hotel"</span></span>
@@ -424,11 +491,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkaG90
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNiDCtyBZb3VyIHRpZXJcbiMgV2hvIG1ha2VzIG5vbi1yZWZ1bmRhYmxlIGJvb2tpbmdzP1xubnIgPC0gaG90ZWxzW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJOb24gUmVmdW5kXCIsIF0gICAgICMgb25seSB0aGUgbm9uLXJlZnVuZGFibGUgYm9va2luZ3Ncbm1lYW4obnIkaG90ZWwgPT0gXCJDaXR5IEhvdGVsXCIpICAgICAgICAgICAgICAgICAgICAgICAgICAjIHNoYXJlIGF0IHRoZSBDaXR5IEhvdGVsXG5tZWFuKG5yJGhvdGVsID09IFwiUmVzb3J0IEhvdGVsXCIpICAgICAgICAgICAgICAgICAgICAgICAgIyBzaGFyZSBhdCB0aGUgUmVzb3J0IEhvdGVsXG4jIFdobyBib29rZWQgdGhlbT8gVGhlIHNoYXJlIGZyb20gZWFjaCBtYXJrZXQgc2VnbWVudDpcbnNlZ21lbnRzIDwtIHNvcnQodW5pcXVlKG5yJG1hcmtldF9zZWdtZW50KSkgICAgICAgICAgICAgIyBORVc6IHVuaXF1ZSgpIGxpc3RzIGVhY2ggZGlmZmVyZW50IHZhbHVlIG9uY2U7IHNvcnQoKSBwdXRzIHRoZW0gQSB0byBaXG5mb3IgKHMgaW4gc2VnbWVudHMpIHtcbiAgIyBORVc6IHBhc3RlKCkgam9pbnMgd29yZHMgYW5kIG51bWJlcnMgaW50byBvbmUgbGluZSBvZiB0ZXh0XG4gICMgTkVXOiBwcmludCgpIHNob3dzIGEgdmFsdWU7IGluc2lkZSBhIGxvb3AgUiBzaG93cyBub3RoaW5nIHVubGVzcyB5b3UgcHJpbnRcbiAgcHJpbnQocGFzdGUocywgcm91bmQobWVhbihuciRtYXJrZXRfc2VnbWVudCA9PSBzKSwgMykpKVxufVxuIyBIb3cgZmFyIGFoZWFkIHdlcmUgdGhleSBib29rZWQgKGRheXMpP1xubWVhbihob3RlbHMkbGVhZF90aW1lW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJObyBEZXBvc2l0XCJdKVxubWVhbihob3RlbHMkbGVhZF90aW1lW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJOb24gUmVmdW5kXCJdKVxubWVhbihob3RlbHMkbGVhZF90aW1lW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJSZWZ1bmRhYmxlXCJdKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNiDCtyBZb3VyIHRpZXI6IENoYWxsZW5nZSAoc3RhcnRpbmcgY29kZSlcbiMgV2hvIG1ha2VzIG5vbi1yZWZ1bmRhYmxlIGJvb2tpbmdzP1xubnIgPC0gaG90ZWxzW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJOb24gUmVmdW5kXCIsIF0gICAgICMgb25seSB0aGUgbm9uLXJlZnVuZGFibGUgYm9va2luZ3Ncbm1lYW4obnIkaG90ZWwgPT0gXCJDaXR5IEhvdGVsXCIpICAgICAgICAgICAgICAgICAgICAgICAgICAjIHNoYXJlIGF0IHRoZSBDaXR5IEhvdGVsXG5tZWFuKG5yJGhvdGVsID09IFwiUmVzb3J0IEhvdGVsXCIpICAgICAgICAgICAgICAgICAgICAgICAgIyBzaGFyZSBhdCB0aGUgUmVzb3J0IEhvdGVsXG4jIFdobyBib29rZWQgdGhlbT8gVGhlIHNoYXJlIGZyb20gZWFjaCBtYXJrZXQgc2VnbWVudDpcbnNlZ21lbnRzIDwtIHNvcnQodW5pcXVlKG5yJG1hcmtldF9zZWdtZW50KSkgICAgICAgICAgICAgIyBORVc6IHVuaXF1ZSgpIGxpc3RzIGVhY2ggZGlmZmVyZW50IHZhbHVlIG9uY2U7IHNvcnQoKSBwdXRzIHRoZW0gQSB0byBaXG5mb3IgKHMgaW4gc2VnbWVudHMpIHtcbiAgIyBORVc6IHBhc3RlKCkgam9pbnMgd29yZHMgYW5kIG51bWJlcnMgaW50byBvbmUgbGluZSBvZiB0ZXh0XG4gICMgTkVXOiBwcmludCgpIHNob3dzIGEgdmFsdWU7IGluc2lkZSBhIGxvb3AgUiBzaG93cyBub3RoaW5nIHVubGVzcyB5b3UgcHJpbnRcbiAgcHJpbnQocGFzdGUocywgcm91bmQobWVhbihuciRtYXJrZXRfc2VnbWVudCA9PSBzKSwgMykpKVxufVxuIyBIb3cgZmFyIGFoZWFkIHdlcmUgdGhleSBib29rZWQgKGRheXMpP1xubWVhbihob3RlbHMkbGVhZF90aW1lW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJObyBEZXBvc2l0XCJdKVxubWVhbihob3RlbHMkbGVhZF90aW1lW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJOb24gUmVmdW5kXCJdKVxubWVhbihob3RlbHMkbGVhZF90aW1lW2hvdGVscyRkZXBvc2l0X3R5cGUgPT0gXCJSZWZ1bmRhYmxlXCJdKSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -437,14 +504,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNiDCtyBZb3VyIHRp
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>nr &lt;- hotels[hotels$deposit_type == "Non Refund", ]</code>, then <code>mean(nr$hotel == "City Hotel")</code>, and a <code>for</code> loop over the market segments as in the code below.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -453,7 +520,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNiDCtyBZb3VyIHRp
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Challenge.</strong> 0.329 both ways. 88% at the city hotel; 97% through groups or offline travel agents; booked 213 days ahead on average, against 90 for no deposit. They look like room blocks held far ahead: not evidence that deposits cause cancellations.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_nr <span class="ot">&lt;-</span> <span class="fu">mean</span>(hotels<span class="sc">$</span>deposit_type <span class="sc">==</span> <span class="st">"Non Refund"</span>)</span>
@@ -483,7 +550,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -492,7 +559,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Stretch.</strong> Switching wins if the first pick was wrong (3/4) and you then pick the star from the two remaining doors (1/2): <span class="math inline">\(3/4 \times 1/2 = 0.375\)</span>. Staying wins 0.25. Switching is still better.</p>
 </div>
@@ -515,8 +582,21 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNyDCtyBTaW11bGF0
 
 </div>
 <script type="webr-15-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNyDCtyBTaW11bGF0ZSB0aGUgdGhyZWUgZG9vcnNcbiMgUnVuIFIgMi43IGZpcnN0LiBUaGUgc2hhcmUgb2YgZ2FtZXMgd29uIHNvIGZhciwgZ2FtZSBieSBnYW1lLlxuZ2FtZV9udW1iZXIgPC0gMTpnYW1lc1xuc3dpdGNoX3NoYXJlIDwtIGN1bXN1bShwaWNrICE9IGNhcikgLyBnYW1lX251bWJlciAgICMgY3Vtc3VtKCkgaXMgYSBydW5uaW5nIHRvdGFsIG9mIHRoZSB3aW5zXG5zdGF5X3NoYXJlICAgPC0gY3Vtc3VtKHBpY2sgPT0gY2FyKSAvIGdhbWVfbnVtYmVyXG5wbG90KGdhbWVfbnVtYmVyLCBzd2l0Y2hfc2hhcmUsIHR5cGUgPSBcImxcIiwgbHdkID0gMiwgY29sID0gXCIjMTgxQzYyXCIsIGxvZyA9IFwieFwiLFxuICAgICB5bGltID0gYygwLCAxKSwgeGxhYiA9IFwiR2FtZXMgcGxheWVkIChsb2cgc2NhbGUpXCIsIHlsYWIgPSBcIlNoYXJlIG9mIGdhbWVzIHdvblwiKVxubGluZXMoZ2FtZV9udW1iZXIsIHN0YXlfc2hhcmUsIGx3ZCA9IDIsIGNvbCA9IFwiI0M4MTAyRVwiKSAgICAgIyBORVc6IGxpbmVzKCkgYWRkcyBhIHNlY29uZCBsaW5lIHRvIHRoZSBwbG90XG5hYmxpbmUoaCA9IDEvMywgbHR5ID0gMikgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgbHR5ID0gMiBtYWtlcyB0aGUgbGluZSBkYXNoZWRcbmFibGluZShoID0gMi8zLCBsdHkgPSAyKVxuIyBORVc6IGxlZ2VuZCgpIGFkZHMgYSBrZXkgdGhhdCBzYXlzIHdoaWNoIGxpbmUgaXMgd2hpY2hcbmxlZ2VuZChcImJvdHRvbXJpZ2h0XCIsIGMoXCJTd2l0Y2hcIiwgXCJTdGF5XCIpLCBjb2wgPSBjKFwiIzE4MUM2MlwiLCBcIiNDODEwMkVcIiksIGx3ZCA9IDIsIGJ0eSA9IFwiblwiKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNyDCtyBTaW11bGF0ZSB0aGUgdGhyZWUgZG9vcnNcbiMgUnVuIHRoZSBjYXJkIGFib3ZlIGZpcnN0LiBUaGUgc2hhcmUgb2YgZ2FtZXMgd29uIHNvIGZhciwgZ2FtZSBieSBnYW1lLlxuZ2FtZV9udW1iZXIgPC0gMTpnYW1lc1xuc3dpdGNoX3NoYXJlIDwtIGN1bXN1bShwaWNrICE9IGNhcikgLyBnYW1lX251bWJlciAgICMgY3Vtc3VtKCkgaXMgYSBydW5uaW5nIHRvdGFsIG9mIHRoZSB3aW5zXG5zdGF5X3NoYXJlICAgPC0gY3Vtc3VtKHBpY2sgPT0gY2FyKSAvIGdhbWVfbnVtYmVyXG5wbG90KGdhbWVfbnVtYmVyLCBzd2l0Y2hfc2hhcmUsIHR5cGUgPSBcImxcIiwgbHdkID0gMiwgY29sID0gXCIjMTgxQzYyXCIsIGxvZyA9IFwieFwiLFxuICAgICB5bGltID0gYygwLCAxKSwgeGxhYiA9IFwiR2FtZXMgcGxheWVkIChsb2cgc2NhbGUpXCIsIHlsYWIgPSBcIlNoYXJlIG9mIGdhbWVzIHdvblwiKVxubGluZXMoZ2FtZV9udW1iZXIsIHN0YXlfc2hhcmUsIGx3ZCA9IDIsIGNvbCA9IFwiI0M4MTAyRVwiKSAgICAgIyBORVc6IGxpbmVzKCkgYWRkcyBhIHNlY29uZCBsaW5lIHRvIHRoZSBwbG90XG5hYmxpbmUoaCA9IDEvMywgbHR5ID0gMikgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgbHR5ID0gMiBtYWtlcyB0aGUgbGluZSBkYXNoZWRcbmFibGluZShoID0gMi8zLCBsdHkgPSAyKVxuIyBORVc6IGxlZ2VuZCgpIGFkZHMgYSBrZXkgdGhhdCBzYXlzIHdoaWNoIGxpbmUgaXMgd2hpY2hcbmxlZ2VuZChcImJvdHRvbXJpZ2h0XCIsIGMoXCJTd2l0Y2hcIiwgXCJTdGF5XCIpLCBjb2wgPSBjKFwiIzE4MUM2MlwiLCBcIiNDODEwMkVcIiksIGx3ZCA9IDIsIGJ0eSA9IFwiblwiKSJ9
 </script>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Staying wins about a third of the time; switching about two thirds. Change the seed: the shares stay close to these.</p>
+</div>
 </div>
 </section>
 <section id="r-2.8-going-further-optional" class="level2">
@@ -538,6 +618,29 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuOCDCtyBHb2luZyBm
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuOCDCtyBHb2luZyBmdXJ0aGVyXG4jIERvIHJldHVybmluZyBndWVzdHMgY2FuY2VsIGxlc3M/IGlzX3JlcGVhdGVkX2d1ZXN0IGlzIDAgZm9yIGEgZmlyc3Qgc3RheSwgMSBmb3IgYSByZXR1cm5pbmcgZ3Vlc3QuXG5tZWFuKGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaXNfcmVwZWF0ZWRfZ3Vlc3QgPT0gMF0pICAgIyBQKGNhbmNlbGxlZCB8IGZpcnN0IHN0YXkpXG5tZWFuKGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaXNfcmVwZWF0ZWRfZ3Vlc3QgPT0gMV0pICAgIyBQKGNhbmNlbGxlZCB8IHJldHVybmluZyBndWVzdCkifQ==
 </script>
 </div>
+</section>
+<section id="check-your-ai-assistant-optional-5-min" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</h2>
+<p>AI is welcome as a study partner. Ask it, then check it in R.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Type this to your AI assistant">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Type this to your AI assistant
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“In a hotel’s data, 99% of bookings with a non-refundable deposit were cancelled. What share of all cancellations had a non-refundable deposit?”</p>
+<p>“Explain the difference between independent and mutually exclusive events, with a hotel example, in three sentences.”</p>
+</div>
+</div>
+<p>The first question cannot be answered without more information (it needs <span class="math inline">\(P(\text{non-refundable})\)</span> and <span class="math inline">\(P(\text{cancel})\)</span>). If the assistant gives 99%, it has swapped the conditional. <strong>AI says, R checks.</strong></p>
+</section>
+<section id="commands-to-know" class="level2">
+<h2 class="anchored" data-anchor-id="commands-to-know">Commands to know</h2>
+<p>These can be assessed in the quiz: <code>sum()</code> on a test to <strong>count</strong> (<code>sum(rows &amp; hotels$is_canceled == 1)</code>); a count divided by its <strong>row</strong> total or its <strong>column</strong> total for a conditional probability; <code>mean(hotels$is_canceled[hotels$hotel == "City Hotel"])</code> for one group’s share; <code>mean(a &amp; b)</code> for a joint share. Also useful: <code>sample()</code> with <code>set.seed()</code> for simulation.</p>
 <script type="webr-data">
 eyJvcHRpb25zIjp7ImJhc2VVcmwiOiIuLi93ZWJyLyJ9LCJwYWNrYWdlcyI6eyJwa2dzIjpbImV2YWx1YXRlIiwia25pdHIiLCJodG1sdG9vbHMiXSwicmVwb3MiOlsiLi4vd2Vici1yZXBvIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
 </script>

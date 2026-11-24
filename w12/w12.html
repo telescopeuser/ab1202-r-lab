@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.38">
@@ -152,11 +152,13 @@ html{scroll-padding-top:64px}
   <ul class="collapse">
   <li><a href="#how-to-use-this-lab" id="toc-how-to-use-this-lab" class="nav-link active" data-scroll-target="#how-to-use-this-lab">How to use this lab</a></li>
   <li><a href="#r-12.1-load-the-data-the-inputs-block-3-with-your-lecturer" id="toc-r-12.1-load-the-data-the-inputs-block-3-with-your-lecturer" class="nav-link" data-scroll-target="#r-12.1-load-the-data-the-inputs-block-3-with-your-lecturer">R 12.1 · Load the data; the inputs (block 3, with your lecturer)</a></li>
-  <li><a href="#r-12.2-one-night-as-a-function-block-3-with-your-lecturer" id="toc-r-12.2-one-night-as-a-function-block-3-with-your-lecturer" class="nav-link" data-scroll-target="#r-12.2-one-night-as-a-function-block-3-with-your-lecturer">R 12.2 · One night, as a function (block 3, with your lecturer)</a></li>
+  <li><a href="#r-12.2-one-night-twice-block-3-with-your-lecturer" id="toc-r-12.2-one-night-twice-block-3-with-your-lecturer" class="nav-link" data-scroll-target="#r-12.2-one-night-twice-block-3-with-your-lecturer">R 12.2 · One night, twice (block 3, with your lecturer)</a></li>
   <li><a href="#r-12.3-10000-nights-and-the-exact-check-block-3-with-your-lecturer" id="toc-r-12.3-10000-nights-and-the-exact-check-block-3-with-your-lecturer" class="nav-link" data-scroll-target="#r-12.3-10000-nights-and-the-exact-check-block-3-with-your-lecturer">R 12.3 · 10,000 nights, and the exact check (block 3, with your lecturer)</a></li>
   <li><a href="#r-12.4-compare-booking-limits-with-a-loop-10-min" id="toc-r-12.4-compare-booking-limits-with-a-loop-10-min" class="nav-link" data-scroll-target="#r-12.4-compare-booking-limits-with-a-loop-10-min">R 12.4 · Compare booking limits with a loop (10 min)</a></li>
   <li><a href="#r-12.5-your-tier-in-pairs" id="toc-r-12.5-your-tier-in-pairs" class="nav-link" data-scroll-target="#r-12.5-your-tier-in-pairs">R 12.5 · Your tier (in pairs)</a></li>
   <li><a href="#r-12.6-groups-that-cancel-together-block-5" id="toc-r-12.6-groups-that-cancel-together-block-5" class="nav-link" data-scroll-target="#r-12.6-groups-that-cancel-together-block-5">R 12.6 · Groups that cancel together (block 5)</a></li>
+  <li><a href="#check-your-ai-assistant-optional-5-min" id="toc-check-your-ai-assistant-optional-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</a></li>
+  <li><a href="#commands-to-know" id="toc-commands-to-know" class="nav-link" data-scroll-target="#commands-to-know">Commands to know</a></li>
   </ul>
 </nav>
 </div>
@@ -210,7 +212,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbm5yb3coaG90ZWxzKSAgICMgdGhlIG51bWJlciBvZiBib29raW5nczogUiBpcyByZWFkeSB3aGVuIHlvdSBzZWUgMTE3NDI1In0=
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjEgwrcgTG9hZCB0aGUgZGF0YTsgdGhlIGlucHV0c1xuaG90ZWxzIDwtIHJlYWQuY3N2KFwiaG90ZWxzLmNzdlwiKSAgICMgdGhlIGZpbGUgZnJvbSBOVFUtTGVhcm4sIHNhdmVkIGluIHlvdXIgd29ya2luZyBmb2xkZXJcbm5yb3coaG90ZWxzKSAgICMgdGhlIG51bWJlciBvZiBib29raW5nczogUiBpcyByZWFkeSB3aGVuIHlvdSBzZWUgMTE3NDI1In0=
 </script>
 </div>
 </section>
@@ -224,16 +226,42 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaG90
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjEgwrcgTG9hZCB0aGUgZGF0YTsgdGhlIGlucHV0c1xuIyBUaGUgaW5wdXRzIGZvciB0aGUgY2l0eSBob3RlbCdzIG92ZXJib29raW5nIGRlY2lzaW9uLlxuY2l0eSA8LSBob3RlbHNbaG90ZWxzJGhvdGVsID09IFwiQ2l0eSBIb3RlbFwiLCBdXG5zaG93IDwtIDEgLSBtZWFuKGNpdHkkaXNfY2FuY2VsZWQpICAgICAgICAgICAgICAgICAjIHRoZSBjaGFuY2UgYSBib29raW5nIHR1cm5zIHVwXG5yYXRlIDwtIG1lYW4oY2l0eSRhZHJbY2l0eSRpc19jYW5jZWxlZCA9PSAwXSkgICAgICAjIGF2ZXJhZ2UgcmF0ZSBvZiBhIGJvb2tpbmcgdGhhdCBzdGF5c1xucm9vbXMgPC0gMTAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyByb29tcyBpbiB0aGUgaG90ZWxcbndhbGtfY29zdCA8LSAyNTAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgYSB3YWxrZWQgZ3Vlc3QgKG5vIHJvb20pIGNvc3RzIDI1MCBldXJvcyAoaWxsdXN0cmF0aXZlKVxuc2hvd1xucmF0ZSJ9
 </script>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A city booking turns up with probability 0.578; one that stays pays €108.27 a night on average.</p>
+</div>
+</div>
 </section>
-<section id="r-12.2-one-night-as-a-function-block-3-with-your-lecturer" class="level2">
-<h2 class="anchored" data-anchor-id="r-12.2-one-night-as-a-function-block-3-with-your-lecturer">R 12.2 · One night, as a function (block 3, with your lecturer)</h2>
+<section id="r-12.2-one-night-twice-block-3-with-your-lecturer" class="level2">
+<h2 class="anchored" data-anchor-id="r-12.2-one-night-twice-block-3-with-your-lecturer">R 12.2 · One night, twice (block 3, with your lecturer)</h2>
 <div>
 <div id="webr-4" class="exercise-cell">
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjIgwrcgT25lIG5pZ2h0LCBhcyBhIGZ1bmN0aW9uXG4jIFJ1biBSIDEyLjEgZmlyc3QuIFBsYXkgb3V0IG9uZSBuaWdodCB3aGVuIHdlIGFjY2VwdCAxNzAgYm9va2luZ3M7IHRoZW4gYSBzZWNvbmQgbmlnaHQuXG5saW1pdCA8LSAxNzBcbnNldC5zZWVkKDEyKVxuZm9yIChuIGluIDE6MikgeyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyB0d28gbmlnaHRzXG4gIGFycml2ZSAgPC0gcmJpbm9tKDEsIGxpbWl0LCBzaG93KSAgICAgICAgICAgICAgICAjIGhvdyBtYW55IHR1cm4gdXAgKFdlZWsgMzogYmlub21pYWwpXG4gIHdhbGtlZCAgPC0gbWF4KGFycml2ZSAtIHJvb21zLCAwKSAgICAgICAgICAgICAgICAjIGd1ZXN0cyB3aXRoIG5vIHJvb20gKDAgaWYgZXZlcnlvbmUgZml0cylcbiAgcmV2ZW51ZSA8LSBtaW4oYXJyaXZlLCByb29tcykgKiByYXRlIC0gd2Fsa2VkICogd2Fsa19jb3N0XG4gIHByaW50KHBhc3RlKFwiTmlnaHRcIiwgbiwgXCI6IHJldmVudWVcIiwgcm91bmQocmV2ZW51ZSwgMiksIFwiZXVyb3M7IHdhbGtlZFwiLCB3YWxrZWQpKVxufSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyB0d28gbmlnaHRzLCB0d28gYW5zd2VycyJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjIgwrcgT25lIG5pZ2h0LCB0d2ljZVxuIyBSdW4gUiAxMi4xIGZpcnN0LiBQbGF5IG91dCBvbmUgbmlnaHQgd2hlbiB3ZSBhY2NlcHQgMTcwIGJvb2tpbmdzOyB0aGVuIGEgc2Vjb25kIG5pZ2h0LlxubGltaXQgPC0gMTcwXG5zZXQuc2VlZCgxMilcbmZvciAobiBpbiAxOjIpIHsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdHdvIG5pZ2h0c1xuICBhcnJpdmUgIDwtIHJiaW5vbSgxLCBsaW1pdCwgc2hvdykgICAgICAgICAgICAgICAgIyBob3cgbWFueSB0dXJuIHVwIChXZWVrIDM6IGJpbm9taWFsKVxuICB3YWxrZWQgIDwtIG1heChhcnJpdmUgLSByb29tcywgMCkgICAgICAgICAgICAgICAgIyBndWVzdHMgd2l0aCBubyByb29tICgwIGlmIGV2ZXJ5b25lIGZpdHMpXG4gIHJldmVudWUgPC0gbWluKGFycml2ZSwgcm9vbXMpICogcmF0ZSAtIHdhbGtlZCAqIHdhbGtfY29zdFxuICBwcmludChwYXN0ZShcIk5pZ2h0XCIsIG4sIFwiOiByZXZlbnVlXCIsIHJvdW5kKHJldmVudWUsIDIpLCBcImV1cm9zOyB3YWxrZWRcIiwgd2Fsa2VkKSlcbn0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdHdvIG5pZ2h0cywgdHdvIGFuc3dlcnMifQ==
 </script>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Each pass of the loop plays one night with 170 bookings: the room revenue, and how many guests are walked (no room for them).</p>
+</div>
 </div>
 </section>
 <section id="r-12.3-10000-nights-and-the-exact-check-block-3-with-your-lecturer" class="level2">
@@ -257,6 +285,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjMgwrcgMTAsMDAw
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjMgwrcgMTAsMDAwIG5pZ2h0cywgYW5kIHRoZSBleGFjdCBjaGVja1xuIyBSdW4gUiAxMi4xIGZpcnN0LiBUaGUgZXhhY3QgYW5zd2VyIGZvciB0aGUgd2FsayBzaGFyZSwgZnJvbSBXZWVrIDMuXG4xIC0gcGJpbm9tKHJvb21zLCAxNzAsIHNob3cpICAgICAgICAgICAgICAgICAgICAgICAjIGV4YWN0IFAobW9yZSB0aGFuIDEwMCB0dXJuIHVwKSJ9
 </script>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The average has a standard error of about €7.08. The simulated share of nights with a walk matches the exact binomial answer.</p>
+</div>
+</div>
 </section>
 <section id="r-12.4-compare-booking-limits-with-a-loop-10-min" class="level2">
 <h2 class="anchored" data-anchor-id="r-12.4-compare-booking-limits-with-a-loop-10-min">R 12.4 · Compare booking limits with a loop (10 min)</h2>
@@ -273,8 +314,21 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjQgwrcgQ29tcGFy
 
 </div>
 <script type="webr-8-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjQgwrcgQ29tcGFyZSBib29raW5nIGxpbWl0cyB3aXRoIGEgbG9vcFxuIyBSdW4gUiAxMi40IGZpcnN0LlxucGxvdChyZXN1bHQkbGltaXQsIHJlc3VsdCRtZWFuLCB0eXBlID0gXCJiXCIsIHBjaCA9IDE5LFxuICAgICB4bGFiID0gXCJCb29raW5ncyBhY2NlcHRlZFwiLCB5bGFiID0gXCJBdmVyYWdlIHJldmVudWUgYSBuaWdodCAoZXVyb3MpXCIpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjQgwrcgQ29tcGFyZSBib29raW5nIGxpbWl0cyB3aXRoIGEgbG9vcFxuIyBSdW4gdGhlIGNhcmQgYWJvdmUgZmlyc3QuXG5wbG90KHJlc3VsdCRsaW1pdCwgcmVzdWx0JG1lYW4sIHR5cGUgPSBcImJcIiwgcGNoID0gMTksXG4gICAgIHhsYWIgPSBcIkJvb2tpbmdzIGFjY2VwdGVkXCIsIHlsYWIgPSBcIkF2ZXJhZ2UgcmV2ZW51ZSBhIG5pZ2h0IChldXJvcylcIikifQ==
 </script>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The average peaks at about 170 (the exact best is 167). After 150 the share of nights with a walk rises fast.</p>
+</div>
 </div>
 </section>
 <section id="r-12.5-your-tier-in-pairs" class="level2">
@@ -291,7 +345,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMTIpXG5saW1p
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -300,14 +354,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMTIpXG5saW1p
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>copy R 12.3 and change 170 to 150.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -316,9 +370,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMTIpXG5saW1p
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Core.</strong> Average €9,376.78 (exact €9,377.19), SE €6.41; 90% of nights between €8,337.03 and €10,394.22; a walk on 1.1% of nights. Compared with 170: about €622.18 less a night on average, but walks are rare.</p>
+<p><strong>Core.</strong> Average €9,376.78 (exact €9,377.19), SE €6.41; 90% of nights between €8,337.03 and €10,394.22; a walk on 1.1% of nights. Compared with your 170 run (R 12.3): €618.27 less a night on average in these simulations (the exact difference is €622.18), but walks are rare.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>limit <span class="ot">&lt;-</span> <span class="dv">150</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>revenue <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
@@ -337,7 +391,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMTIpXG5saW1p
 </div>
 </div>
 <div class="tier-applied">
-<p><strong>Applied.</strong> R 12.4’s loop: which limit has the best average, and which the best 5th percentile? Then set <code>walk_cost &lt;- 400</code>, rerun the loop, and say how the answer changes.</p>
+<p><strong>Applied.</strong> R 12.4’s loop: which limit has the best average, and which the best 5th percentile? Then set <code>walk_cost &lt;- 400</code>, rerun the loop, and say how the answer changes. Set <code>walk_cost &lt;- 250</code> again when you have finished: R 12.6 uses it.</p>
 <div>
 <div id="webr-10" class="exercise-cell">
 
@@ -347,7 +401,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2Fsa19jb3N0IDwtIDI1MCAg
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -356,14 +410,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2Fsa19jb3N0IDwtIDI1MCAg
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>result$limit[which.max(result$mean)]</code>, and the same with <code>low5</code>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -372,7 +426,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2Fsa19jb3N0IDwtIDI1MCAg
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Applied.</strong> At €250: best average 170 (exact best 167), best 5th percentile 160. At €400: best average 160 in the loop (exact best 164, €9,897.55). A dearer walk moves the best limit down.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ... the loop as above ...</span></span>
@@ -389,11 +443,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2Fsa19jb3N0IDwtIDI1MCAg
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGltaXRzIDwtIHNlcSgxMjAsIDE4MCwgYnkgPSAxMClcbm1lYW5fZyA8LSBudW1lcmljKGxlbmd0aChsaW1pdHMpKVxubG93NV9nIDwtIG51bWVyaWMobGVuZ3RoKGxpbWl0cykpXG5mb3IgKGkgaW4gMTpsZW5ndGgobGltaXRzKSkge1xuICBzZXQuc2VlZCgxMilcbiAgcmV2ZW51ZSA8LSBudW1lcmljKDEwMDAwKVxuICBmb3IgKGogaW4gMToxMDAwMCkge1xuICAgIGFycml2ZSA8LSAxMCAqIHJiaW5vbSgxLCBsaW1pdHNbaV0gLyBfX19fX18sIHNob3cpICAgIyBibG9ja3Mgb2YgMTAgdGhhdCB0dXJuIHVwIHRvZ2V0aGVyXG4gICAgd2Fsa2VkIDwtIG1heChhcnJpdmUgLSByb29tcywgMClcbiAgICByZXZlbnVlW2pdIDwtIG1pbihhcnJpdmUsIHJvb21zKSAqIHJhdGUgLSB3YWxrZWQgKiB3YWxrX2Nvc3RcbiAgfVxuICBtZWFuX2dbaV0gPC0gbWVhbihyZXZlbnVlKVxuICBsb3c1X2dbaV0gPC0gcXVhbnRpbGUocmV2ZW51ZSwgMC4wNSlcbn1cbmRhdGEuZnJhbWUobGltaXQgPSBsaW1pdHMsIG1lYW4gPSByb3VuZChtZWFuX2cpLCBsb3c1ID0gcm91bmQobG93NV9nKSkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmF0aW8gPC0gcmF0ZSAvIChyYXRlICsgX19fX19fKSAgICAgICAgIyB0aGUgd2FsayBjaGFuY2UgeW91IGNhbiBhY2NlcHQ6IHJhdGUgLyAocmF0ZSArIGNvc3Qgb2YgYSB3YWxrKVxuTCA8LSAxMDA6MjAwICAgICAgICAgICAgICAgICAgICAgICAgICAgIyB0aGUgYm9va2luZyBsaW1pdHMgdG8gdHJ5XG5wX3dhbGsgPC0gMSAtIHBiaW5vbSgxMDAsIEwsIHNob3cpICAgICAjIFAobW9yZSB0aGFuIDEwMCBvZiB0aGUgTCBib29raW5ncyB0dXJuIHVwKSwgZm9yIGVhY2ggbGltaXRcbm1heChMW3Bfd2FsayA8PSByYXRpb10pICAgICAgICAgICAgICAgICMgdGhlIGxhcmdlc3QgbGltaXQgdGhhdCBtZWV0cyB0aGUgcnVsZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -402,14 +456,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGltaXRzIDwtIHNlcSgxMjAs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><code>L &lt;- 100:200; max(L[1 - pbinom(100, L, show) &lt;= rate / (rate + 250)])</code>.</p>
+<p><code>1 - pbinom(100, L, show)</code> is the chance of a walk for each limit in <code>L</code>; keep the limits where it is at most the ratio, then take the largest with <code>max()</code>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -418,9 +472,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibGltaXRzIDwtIHNlcSgxMjAs
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Challenge.</strong> The ratio is 0.302; the largest limit that meets it is 168. The exact best average is at 167: the rule lands next to it. To be exact, the last booking causes a walk only if it turns up and at least 100 of the others do, <code>1 - pbinom(99, L - 1, show)</code>; with that version the rule gives 167, the best exactly.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ratio <span class="ot">&lt;-</span> rate <span class="sc">/</span> (rate <span class="sc">+</span> <span class="dv">250</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>L <span class="ot">&lt;-</span> <span class="dv">100</span><span class="sc">:</span><span class="dv">200</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>p_walk <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">100</span>, L, show)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(L[p_walk <span class="sc">&lt;=</span> ratio])</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># exact version: the last booking walks only if it turns up and at least 100 of the others do</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(L[<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(<span class="dv">99</span>, L <span class="sc">-</span> <span class="dv">1</span>, show) <span class="sc">&lt;=</span> ratio])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -436,7 +496,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -445,7 +505,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Stretch.</strong> At 150 with groups: average €8,443.06, 5th percentile €5,413.66, a walk on 17.2% of nights. Yes: both the average and the bad nights are better than at 170.</p>
 </div>
@@ -463,6 +523,43 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjYgwrcgR3JvdXBzIHRoYXQgY2FuY2VsIHRvZ2V0aGVyXG4jIFJ1biBSIDEyLjEgZmlyc3QuIFdoYXQgaWYgYm9va2luZ3MgY29tZSBpbiBibG9ja3Mgb2YgMTAgdGhhdCBjYW5jZWwgdG9nZXRoZXI/XG5zZXQuc2VlZCgxMilcbmdfcmV2ZW51ZSA8LSBudW1lcmljKDEwMDAwKVxuZ193YWxrZWQgIDwtIG51bWVyaWMoMTAwMDApXG5mb3IgKGkgaW4gMToxMDAwMCkge1xuICBhcnJpdmUgICAgICAgPC0gMTAgKiByYmlub20oMSwgMTcwIC8gMTAsIHNob3cpICAgIyAxNyBibG9ja3Mgb2YgMTA6IGVhY2ggYmxvY2sgdHVybnMgdXAgb3Igbm90LCB0b2dldGhlclxuICBnX3dhbGtlZFtpXSAgPC0gbWF4KGFycml2ZSAtIHJvb21zLCAwKVxuICBnX3JldmVudWVbaV0gPC0gbWluKGFycml2ZSwgcm9vbXMpICogcmF0ZSAtIGdfd2Fsa2VkW2ldICogd2Fsa19jb3N0XG59XG5tZWFuKGdfcmV2ZW51ZSkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSBhdmVyYWdlIHJldmVudWUgYSBuaWdodFxucXVhbnRpbGUoZ19yZXZlbnVlLCAwLjA1KSAgICAgICAgICAgICAgICAgICAgICAgICAgIyBhIGJhZCBuaWdodFxubWVhbihnX3dhbGtlZCA+IDApICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBzaGFyZSBvZiBuaWdodHMgdGhhdCB3YWxrIGEgZ3Vlc3QifQ==
 </script>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>You should see
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The same show-up rate, but in blocks of 10: the average at 170 falls by about €1,900 a night, and the worst 5% of nights are far worse.</p>
+</div>
+</div>
+</section>
+<section id="check-your-ai-assistant-optional-5-min" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</h2>
+<p>AI is welcome as a study partner. Ask it, then check it in R.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Type this to your AI assistant">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Type this to your AI assistant
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“A hotel accepts 170 bookings for 100 rooms. Each booking turns up with probability 0.578, independently. What is the probability that more than 100 turn up?”</p>
+<p>“I ran my simulation twice and got different averages. Is my code wrong?”</p>
+</div>
+</div>
+<p>Check the first answer: <code>1 - pbinom(100, 170, 0.578)</code> = 0.365. Many assistants use a normal approximation; it should land close. Check the second: no. Without <code>set.seed()</code>, each run uses new random numbers; the averages should differ by about a standard error. <strong>AI says, R checks.</strong></p>
+</section>
+<section id="commands-to-know" class="level2">
+<h2 class="anchored" data-anchor-id="commands-to-know">Commands to know</h2>
+<p>These can be assessed in the quiz: <code>set.seed()</code>, <code>rbinom(n, size, prob)</code>, <code>numeric()</code> with a <code>for</code> loop that stores each run, <code>quantile(x, c(0.05, 0.95))</code>, <code>mean(x &gt; a)</code> for a simulated probability, and a simple <code>for</code> loop. Remember: a simulated average is an estimate with a standard error, and a recommendation needs its risk and its assumptions.</p>
+<p><em>The walk cost (€250) and the groups of 10 are illustrative.</em></p>
 <script type="webr-data">
 eyJvcHRpb25zIjp7ImJhc2VVcmwiOiIuLi93ZWJyLyJ9LCJwYWNrYWdlcyI6eyJwa2dzIjpbImV2YWx1YXRlIiwia25pdHIiLCJodG1sdG9vbHMiXSwicmVwb3MiOlsiLi4vd2Vici1yZXBvIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
 </script>
