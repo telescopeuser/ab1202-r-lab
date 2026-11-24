@@ -85,6 +85,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 /* type sizes, as notes.css */
 div.sourceCode pre code, pre code, .cell-output pre code { font-size: 13.5px; line-height: 1.45; }
 p code, li code, td code { font-size: .92em; }
+/* R Lab cells: a long line wraps (indented) instead of needing a sideways scroll (Sam, 25 Nov 2026) */
+.cm-editor .cm-content { white-space: pre-wrap !important; word-break: break-word; overflow-wrap: anywhere; }
+.cm-editor .cm-line { padding-left: 1.2em !important; text-indent: -1.2em; }
+.cm-editor .cm-scroller { overflow-x: hidden !important; }
 </style>
 <script type="module" src="w08_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="w08_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
