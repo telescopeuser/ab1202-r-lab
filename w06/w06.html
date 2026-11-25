@@ -374,7 +374,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBCaWdnZXIg
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5zIDwtIG51bWVyaWMoMTAwMDApICAgICAgICAgICAgICAgICAjIG9uZSBhdmVyYWdlIHBlciBzYW1wbGVcbmZvciAoaSBpbiAxOjEwMDAwKSB7XG4gIG1lYW5zW2ldIDwtIG1lYW4oc2FtcGxlKGhvdGVscyRhZHIsIDMwKSlcbn1cbnNkKG1lYW5zKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSBzaW11bGF0aW9uIC4uLlxuc2lnbWEgLyBzcXJ0KDMwKSAgICAgICAgICAgICAgICAgICAgICAgICMgLi4uIGFuZCB0aGUgZm9ybXVsYVxuIyBOb3cgc2FtcGxlcyBvZiAxMjA6IGZpbGwgdGhlIGJsYW5rXG5tZWFuczEyMCA8LSBudW1lcmljKDEwMDAwKVxuZm9yIChpIGluIDE6MTAwMDApIHtcbiAgbWVhbnMxMjBbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGFkciwgX19fX19fKSlcbn1cbnNkKG1lYW5zMTIwKVxuc2lnbWEgLyBzcXJ0KDEyMCkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5zMzAgPC0gbnVtZXJpYygxMDAwMCkgICAgICAgICAgICAgICAjIG9uZSBhdmVyYWdlIHBlciBzYW1wbGVcbmZvciAoaSBpbiAxOjEwMDAwKSB7XG4gIG1lYW5zMzBbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGFkciwgMzApKVxufVxuc2QobWVhbnMzMCkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdGhlIHNpbXVsYXRpb24gLi4uXG5zaWdtYSAvIHNxcnQoMzApICAgICAgICAgICAgICAgICAgICAgICAgIyAuLi4gYW5kIHRoZSBmb3JtdWxhXG4jIE5vdyBzYW1wbGVzIG9mIDEyMDogZmlsbCB0aGUgYmxhbmtcbnNldC5zZWVkKDYpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSBzZWVkIGFnYWluLCBqdXN0IGJlZm9yZSB0aGlzIHNpbXVsYXRpb25cbm1lYW5zMTIwIDwtIG51bWVyaWMoMTAwMDApXG5mb3IgKGkgaW4gMToxMDAwMCkge1xuICBtZWFuczEyMFtpXSA8LSBtZWFuKHNhbXBsZShob3RlbHMkYWRyLCBfX19fX18pKVxufVxuc2QobWVhbnMxMjApXG5zaWdtYSAvIHNxcnQoMTIwKSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -389,7 +389,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5z
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>change <code>30</code> to <code>120</code> inside <code>sample()</code>, and compare <code>sd(means)</code> with <code>sigma / sqrt(120)</code>.</p>
+<p>in the second loop, put <code>120</code> inside <code>sample()</code>, and compare <code>sd(means120)</code> with <code>sigma / sqrt(120)</code>.</p>
 </div>
 </div>
 </div>
@@ -407,18 +407,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5z
 <div class="callout-body-container callout-body">
 <p><strong>Core.</strong> For 30 (<code>set.seed(6)</code>): SD of the averages 8.55, <span class="math inline">\(\sigma/\sqrt{30} = 8.53\)</span>. For 120 (<code>set.seed(6)</code>): 4.31 against <span class="math inline">\(\sigma/\sqrt{120} = 4.26\)</span>. Four times the sample, half the error.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>means <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>means30 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  means[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>adr, <span class="dv">30</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  means30[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>adr, <span class="dv">30</span>))</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(means)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(means30)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">30</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>means120 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  means120[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>adr, <span class="dv">120</span>))</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(means120)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>sigma <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">120</span>)         <span class="co"># ... both: four times the sample, half the error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>means120 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  means120[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>adr, <span class="dv">120</span>))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(means120)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>sigma <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">120</span>)         <span class="co"># ... both: four times the sample, half the error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -430,7 +431,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5z
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAzKSlcbmZvciAobiBpbiBjKDIsIDEwLCA0MCkpIHtcbiAgbSA8LSBudW1lcmljKDUwMDApXG4gIGZvciAoaSBpbiAxOjUwMDApIHtcbiAgICBtW2ldIDwtIG1lYW4oc2FtcGxlKGhvdGVscyRsZWFkX3RpbWUsIG4pKVxuICB9XG4gIGhpc3QobSwgYnJlYWtzID0gNDAsIG1haW4gPSBwYXN0ZShcIm4gPVwiLCBuKSlcbn1cbnNlIDwtIHNkKGhvdGVscyRsZWFkX3RpbWUpIC8gc3FydCg0MClcbjEgLSBwbm9ybSgxMjAsIG1lYW4oaG90ZWxzJGxlYWRfdGltZSksIF9fX19fXylcbm1lYW4obSA+IDEyMCkgICAgICAgICMgbSBob2xkcyB0aGUgbGFzdCBydW46IG4gPSA0MCJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAzKSlcbnNldC5zZWVkKDYpXG5mb3IgKG4gaW4gYygyLCAxMCwgNDApKSB7XG4gIG0gPC0gbnVtZXJpYyg1MDAwKVxuICBmb3IgKGkgaW4gMTo1MDAwKSB7XG4gICAgbVtpXSA8LSBtZWFuKHNhbXBsZShob3RlbHMkbGVhZF90aW1lLCBuKSlcbiAgfVxuICBoaXN0KG0sIGJyZWFrcyA9IDQwLCBtYWluID0gcGFzdGUoXCJuID1cIiwgbikpXG59XG5zZSA8LSBzZChob3RlbHMkbGVhZF90aW1lKSAvIHNxcnQoNDApXG4xIC0gcG5vcm0oMTIwLCBtZWFuKGhvdGVscyRsZWFkX3RpbWUpLCBfX19fX18pXG5tZWFuKG0gPiAxMjApICAgICAgICAjIG0gaG9sZHMgdGhlIGxhc3QgcnVuOiBuID0gNDAifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -461,18 +462,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAz
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Applied.</strong> <span class="math inline">\(\text{SE} = 106.91/\sqrt{40} = 16.90\)</span>; CLT: <span class="math inline">\(P(\bar X &gt; 120) = 0.189\)</span>; simulation (<code>set.seed(6)</code> before the loop): 0.184. The histograms lose their skew as <span class="math inline">\(n\)</span> grows.</p>
+<p><strong>Applied.</strong> <span class="math inline">\(\text{SE} = 106.91/\sqrt{40} = 16.90\)</span>; CLT: <span class="math inline">\(P(\bar X &gt; 120) = 0.189\)</span>; simulation: 0.184. The histograms lose their skew as <span class="math inline">\(n\)</span> grows.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">40</span>)) {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">5000</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5000</span>) {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    m[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>lead_time, n))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(m, <span class="at">breaks =</span> <span class="dv">40</span>, <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"n ="</span>, n))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(hotels<span class="sc">$</span>lead_time) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">40</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">120</span>, <span class="fu">mean</span>(hotels<span class="sc">$</span>lead_time), se)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(m <span class="sc">&gt;</span> <span class="dv">120</span>)                                         <span class="co"># close: the CLT works well at n = 40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">40</span>)) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">5000</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5000</span>) {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    m[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>lead_time, n))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(m, <span class="at">breaks =</span> <span class="dv">40</span>, <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"n ="</span>, n))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(hotels<span class="sc">$</span>lead_time) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">40</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">120</span>, <span class="fu">mean</span>(hotels<span class="sc">$</span>lead_time), se)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(m <span class="sc">&gt;</span> <span class="dv">120</span>)                                         <span class="co"># close: the CLT works well at n = 40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
