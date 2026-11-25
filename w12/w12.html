@@ -334,7 +334,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEyLjQgwrcgQ29tcGFy
 </section>
 <section id="r-12.5-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-12.5-your-tier-in-pairs">R 12.5 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end).</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>Weeks 9–12:</strong> Core still has starting code; Applied gives the steps in words; Challenge gives the question only. Hints and full answers are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> Simulate 10,000 nights with a limit of 150 (<code>set.seed(12)</code> first). Find the average, its standard error, the 90% range and the share of nights with a walk.</p>
 <div>
@@ -393,12 +393,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMTIpXG5saW1p
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> R 12.4’s loop: which limit has the best average, and which the best 5th percentile? Then set <code>walk_cost &lt;- 400</code>, rerun the loop, and say how the answer changes. Set <code>walk_cost &lt;- 250</code> again when you have finished: R 12.6 uses it.</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li>Run R 12.4’s loop (<code>walk_cost</code> is 250).</li>
+<li>The limit with the best average: <code>which.max()</code> on <code>result$mean</code>.</li>
+<li>The limit with the best 5th percentile: the same on <code>result$low5</code>.</li>
+<li>Set <code>walk_cost &lt;- 400</code>, run the loop again, and repeat the last two steps.</li>
+<li>Set <code>walk_cost &lt;- 250</code> again when you have finished.</li>
+</ol>
 <div>
 <div id="webr-10" class="exercise-cell">
 
 </div>
 <script type="webr-10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2Fsa19jb3N0IDwtIDI1MCAgICAgICAgICAgICAgICAgICAgICMgdGhlbiB0cnkgNDAwXG5yZXN1bHQkbGltaXRbd2hpY2gubWF4KHJlc3VsdCRtZWFuKV1cbnJlc3VsdCRsaW1pdFt3aGljaC5tYXgocmVzdWx0JF9fX19fXyldIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -439,12 +447,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoid2Fsa19jb3N0IDwtIDI1MCAg
 </div>
 <div class="tier-challenge">
 <p><strong>Challenge.</strong> The rule: accept bookings while <span class="math inline">\(P(\text{walk}) \le \text{rate}/(\text{rate} + 250)\)</span>. Find the largest limit that meets it with <code>1 - pbinom(100, L, show)</code> for <code>L &lt;- 100:200</code>, and compare with the simulated best.</p>
+<p>No starting code here: write it from the question. The hint above points the way, and the full answer is at the end of this handout.</p>
 <div>
 <div id="webr-11" class="exercise-cell">
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmF0aW8gPC0gcmF0ZSAvIChyYXRlICsgX19fX19fKSAgICAgICAgIyB0aGUgd2FsayBjaGFuY2UgeW91IGNhbiBhY2NlcHQ6IHJhdGUgLyAocmF0ZSArIGNvc3Qgb2YgYSB3YWxrKVxuTCA8LSAxMDA6MjAwICAgICAgICAgICAgICAgICAgICAgICAgICAgIyB0aGUgYm9va2luZyBsaW1pdHMgdG8gdHJ5XG5wX3dhbGsgPC0gMSAtIHBiaW5vbSgxMDAsIEwsIHNob3cpICAgICAjIFAobW9yZSB0aGFuIDEwMCBvZiB0aGUgTCBib29raW5ncyB0dXJuIHVwKSwgZm9yIGVhY2ggbGltaXRcbm1heChMW3Bfd2FsayA8PSByYXRpb10pICAgICAgICAgICAgICAgICMgdGhlIGxhcmdlc3QgbGltaXQgdGhhdCBtZWV0cyB0aGUgcnVsZSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">

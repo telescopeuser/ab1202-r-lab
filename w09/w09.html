@@ -358,7 +358,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDkuNSDCtyBUd2VudHkg
 </section>
 <section id="r-9.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-9.6-your-tier-in-pairs">R 9.6 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end).</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>Weeks 9–12:</strong> Core still has starting code; Applied gives the steps in words; Challenge gives the question only. Hints and full answers are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> City against resort rates with <code>t.test(a, b)</code>: 50 from each hotel (R 9.2), then 200 (R 9.3). For each: <span class="math inline">\(t\)</span>, the p-value, the 95% interval, and your decision.</p>
 <div>
@@ -412,12 +412,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoOSlcbmEgPC0g
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> Test whether city and resort bookings cancel at different rates (R 9.4), by hand: pool the shares, find <span class="math inline">\(z\)</span> and the two-sided p-value, and compare with <code>prop.test()</code>.</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li>The city’s and the resort’s <code>is_canceled</code> values; <code>set.seed(1)</code>; 200 from each (<code>x1</code>, <code>x2</code>).</li>
+<li>The pooled share: all cancellations in the two samples over 400.</li>
+<li><span class="math inline">\(z\)</span> = the gap in the two shares over <span class="math inline">\(\sqrt{\text{pool}(1 - \text{pool})(1/200 + 1/200)}\)</span>.</li>
+<li>The two-sided p-value with <code>pnorm()</code>.</li>
+<li>Check it with <code>prop.test(..., correct = FALSE)$p.value</code>.</li>
+</ol>
 <div>
 <div id="webr-11" class="exercise-cell">
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY3ggPC0gaG90ZWxzJGlzX2NhbmNlbGVkW2hvdGVscyRob3RlbCA9PSBcIkNpdHkgSG90ZWxcIl1cbnJ4IDwtIGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIl1cbnNldC5zZWVkKDEpXG54MSA8LSBzYW1wbGUoY3gsIDIwMClcbngyIDwtIHNhbXBsZShyeCwgMjAwKVxucG9vbCA8LSAoc3VtKHgxKSArIHN1bSh4MikpIC8gNDAwXG56IDwtIChtZWFuKHgxKSAtIG1lYW4oeDIpKSAvIHNxcnQocG9vbCAqICgxIC0gcG9vbCkgKiAoMSAvIDIwMCArIDEgLyBfX19fX18pKVxuYyh6ID0geiwgcCA9IDIgKiAoMSAtIHBub3JtKGFicyh6KSkpKVxucHJvcC50ZXN0KGMoc3VtKHgxKSwgc3VtKHgyKSksIGMoMjAwLCAyMDApLCBjb3JyZWN0ID0gRkFMU0UpJHAudmFsdWUifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -464,12 +472,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY3ggPC0gaG90ZWxzJGlzX2Nh
 </div>
 <div class="tier-challenge">
 <p><strong>Challenge.</strong> p-hacking by simulation: in 500 batches of 20 tests on pure noise (<code>set.seed(9)</code>), how often is at least one “significant” at 5%? And at the Bonferroni level <span class="math inline">\(0.05/20\)</span>?</p>
+<p>No starting code here: write it from the question. The hint above points the way, and the full answer is at the end of this handout.</p>
 <div>
 <div id="webr-12" class="exercise-cell">
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoOSlcbmFueV9hdF81cGN0IDwtIG51bWVyaWMoNTAwKVxuYW55X2JvbmZlcnJvbmkgPC0gbnVtZXJpYyg1MDApXG5mb3IgKGJhdGNoIGluIDE6NTAwKSB7ICAgICAgICAgICAgICAjIDUwMCBiYXRjaGVzXG4gIHAgPC0gbnVtZXJpYygyMClcbiAgZm9yIChqIGluIDE6MjApIHsgICAgICAgICAgICAgICAgICMgMjAgdXNlbGVzcyB0ZXN0cyBpbiBlYWNoIGJhdGNoXG4gICAgcFtqXSA8LSB0LnRlc3Qocm5vcm0oNTApLCBybm9ybSg1MCkpJHAudmFsdWVcbiAgfVxuICBhbnlfYXRfNXBjdFtiYXRjaF0gPC0gYW55KHAgPCAwLjA1KVxuICBhbnlfYm9uZmVycm9uaVtiYXRjaF0gPC0gYW55KHAgPCAwLjA1IC8gX19fX19fKVxufVxubWVhbihhbnlfYXRfNXBjdClcbm1lYW4oYW55X2JvbmZlcnJvbmkpXG4xIC0gMC45NV4yMCAgICAgICMgdGhlIHRoZW9yeSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -501,6 +510,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoOSlcbmFueV9h
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Challenge.</strong> About 0.62 at 5% (theory 0.642) and 0.03 with Bonferroni.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">9</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>any_at_5pct <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">500</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>any_bonferroni <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">500</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (batch <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>) {              <span class="co"># 500 batches</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">20</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {                 <span class="co"># 20 useless tests in each batch</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    p[j] <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="fu">rnorm</span>(<span class="dv">50</span>), <span class="fu">rnorm</span>(<span class="dv">50</span>))<span class="sc">$</span>p.value</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  any_at_5pct[batch] <span class="ot">&lt;-</span> <span class="fu">any</span>(p <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  any_bonferroni[batch] <span class="ot">&lt;-</span> <span class="fu">any</span>(p <span class="sc">&lt;</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">20</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(any_at_5pct)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(any_bonferroni)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.95</span><span class="sc">^</span><span class="dv">20</span>      <span class="co"># the theory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

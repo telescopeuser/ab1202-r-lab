@@ -366,7 +366,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjUgwrcgU2lnbmlm
 </section>
 <section id="r-10.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-10.6-your-tier-in-pairs">R 10.6 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end).</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>Weeks 9–12:</strong> Core still has starting code; Applied gives the steps in words; Challenge gives the question only. Hints and full answers are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> <code>lm(adr ~ guests)</code> (R 10.4): the intercept, the slope and <span class="math inline">\(R^2\)</span>, then predictions for 2 and 4 guests.</p>
 <div>
@@ -416,12 +416,18 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibTEgPC0gbG0oYWRyIH4gZ3Vl
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> The model with guests, the hotel and summer (R 10.4): interpret each coefficient, then quote 3 guests at the resort in August.</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li>Fit the model with guests, the hotel and summer (R 10.4’s <code>m3</code>).</li>
+<li>Print its coefficients rounded to 2 places, and say in euros what each one means.</li>
+<li>The quote for 3 guests at the resort in August: <code>predict()</code> with a one-row data frame.</li>
+</ol>
 <div>
 <div id="webr-12" class="exercise-cell">
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibTMgPC0gbG0oYWRyIH4gZ3Vlc3RzICsgaG90ZWwgKyBzdW1tZXIsIGRhdGEgPSBob3RlbHMpXG5yb3VuZChjb2VmKG0zKSwgMilcbnByZWRpY3QobTMsIGRhdGEuZnJhbWUoZ3Vlc3RzID0gMywgaG90ZWwgPSBcIlJlc29ydCBIb3RlbFwiLCBzdW1tZXIgPSBfX19fX18pKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -462,12 +468,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibTMgPC0gbG0oYWRyIH4gZ3Vl
 </div>
 <div class="tier-challenge">
 <p><strong>Challenge.</strong> Simulate the guests slope from 2,000 samples of 50 bookings and of 200 (<code>set.seed(10)</code> before each). Compare the SDs of the slopes.</p>
+<p>No starting code here: write it from the question. The hint above points the way, and the full answer is at the end of this handout.</p>
 <div>
 <div id="webr-13" class="exercise-cell">
 
 </div>
 <script type="webr-13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMTApXG5zNTAgPC0gbnVtZXJpYygyMDAwKSAgICAgICAgICAgICAgICAgICAgICAgIyBzbG9wZXMgZnJvbSBzYW1wbGVzIG9mIDUwXG5mb3IgKGkgaW4gMToyMDAwKSB7XG4gIG9uZV9zYW1wbGUgPC0gaG90ZWxzW3NhbXBsZShucm93KGhvdGVscyksIDUwKSwgXVxuICBzNTBbaV0gPC0gY29lZihsbShhZHIgfiBndWVzdHMsIGRhdGEgPSBvbmVfc2FtcGxlKSlbMl1cbn1cbnNldC5zZWVkKDEwKVxuczIwMCA8LSBudW1lcmljKDIwMDApICAgICAgICAgICAgICAgICAgICAgICMgc2xvcGVzIGZyb20gc2FtcGxlcyBvZiAyMDA6IGZpbGwgdGhlIGJsYW5rXG5mb3IgKGkgaW4gMToyMDAwKSB7XG4gIG9uZV9zYW1wbGUgPC0gaG90ZWxzW3NhbXBsZShucm93KGhvdGVscyksIF9fX19fXyksIF1cbiAgczIwMFtpXSA8LSBjb2VmKGxtKGFkciB+IGd1ZXN0cywgZGF0YSA9IG9uZV9zYW1wbGUpKVsyXVxufVxuc2QoczUwKVxuc2QoczIwMCkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -499,6 +506,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMTApXG5zNTAg
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Challenge.</strong> Samples of 50: mean 31.40, SD 11.73. Samples of 200: mean 31.96, SD 5.88. Four times the sample, about half the spread.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">10</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>s50 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">2000</span>)                       <span class="co"># slopes from samples of 50</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  one_sample <span class="ot">&lt;-</span> hotels[<span class="fu">sample</span>(<span class="fu">nrow</span>(hotels), <span class="dv">50</span>), ]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  s50[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">lm</span>(adr <span class="sc">~</span> guests, <span class="at">data =</span> one_sample))[<span class="dv">2</span>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">10</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>s200 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">2000</span>)                      <span class="co"># slopes from samples of 200</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>) {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  one_sample <span class="ot">&lt;-</span> hotels[<span class="fu">sample</span>(<span class="fu">nrow</span>(hotels), <span class="dv">200</span>), ]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  s200[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(<span class="fu">lm</span>(adr <span class="sc">~</span> guests, <span class="at">data =</span> one_sample))[<span class="dv">2</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(s50)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(s200)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

@@ -359,15 +359,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDcuNSDCtyBBbiBpbnRl
 </section>
 <section id="r-7.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-7.6-your-tier-in-pairs">R 7.6 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end).</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> The 95% interval for the average rate from the random sample of 30 (R 7.2), by hand and with <code>t.test()</code>. Then draw a sample of 120 with <code>set.seed(1)</code> and compare the margins.</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li><code>set.seed(1)</code>, then a sample of 30 room rates.</li>
+<li>The standard error, the t value with <code>qt()</code> and <span class="math inline">\(n - 1\)</span> degrees of freedom, then the two ends of the interval.</li>
+<li>The same interval in one line with <code>t.test()</code>.</li>
+<li><code>set.seed(1)</code> again; a sample of 120; its interval. Compare the two widths.</li>
+</ol>
 <div>
 <div id="webr-10" class="exercise-cell">
 
 </div>
 <script type="webr-10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMSlcbnggPC0gc2FtcGxlKGhvdGVscyRhZHIsIDMwKVxuc2UgPC0gc2QoeCkgLyBzcXJ0KDMwKVxudHN0YXIgPC0gcXQoMC45NzUsIGRmID0gX19fX19fKSAgICAgICAgICAjIGRlZ3JlZXMgb2YgZnJlZWRvbTogbiAtIDFcbm1lYW4oeCkgLSB0c3RhciAqIHNlICAgICAgICAgICAgICAgICAgICAgIyB0aGUgbG93ZXIgZW5kXG5tZWFuKHgpICsgdHN0YXIgKiBzZSAgICAgICAgICAgICAgICAgICAgICMgdGhlIHVwcGVyIGVuZFxudC50ZXN0KHgpJGNvbmYuaW50ICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSBzYW1lLCBpbiBvbmUgbGluZVxuIyBOb3cgYSBzYW1wbGUgb2YgMTIwOiB3aGF0IGhhcHBlbnMgdG8gdGhlIHdpZHRoP1xuc2V0LnNlZWQoMSlcbngxMjAgPC0gc2FtcGxlKGhvdGVscyRhZHIsIDEyMClcbnQudGVzdCh4MTIwKSRjb25mLmludCJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMSlcbnggPC0gc2FtcGxlKGhvdGVscyRhZHIsIDMwKVxuIyB5b3VyIGxpbmVzIGZyb20gaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -415,12 +422,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMSlcbnggPC0g
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> The 95% interval for the share that cancel, from a random sample of 200 (R 7.5). Does it contain the share in the whole file? Then: how many bookings for ±3 points, using your <span class="math inline">\(\hat p\)</span>?</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li><code>set.seed(1)</code>, then a sample of 200 values of <code>is_canceled</code>, and its share.</li>
+<li>The standard error of a share, then the share plus and minus 1.96 standard errors.</li>
+<li>Compare the interval with the share in the whole file (the truth, known here).</li>
+<li>The sample size for ±3 points, with <code>ceiling()</code>.</li>
+</ol>
 <div>
 <div id="webr-11" class="exercise-cell">
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMSlcbnkgPC0gc2FtcGxlKGhvdGVscyRpc19jYW5jZWxlZCwgMjAwKVxucGhhdCA8LSBtZWFuKHkpXG5zZV9wIDwtIHNxcnQocGhhdCAqICgxIC0gcGhhdCkgLyBfX19fX18pICAgIyB0aGUgc3RhbmRhcmQgZXJyb3Igb2YgYSBwcm9wb3J0aW9uXG5waGF0IC0gMS45NiAqIHNlX3AgICAgICAgICAgICAgICAgICAgICAgICAgIyB0aGUgbG93ZXIgZW5kXG5waGF0ICsgMS45NiAqIHNlX3AgICAgICAgICAgICAgICAgICAgICAgICAgIyB0aGUgdXBwZXIgZW5kXG5tZWFuKGhvdGVscyRpc19jYW5jZWxlZCkgICAgICAgICMgdGhlIHRydXRoLCBrbm93biBoZXJlXG5jZWlsaW5nKDEuOTZeMiAqIHBoYXQgKiAoMSAtIHBoYXQpIC8gMC4wM14yKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoMSlcbnkgPC0gc2FtcGxlKGhvdGVscyRpc19jYW5jZWxlZCwgMjAwKVxuIyB5b3VyIGxpbmVzIGZyb20gaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">

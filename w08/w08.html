@@ -334,15 +334,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDguNCDCtyBUaGUgY29p
 </section>
 <section id="r-8.5-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-8.5-your-tier-in-pairs">R 8.5 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end).</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> The resort manager says fewer than 30% of <strong>resort</strong> bookings cancel. Test <span class="math inline">\(H_0: p = 0.30\)</span> against <span class="math inline">\(H_1: p &gt; 0.30\)</span> at 5%, with a random sample of 200 resort bookings (<code>set.seed(8)</code>).</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li>Keep the resort’s <code>is_canceled</code> values; <code>set.seed(8)</code>; a sample of 200.</li>
+<li>The sample share. Call it <code>phat_r</code>, so that <code>phat</code> from R 8.2 stays as it is.</li>
+<li><span class="math inline">\(z\)</span> = (share − 0.30) over the standard error under <span class="math inline">\(H_0\)</span> (it uses <code>p0</code> and 200). Call it <code>z_r</code>.</li>
+<li>Compare <code>z_r</code> with <code>qnorm(0.95)</code> and decide.</li>
+</ol>
 <div>
 <div id="webr-9" class="exercise-cell">
 
 </div>
 <script type="webr-9-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmVzb3J0IDwtIGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIl1cbnNldC5zZWVkKDgpXG5yIDwtIHNhbXBsZShyZXNvcnQsIDIwMClcbnBoYXRfciA8LSBtZWFuKHIpICAgICAgICAgICAgICAgICAgICAgICAgIyBfcjogdGhlIHJlc29ydCdzIHNoYXJlIChwaGF0IGFuZCB6IHN0YXkgYXMgUiA4LjIgbGVmdCB0aGVtKVxuel9yIDwtIChwaGF0X3IgLSBwMCkgLyBzcXJ0KHAwICogKDEgLSBwMCkgLyBfX19fX18pXG5jKHBoYXQgPSBwaGF0X3IsIHogPSB6X3IsIGNyaXRpY2FsID0gcW5vcm0oMC45NSkpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmVzb3J0IDwtIGhvdGVscyRpc19jYW5jZWxlZFtob3RlbHMkaG90ZWwgPT0gXCJSZXNvcnQgSG90ZWxcIl1cbnNldC5zZWVkKDgpXG4jIHlvdXIgbGluZXMgZnJvbSBoZXJlIn0=
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -386,12 +393,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmVzb3J0IDwtIGhvdGVscyRp
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> Test <span class="math inline">\(H_0\)</span>: city rates average €100 against <span class="math inline">\(H_1\)</span>: they do not, with <code>t.test(x, mu = 100)</code>: first with 40 random city bookings, then with 200 (<code>set.seed(8)</code> before each). Which decision is right?</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li>Keep the city’s room rates.</li>
+<li><code>set.seed(8)</code>; a sample of 40; <code>t.test(x, mu = 100)$p.value</code>.</li>
+<li><code>set.seed(8)</code> again; a sample of 200 (call it <code>x200</code>); the same test.</li>
+<li><code>mean(city)</code>: the truth, known here. Which of the two decisions was right?</li>
+</ol>
 <div>
 <div id="webr-10" class="exercise-cell">
 
 </div>
 <script type="webr-10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkYWRyW2hvdGVscyRob3RlbCA9PSBcIkNpdHkgSG90ZWxcIl1cbnNldC5zZWVkKDgpXG54IDwtIHNhbXBsZShjaXR5LCA0MClcbnQudGVzdCh4LCBtdSA9IF9fX19fXykkcC52YWx1ZVxuc2V0LnNlZWQoOClcbngyMDAgPC0gc2FtcGxlKGNpdHksIDIwMClcbnQudGVzdCh4MjAwLCBtdSA9IDEwMCkkcC52YWx1ZVxubWVhbihjaXR5KSAgICAgICAgIyB0aGUgdHJ1dGgsIGtub3duIGhlcmUifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkYWRyW2hvdGVscyRob3RlbCA9PSBcIkNpdHkgSG90ZWxcIl1cbnNldC5zZWVkKDgpXG4jIHlvdXIgbGluZXMgZnJvbSBoZXJlIn0=
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -437,12 +451,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY2l0eSA8LSBob3RlbHMkYWRy
 </div>
 <div class="tier-challenge">
 <p><strong>Challenge.</strong> Power by simulation: how often does the 5% test reject the 30% claim with 100, 200 and 500 real bookings? Use a <code>for</code> loop, then compare with the formula (R 8.7).</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li><code>set.seed(8)</code>, then a loop over the three sample sizes. Call the loop variable <code>size</code>: <code>n</code> is still the 200 of R 8.2.</li>
+<li>Inside the loop: the critical share for that size (call it <code>crit_n</code>), an empty list <code>real_n</code> of 5,000, and a second loop that fills it with the shares of samples of that size.</li>
+<li>Still inside: print the share of <code>real_n</code> above <code>crit_n</code>. That is the power.</li>
+<li>Compare your three numbers with the formula’s (R 8.7).</li>
+</ol>
 <div>
 <div id="webr-11" class="exercise-cell">
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicDAgPC0gMC4zMFxuc2V0LnNlZWQoOClcbmZvciAoc2l6ZSBpbiBjKDEwMCwgMjAwLCA1MDApKSB7ICAgICAgICAgICAgICAgICAgICMgb25lIHNhbXBsZSBzaXplIGF0IGEgdGltZVxuICBjcml0X24gPC0gcDAgKyBxbm9ybSgwLjk1KSAqIHNxcnQocDAgKiAoMSAtIHAwKSAvIHNpemUpXG4gIHJlYWxfbiA8LSBudW1lcmljKDUwMDApXG4gIGZvciAoaSBpbiAxOjUwMDApIHsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIDUsMDAwIHNhbXBsZXMgb2YgdGhpcyBzaXplXG4gICAgcmVhbF9uW2ldIDwtIG1lYW4oc2FtcGxlKGhvdGVscyRpc19jYW5jZWxlZCwgX19fX19fKSlcbiAgfVxuICBwcmludChwYXN0ZShcIm4gPVwiLCBzaXplLCBcIjogcG93ZXIgPVwiLCBtZWFuKHJlYWxfbiA+IGNyaXRfbikpKVxufSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicDAgPC0gMC4zMFxuc2V0LnNlZWQoOClcbiMgeW91ciBsaW5lcyBmcm9tIGhlcmU6IGEgbG9vcCBvdmVyIHNpemUsIGFuZCBhIGxvb3Agb2YgNSwwMDAgc2FtcGxlcyBpbnNpZGUgaXQifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -474,6 +495,16 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicDAgPC0gMC4zMFxuc2V0LnNl
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Challenge.</strong> Simulation (<code>set.seed(8)</code> before the loop): 0.501, 0.730, 0.975. Formula: 0.495, 0.735, 0.971. They agree to about 0.01; the power rises steeply with <span class="math inline">\(n\)</span>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="fl">0.30</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (size <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>)) {                   <span class="co"># one sample size at a time</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  crit_n <span class="ot">&lt;-</span> p0 <span class="sc">+</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> size)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  real_n <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">5000</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5000</span>) {                              <span class="co"># 5,000 samples of this size</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    real_n[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>is_canceled, size))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"n ="</span>, size, <span class="st">": power ="</span>, <span class="fu">mean</span>(real_n <span class="sc">&gt;</span> crit_n)))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

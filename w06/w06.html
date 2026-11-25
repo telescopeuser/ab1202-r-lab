@@ -366,15 +366,21 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBCaWdnZXIg
 </section>
 <section id="r-6.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-6.6-your-tier-in-pairs">R 6.6 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end).</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> Simulate the sampling distribution of the average rate for samples of 30 (R 6.2), and compare its SD with <span class="math inline">\(\sigma/\sqrt{30}\)</span>. Then do it for samples of 120.</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li><code>set.seed(6)</code>, then an empty list of 10,000 filled with the averages of samples of 30 (as in R 6.2), under the name <code>means30</code>.</li>
+<li><code>sd()</code> of the list against <code>sigma / sqrt(30)</code>.</li>
+<li><code>set.seed(6)</code> again; the same for samples of 120, under the name <code>means120</code>; compare with <code>sigma / sqrt(120)</code>.</li>
+</ol>
 <div>
 <div id="webr-11" class="exercise-cell">
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5zMzAgPC0gbnVtZXJpYygxMDAwMCkgICAgICAgICAgICAgICAjIG9uZSBhdmVyYWdlIHBlciBzYW1wbGVcbmZvciAoaSBpbiAxOjEwMDAwKSB7XG4gIG1lYW5zMzBbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGFkciwgMzApKVxufVxuc2QobWVhbnMzMCkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdGhlIHNpbXVsYXRpb24gLi4uXG5zaWdtYSAvIHNxcnQoMzApICAgICAgICAgICAgICAgICAgICAgICAgIyAuLi4gYW5kIHRoZSBmb3JtdWxhXG4jIE5vdyBzYW1wbGVzIG9mIDEyMDogZmlsbCB0aGUgYmxhbmtcbnNldC5zZWVkKDYpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHRoZSBzZWVkIGFnYWluLCBqdXN0IGJlZm9yZSB0aGlzIHNpbXVsYXRpb25cbm1lYW5zMTIwIDwtIG51bWVyaWMoMTAwMDApXG5mb3IgKGkgaW4gMToxMDAwMCkge1xuICBtZWFuczEyMFtpXSA8LSBtZWFuKHNhbXBsZShob3RlbHMkYWRyLCBfX19fX18pKVxufVxuc2QobWVhbnMxMjApXG5zaWdtYSAvIHNxcnQoMTIwKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5zMzAgPC0gbnVtZXJpYygxMDAwMCkgICAgICAgICAgICAgICAjIG9uZSBhdmVyYWdlIHBlciBzYW1wbGVcbiMgeW91ciBsaW5lcyBmcm9tIGhlcmUifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -426,12 +432,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5z
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> Repeat R 6.4 with a <code>for</code> loop over <span class="math inline">\(n\)</span> = 2, 10 and 40. For <span class="math inline">\(n = 40\)</span>, find <span class="math inline">\(P(\bar X &gt; 120)\)</span> by the CLT and by simulation.</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li>A loop over <span class="math inline">\(n\)</span> = 2, 10 and 40. Inside it: 5,000 averages of samples of lead time of size <span class="math inline">\(n\)</span>, kept in <code>m</code>, and a histogram (as in R 6.4).</li>
+<li>The standard error for <span class="math inline">\(n = 40\)</span>: the SD of lead time over <span class="math inline">\(\sqrt{40}\)</span>.</li>
+<li><span class="math inline">\(P(\bar X &gt; 120)\)</span> from the CLT, with <code>pnorm()</code>.</li>
+<li>The same share from the simulation: after the loop, <code>m</code> holds the <span class="math inline">\(n = 40\)</span> averages.</li>
+</ol>
 <div>
 <div id="webr-12" class="exercise-cell">
 
 </div>
 <script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAzKSlcbnNldC5zZWVkKDYpXG5mb3IgKG4gaW4gYygyLCAxMCwgNDApKSB7XG4gIG0gPC0gbnVtZXJpYyg1MDAwKVxuICBmb3IgKGkgaW4gMTo1MDAwKSB7XG4gICAgbVtpXSA8LSBtZWFuKHNhbXBsZShob3RlbHMkbGVhZF90aW1lLCBuKSlcbiAgfVxuICBoaXN0KG0sIGJyZWFrcyA9IDQwLCBtYWluID0gcGFzdGUoXCJuID1cIiwgbikpXG59XG5zZSA8LSBzZChob3RlbHMkbGVhZF90aW1lKSAvIHNxcnQoNDApXG4xIC0gcG5vcm0oMTIwLCBtZWFuKGhvdGVscyRsZWFkX3RpbWUpLCBfX19fX18pXG5tZWFuKG0gPiAxMjApICAgICAgICAjIG0gaG9sZHMgdGhlIGxhc3QgcnVuOiBuID0gNDAifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAzKSlcbnNldC5zZWVkKDYpXG4jIHlvdXIgbGluZXMgZnJvbSBoZXJlOiB0aGUgbG9vcCBvdmVyIG4sIHRoZW4gdGhlIHR3byBwcm9iYWJpbGl0aWVzIn0=
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">

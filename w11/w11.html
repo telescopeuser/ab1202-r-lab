@@ -374,7 +374,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDExLjUgwrcgRml0IG9u
 </section>
 <section id="r-11.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-11.6-your-tier-in-pairs">R 11.6 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end).</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>Weeks 9–12:</strong> Core still has starting code; Applied gives the steps in words; Challenge gives the question only. Hints and full answers are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> The log model (R 11.3): write each coefficient as a % effect, and compare the summer premium with the euro model’s.</p>
 <div>
@@ -423,12 +423,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibV9sb2cgPC0gbG0obG9nKGFk
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> The variable draft (R 11.5): score three sets of picks of your own by changing the <code>lm()</code> line in R 11.5 and running its last four lines, and explain which wins on unseen data and why.</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li>In R 11.5, change the <code>lm()</code> line to three picks of your own: column names after the <code>~</code>, joined with <code>+</code>.</li>
+<li>Run its last lines: the fitted <span class="math inline">\(R^2\)</span> and the <span class="math inline">\(R^2\)</span> on unseen bookings.</li>
+<li>Do this for three sets of picks, and note both numbers each time.</li>
+<li>Which set wins on unseen data, and why?</li>
+</ol>
 <div>
 <div id="webr-13" class="exercise-cell">
 
 </div>
 <script type="webr-13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBZT1VSIFBJQ0tTOiBwdXQgY29sdW1uIG5hbWVzIGFmdGVyIHRoZSB+LCBqb2luZWQgd2l0aCArXG5tIDwtIGxtKGFkciB+IF9fX19fXywgZGF0YSA9IHRyYWluKVxucCA8LSBwcmVkaWN0KG0sIHRlc3QpXG5yb3VuZChzdW1tYXJ5KG0pJHIuc3F1YXJlZCwgMykgICAgICAgICMgZml0dGVkXG5yb3VuZCgxIC0gc3VtKCh0ZXN0JGFkciAtIHApXjIpIC8gc3VtKCh0ZXN0JGFkciAtIG1lYW4odGVzdCRhZHIpKV4yKSwgMykgICAjIHVuc2VlbiJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -460,18 +467,24 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBZT1VSIFBJQ0tTOiBwdXQg
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Applied.</strong> For example: guests + hotel + summer: fitted 0.513, adjusted 0.487, unseen 0.224. Month alone: 0.513, 0.402, 0.036. Guests + summer + room type: 0.601, 0.539, 0.244. Models with many dummies fit 60 bookings well and predict new ones badly.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># one set of picks; change the names after the ~ for the other two</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(adr <span class="sc">~</span> guests <span class="sc">+</span> summer <span class="sc">+</span> reserved_room_type, <span class="at">data =</span> train)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">predict</span>(m, test)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">summary</span>(m)<span class="sc">$</span>r.squared, <span class="dv">3</span>)        <span class="co"># fitted</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>((test<span class="sc">$</span>adr <span class="sc">-</span> p)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">sum</span>((test<span class="sc">$</span>adr <span class="sc">-</span> <span class="fu">mean</span>(test<span class="sc">$</span>adr))<span class="sc">^</span><span class="dv">2</span>), <span class="dv">3</span>)   <span class="co"># unseen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
 <div class="tier-challenge">
 <p><strong>Challenge.</strong> The simulation (R 11.7, below): check the biased slope against the formula <span class="math inline">\(20 + 60 \times [P(z = 1 \mid x = 1) - P(z = 1 \mid x = 0)]\)</span>, using Bayes’ rule (Week 2) for the two probabilities.</p>
+<p>No starting code here: write it from the question. The hint above points the way, and the full answer is at the end of this handout.</p>
 <div>
 <div id="webr-14" class="exercise-cell">
 
 </div>
 <script type="webr-14-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHoxIDwtIDAuMyAqIDAuNSAvICgwLjMgKiAwLjUgKyAwLjcgKiAwLjEpICAgICAgICAgICMgUCh6ID0gMSB8IHggPSAxKVxucHowIDwtIDAuMyAqIDAuNSAvICgwLjMgKiAwLjUgKyAwLjcgKiBfX19fX18pICAgICAgICMgUCh6ID0gMSB8IHggPSAwKVxuMjAgKyA2MCAqIChwejEgLSBwejApICAgICAgICAgICAgIyB0aGUgZm9ybXVsYSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -503,9 +516,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicHoxIDwtIDAuMyAqIDAuNSAv
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Challenge.</strong> Simulation: 49.27 without <span class="math inline">\(z\)</span>, 20.01 with <span class="math inline">\(z\)</span>. Formula: <span class="math inline">\(P(z \mid x = 1) = 0.682\)</span>, <span class="math inline">\(P(z \mid x = 0) = 0.192\)</span>; <span class="math inline">\(20 + 60 \times 0.490 = 49.37\)</span>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pz1 <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> (<span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> <span class="fl">0.1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pz0 <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> (<span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> <span class="fl">0.9</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">+</span> <span class="dv">60</span> <span class="sc">*</span> (pz1 <span class="sc">-</span> pz0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pz1 <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> (<span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> <span class="fl">0.1</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pz0 <span class="ot">&lt;-</span> <span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">/</span> (<span class="fl">0.3</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">0.7</span> <span class="sc">*</span> <span class="fl">0.9</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">+</span> <span class="dv">60</span> <span class="sc">*</span> (pz1 <span class="sc">-</span> pz0)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
