@@ -54,7 +54,8 @@ p code, li code, td code { font-size: .92em; }
 .cm-editor .cm-content { white-space: pre-wrap !important; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1 !important; min-width: 0 !important; width: auto !important; }
 .cm-editor .cm-line { padding-left: 1.2em !important; text-indent: -1.2em; }
 .cm-editor .cm-scroller { overflow-x: hidden !important; }
-.phase { margin: 1.8em 0 .2em; padding-top: .35em; border-top: 2px solid #C8102E; color: #C8102E; font-weight: 700; font-size: .8em; letter-spacing: .06em; text-transform: uppercase; }
+.phase { margin: 2em 0 .5em; padding: .55em .9em; border-left: 6px solid #181C62; background: #EEF0FA; color: #181C62; font-weight: 700; font-size: 1.05em; line-height: 1.4; border-radius: 4px; }   /* Sam, 26 Nov 2026: larger, sentence case, navy on a pale tint (contrast about 13:1); the words carry the meaning, not the colour */
+.phase p { margin: 0; }
 </style>
 <script type="module" src="w02_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="w02_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
@@ -123,8 +124,8 @@ html{scroll-padding-top:64px}
   <li><a href="#r-2.5-total-probability-and-bayes-rule-6-min" id="toc-r-2.5-total-probability-and-bayes-rule-6-min" class="nav-link" data-scroll-target="#r-2.5-total-probability-and-bayes-rule-6-min">R 2.5 · Total probability and Bayes’ rule (6 min)</a></li>
   <li><a href="#r-2.6-your-tier-in-pairs" id="toc-r-2.6-your-tier-in-pairs" class="nav-link" data-scroll-target="#r-2.6-your-tier-in-pairs">R 2.6 · Your tier (in pairs)</a></li>
   <li><a href="#r-2.7-simulate-the-three-doors-block-5" id="toc-r-2.7-simulate-the-three-doors-block-5" class="nav-link" data-scroll-target="#r-2.7-simulate-the-three-doors-block-5">R 2.7 · Simulate the three doors (block 5)</a></li>
-  <li><a href="#r-2.8-going-further-optional" id="toc-r-2.8-going-further-optional" class="nav-link" data-scroll-target="#r-2.8-going-further-optional">R 2.8 · Going further (optional)</a></li>
-  <li><a href="#check-your-ai-assistant-optional-5-min" id="toc-check-your-ai-assistant-optional-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</a></li>
+  <li><a href="#r-2.8-going-further" id="toc-r-2.8-going-further" class="nav-link" data-scroll-target="#r-2.8-going-further">R 2.8 · Going further</a></li>
+  <li><a href="#check-your-ai-assistant-5-min" id="toc-check-your-ai-assistant-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-5-min">Check your AI assistant (5 min)</a></li>
   <li><a href="#commands-to-know" id="toc-commands-to-know" class="nav-link" data-scroll-target="#commands-to-know">Commands to know</a></li>
   </ul>
 </nav>
@@ -181,6 +182,9 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 <script type="webr-2-contents">
 eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMSDCtyBMb2FkIGFuZCBidWlsZCB0aGUgdGFibGVcbmhvdGVscyA8LSByZWFkLmNzdihcImhvdGVscy5jc3ZcIikgICAjIHRoZSBmaWxlIGZyb20gTlRVLUxlYXJuLCBzYXZlZCBpbiB5b3VyIHdvcmtpbmcgZm9sZGVyXG5ucm93KGhvdGVscykgICAjIHRoZSBudW1iZXIgb2YgYm9va2luZ3M6IFIgaXMgcmVhZHkgd2hlbiB5b3Ugc2VlIDExNzQyNSJ9
 </script>
+</div>
+<div class="phase">
+<p>In class · block 3 · the worked example: run these with your lecturer</p>
 </div>
 </section>
 <section id="r-2.1-load-and-build-the-table-block-3-with-your-lecturer" class="level2">
@@ -241,9 +245,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMiDCtyBDb25kaXRp
 </section>
 <section id="r-2.3-the-other-way-round-condition-on-the-column-block-3-with-your-lecturer" class="level2">
 <h2 class="anchored" data-anchor-id="r-2.3-the-other-way-round-condition-on-the-column-block-3-with-your-lecturer">R 2.3 · The other way round: condition on the column (block 3, with your lecturer)</h2>
-<div class="phase">
-<p>In class · block 4 · the R lab: R 2.4–2.5, then your tier (R 2.6)</p>
-</div>
 <div>
 <div id="webr-6" class="exercise-cell">
 
@@ -264,6 +265,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuMyDCtyBUaGUgb3Ro
 <div class="callout-body-container callout-body">
 <p>Now each column adds to 1. Read the <code>given_cancelled</code> column: of all cancellations, only 32.9% were non-refundable. <span class="math inline">\(P(A \mid B)\)</span> and <span class="math inline">\(P(B \mid A)\)</span> are different numbers.</p>
 </div>
+</div>
+<div class="phase">
+<p>In class · block 4 · the R lab: R 2.4–2.5, then your tier (R 2.6)</p>
 </div>
 </section>
 <section id="r-2.4-independent-or-not-6-min" class="level2">
@@ -443,6 +447,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 </div>
+<div class="phase">
+<p>In class · block 5 · the decision, and simulate to check</p>
+</div>
 </section>
 <section id="r-2.7-simulate-the-three-doors-block-5" class="level2">
 <h2 class="anchored" data-anchor-id="r-2.7-simulate-the-three-doors-block-5">R 2.7 · Simulate the three doors (block 5)</h2>
@@ -476,8 +483,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuNyDCtyBTaW11bGF0
 </div>
 </div>
 </section>
-<section id="r-2.8-going-further-optional" class="level2">
-<h2 class="anchored" data-anchor-id="r-2.8-going-further-optional">R 2.8 · Going further (optional)</h2>
+<section id="r-2.8-going-further" class="level2">
+<h2 class="anchored" data-anchor-id="r-2.8-going-further">R 2.8 · Going further</h2>
 <p>For when you have time, in class or later. Not needed for the Mission Set or the quiz.</p>
 <div>
 <div id="webr-16" class="exercise-cell">
@@ -496,8 +503,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDIuOCDCtyBHb2luZyBm
 </script>
 </div>
 </section>
-<section id="check-your-ai-assistant-optional-5-min" class="level2">
-<h2 class="anchored" data-anchor-id="check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</h2>
+<section id="check-your-ai-assistant-5-min" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-ai-assistant-5-min">Check your AI assistant (5 min)</h2>
 <p>AI is welcome as a study partner. Ask it, then check it in R.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Type this to your AI assistant">
 <div class="callout-header d-flex align-content-center">

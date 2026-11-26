@@ -54,7 +54,8 @@ p code, li code, td code { font-size: .92em; }
 .cm-editor .cm-content { white-space: pre-wrap !important; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1 !important; min-width: 0 !important; width: auto !important; }
 .cm-editor .cm-line { padding-left: 1.2em !important; text-indent: -1.2em; }
 .cm-editor .cm-scroller { overflow-x: hidden !important; }
-.phase { margin: 1.8em 0 .2em; padding-top: .35em; border-top: 2px solid #C8102E; color: #C8102E; font-weight: 700; font-size: .8em; letter-spacing: .06em; text-transform: uppercase; }
+.phase { margin: 2em 0 .5em; padding: .55em .9em; border-left: 6px solid #181C62; background: #EEF0FA; color: #181C62; font-weight: 700; font-size: 1.05em; line-height: 1.4; border-radius: 4px; }   /* Sam, 26 Nov 2026: larger, sentence case, navy on a pale tint (contrast about 13:1); the words carry the meaning, not the colour */
+.phase p { margin: 0; }
 </style>
 <script type="module" src="w08_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="w08_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
@@ -123,7 +124,7 @@ html{scroll-padding-top:64px}
   <li><a href="#r-8.5-your-tier-in-pairs" id="toc-r-8.5-your-tier-in-pairs" class="nav-link" data-scroll-target="#r-8.5-your-tier-in-pairs">R 8.5 · Your tier (in pairs)</a></li>
   <li><a href="#r-8.6-the-false-alarm-rate-block-5" id="toc-r-8.6-the-false-alarm-rate-block-5" class="nav-link" data-scroll-target="#r-8.6-the-false-alarm-rate-block-5">R 8.6 · The false-alarm rate (block 5)</a></li>
   <li><a href="#r-8.7-the-power-block-5" id="toc-r-8.7-the-power-block-5" class="nav-link" data-scroll-target="#r-8.7-the-power-block-5">R 8.7 · The power (block 5)</a></li>
-  <li><a href="#check-your-ai-assistant-optional-5-min" id="toc-check-your-ai-assistant-optional-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</a></li>
+  <li><a href="#check-your-ai-assistant-5-min" id="toc-check-your-ai-assistant-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-5-min">Check your AI assistant (5 min)</a></li>
   <li><a href="#commands-to-know" id="toc-commands-to-know" class="nav-link" data-scroll-target="#commands-to-know">Commands to know</a></li>
   </ul>
 </nav>
@@ -181,6 +182,9 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
 eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDguMSDCtyBMb2FkIHRoZSBkYXRhOyB0aGUgc2FtcGxlXG5ob3RlbHMgPC0gcmVhZC5jc3YoXCJob3RlbHMuY3N2XCIpICAgIyB0aGUgZmlsZSBmcm9tIE5UVS1MZWFybiwgc2F2ZWQgaW4geW91ciB3b3JraW5nIGZvbGRlclxubnJvdyhob3RlbHMpICAgIyB0aGUgbnVtYmVyIG9mIGJvb2tpbmdzOiBSIGlzIHJlYWR5IHdoZW4geW91IHNlZSAxMTc0MjUifQ==
 </script>
 </div>
+<div class="phase">
+<p>In class · block 3 · the worked example: run these with your lecturer</p>
+</div>
 </section>
 <section id="r-8.1-load-the-data-the-sample-block-3-with-your-lecturer" class="level2">
 <h2 class="anchored" data-anchor-id="r-8.1-load-the-data-the-sample-block-3-with-your-lecturer">R 8.1 · Load the data; the sample (block 3, with your lecturer)</h2>
@@ -232,9 +236,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDguMiDCtyBUaGUgdGVz
 </section>
 <section id="r-8.3-the-p-value-the-one-line-test-and-the-region-block-3-with-your-lecturer" class="level2">
 <h2 class="anchored" data-anchor-id="r-8.3-the-p-value-the-one-line-test-and-the-region-block-3-with-your-lecturer">R 8.3 · The p-value, the one-line test and the region (block 3, with your lecturer)</h2>
-<div class="phase">
-<p>In class · block 4 · the R lab: R 8.4, then your tier (R 8.5)</p>
-</div>
 <div>
 <div id="webr-5" class="exercise-cell">
 
@@ -263,6 +264,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDguMyDCtyBUaGUgcC12
 <div class="callout-body-container callout-body">
 <p>The p-value is below 0.05: the same decision. <code>prop.test()</code> with <code>correct = FALSE</code> matches the hand calculation. In counts, 71 or more cancellations out of 200 reject.</p>
 </div>
+</div>
+<div class="phase">
+<p>In class · block 4 · the R lab: R 8.4, then your tier (R 8.5)</p>
 </div>
 </section>
 <section id="r-8.4-the-coin-game-and-a-test-for-a-mean-5-min" class="level2">
@@ -413,6 +417,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </script>
 </div>
 </div>
+<div class="phase">
+<p>In class · block 5 · the decision, and simulate to check</p>
+</div>
 </section>
 <section id="r-8.6-the-false-alarm-rate-block-5" class="level2">
 <h2 class="anchored" data-anchor-id="r-8.6-the-false-alarm-rate-block-5">R 8.6 · The false-alarm rate (block 5)</h2>
@@ -470,8 +477,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDguNyDCtyBUaGUgcG93
 </div>
 </div>
 </section>
-<section id="check-your-ai-assistant-optional-5-min" class="level2">
-<h2 class="anchored" data-anchor-id="check-your-ai-assistant-optional-5-min">Check your AI assistant (optional, 5 min)</h2>
+<section id="check-your-ai-assistant-5-min" class="level2">
+<h2 class="anchored" data-anchor-id="check-your-ai-assistant-5-min">Check your AI assistant (5 min)</h2>
 <p>AI is welcome as a study partner. Ask it, then check it in R.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Type this to your AI assistant">
 <div class="callout-header d-flex align-content-center">
