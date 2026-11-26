@@ -24,41 +24,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -366,7 +331,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBCaWdnZXIg
 </section>
 <section id="r-6.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-6.6-your-tier-in-pairs">R 6.6 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: the answers are at the end of your R handout (Week Pack). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> Simulate the sampling distribution of the average rate for samples of 30 (R 6.2), and compare its SD with <span class="math inline">\(\sigma/\sqrt{30}\)</span>. Then do it for samples of 120.</p>
 <p><strong>Your steps:</strong></p>
@@ -399,36 +364,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5z
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Core.</strong> For 30 (<code>set.seed(6)</code>): SD of the averages 8.55, <span class="math inline">\(\sigma/\sqrt{30} = 8.53\)</span>. For 120 (<code>set.seed(6)</code>): 4.31 against <span class="math inline">\(\sigma/\sqrt{120} = 4.26\)</span>. Four times the sample, half the error.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>means30 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  means30[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>adr, <span class="dv">30</span>))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(means30)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">30</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>means120 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  means120[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>adr, <span class="dv">120</span>))</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(means120)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>sigma <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">120</span>)         <span class="co"># ... both: four times the sample, half the error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> Repeat R 6.4 with a <code>for</code> loop over <span class="math inline">\(n\)</span> = 2, 10 and 40. For <span class="math inline">\(n = 40\)</span>, find <span class="math inline">\(P(\bar X &gt; 120)\)</span> by the CLT and by simulation.</p>
@@ -448,7 +383,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAz
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -457,37 +392,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAz
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>se &lt;- sd(hotels$lead_time) / sqrt(40)</code>, then <code>1 - pnorm(120, mean(hotels$lead_time), se)</code>; after the loop, <code>m</code> holds the <span class="math inline">\(n = 40\)</span> averages, so <code>mean(m &gt; 120)</code>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Applied.</strong> <span class="math inline">\(\text{SE} = 106.91/\sqrt{40} = 16.90\)</span>; CLT: <span class="math inline">\(P(\bar X &gt; 120) = 0.189\)</span>; simulation: 0.184. The histograms lose their skew as <span class="math inline">\(n\)</span> grows.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">40</span>)) {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">5000</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5000</span>) {</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    m[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">sample</span>(hotels<span class="sc">$</span>lead_time, n))</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(m, <span class="at">breaks =</span> <span class="dv">40</span>, <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"n ="</span>, n))</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(hotels<span class="sc">$</span>lead_time) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">40</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">120</span>, <span class="fu">mean</span>(hotels<span class="sc">$</span>lead_time), se)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(m <span class="sc">&gt;</span> <span class="dv">120</span>)                                         <span class="co"># close: the CLT works well at n = 40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -503,7 +410,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBZb3VyIHRp
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -512,28 +419,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBZb3VyIHRp
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>the three <code>mean()</code> lines show the average estimate of each rule; the three <code>sd()</code> lines show each one’s spread. Change <code>k &lt;- 5</code> to <code>k &lt;- 10</code> and run the card again.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Challenge.</strong> <span class="math inline">\(k = 5\)</span>: averages 1,199, 1,434, 1,438; SDs 200, 370, 240 (largest; 2 × mean − 1; largest × 6/5 − 1). The largest number spreads least but is biased low; the other two are unbiased, and of those “largest plus a gap” has the smaller SD. <span class="math inline">\(k = 10\)</span>: averages 1,306, 1,435, 1,436; SDs 121, 262, 133.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1437</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... the recipe as above ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -547,22 +435,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBZb3VyIHRp
 <script type="webr-14-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBZb3VyIHRpZXI6IFN0cmV0Y2ggKHN0YXJ0aW5nIGNvZGUpXG4jIEEgcHJvcG9ydGlvbiBpcyB0aGUgbWVhbiBvZiAwcyBhbmQgMXM6IGl0cyBzYW1wbGVzIGJlaGF2ZSB0aGUgc2FtZSB3YXkuXG5wIDwtIG1lYW4oaG90ZWxzJGlzX2NhbmNlbGVkKVxuc2V0LnNlZWQoNilcbnBoYXQgPC0gbnVtZXJpYygxMDAwMClcbmZvciAoaSBpbiAxOjEwMDAwKSB7XG4gIHBoYXRbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGlzX2NhbmNlbGVkLCAxMDApKSAgICMgdGhlIHNoYXJlIGNhbmNlbGxlZCBpbiBhIHNhbXBsZSBvZiAxMDBcbn1cbnAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdGhlIHBvcHVsYXRpb24gcHJvcG9ydGlvblxuc2QocGhhdCkgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBob3cgbXVjaCB0aGUgc2FtcGxlIHNoYXJlcyB2YXJ5IC4uLlxuc3FydChwICogKDEgLSBwKSAvIDEwMCkgICAgICAgICAgICAgIyAuLi4gYW5kIHRoZSBmb3JtdWxhIn0=
 </script>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Stretch.</strong> <span class="math inline">\(p = 0.375\)</span>; <span class="math inline">\(\sqrt{p(1 - p)/100} = 0.048\)</span>, and the simulation agrees to about 0.001. Week 7 uses this for the confidence interval for a proportion.</p>
-</div>
-</div>
 </div>
 </div>
 </section>

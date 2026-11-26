@@ -169,7 +169,7 @@ local({
     paste(paste(f, i$size, i$isdir, sep = "\037"), collapse = "\036")
   }
   e$View <- function(x, title) { print(utils::head(x, 20)); invisible(x) }
-  e$install.packages <- function(...) message("AB1202 uses base R only: no packages can be installed here.")
+  e$install.packages <- function(...) message("AB1202 uses only the commands that come with R: no packages are needed or installed here.")
   invisible()
 })
 </script>

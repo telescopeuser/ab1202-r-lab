@@ -6,7 +6,7 @@
  "display": "standalone",
  "background_color": "#181C62",
  "theme_color": "#181C62",
- "description": "Base R in the browser for AB1202 Statistics & Analysis; works offline.",
+ "description": "R in the browser for AB1202 Statistics & Analysis; works offline.",
  "icons": [
   {
    "src": "icons/icon-192.png",

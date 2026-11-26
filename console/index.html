@@ -76,7 +76,7 @@ input[type=file]{display:none}
   <a class="homebtn" href="../index.html">⌂ All weeks</a>
   <strong>AB1202 R console</strong>
   <span id="status">Starting R…</span>
-  <span class="note">Base R · works offline once installed</span>
+  <span class="note">Works offline once installed</span>
   <span class="spacer"></span>
   <button id="restart" title="Stop a long run and start a fresh R session (your script stays)">Restart R</button>
 </header>
@@ -169,7 +169,7 @@ local({
     paste(paste(f, i$size, i$isdir, sep = "\037"), collapse = "\036")
   }
   e$View <- function(x, title) { print(utils::head(x, 20)); invisible(x) }
-  e$install.packages <- function(...) message("AB1202 uses base R only: no packages can be installed here.")
+  e$install.packages <- function(...) message("AB1202 uses only the commands that come with R: no packages are needed or installed here.")
   invisible()
 })
 </script>

@@ -24,41 +24,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -374,7 +339,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDUuNSDCtyBDaGVjayB0
 </section>
 <section id="r-5.6-your-tier-in-pairs" class="level2">
 <h2 class="anchored" data-anchor-id="r-5.6-your-tier-in-pairs">R 5.6 · Your tier (in pairs)</h2>
-<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: open <strong>Answer</strong> under each task (in your R handout, the same answers are at the end). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
+<p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: the answers are at the end of your R handout (Week Pack). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
 <div class="tier-core">
 <p><strong>Core.</strong> Find <span class="math inline">\(r\)</span> for lead time and cancelling, and the cancellation share in each lead-time band (R 5.1–5.2). Then find <span class="math inline">\(r\)</span> for the <strong>resort</strong> only.</p>
 <p><strong>Your steps:</strong></p>
@@ -407,33 +372,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiY29yKGhvdGVscyRsZWFkX3Rp
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Core.</strong> <span class="math inline">\(r = 0.291\)</span> for all bookings; resort only: 0.228. The bands rise from 0.097 (0–7 days) to 0.680 (over a year).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(hotels<span class="sc">$</span>lead_time, hotels<span class="sc">$</span>is_canceled)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">31</span>, <span class="dv">91</span>, <span class="dv">181</span>, <span class="dv">366</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>upper <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">30</span>, <span class="dv">90</span>, <span class="dv">180</span>, <span class="dv">365</span>, <span class="dv">100000</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>share_cancelled <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">6</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) {</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  in_band <span class="ot">&lt;-</span> hotels<span class="sc">$</span>lead_time <span class="sc">&gt;=</span> lower[b] <span class="sc">&amp;</span> hotels<span class="sc">$</span>lead_time <span class="sc">&lt;=</span> upper[b]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  share_cancelled[b] <span class="ot">&lt;-</span> <span class="fu">mean</span>(hotels<span class="sc">$</span>is_canceled[in_band])</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(share_cancelled, <span class="dv">3</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>resort_bookings <span class="ot">&lt;-</span> hotels[hotels<span class="sc">$</span>hotel <span class="sc">==</span> <span class="st">"Resort Hotel"</span>, ]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(resort_bookings<span class="sc">$</span>lead_time, resort_bookings<span class="sc">$</span>is_canceled)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
 </div>
 <div class="tier-applied">
 <p><strong>Applied.</strong> From the joint table (R 5.3), find <span class="math inline">\(P(\text{cancelled})\)</span>, <span class="math inline">\(P(\text{cancelled} \mid 2 \text{ or more requests})\)</span> and the covariance by hand: <span class="math inline">\(E(XY) - E(X)E(Y)\)</span>.</p>
@@ -454,7 +392,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmVxIDwtIGhvdGVscyR0b3Rh
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -463,40 +401,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicmVxIDwtIGhvdGVscyR0b3Rh
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(E(XY) = 1 \times P(1, 1) + 2 \times P(2, 1)\)</span>, since every other cell has <span class="math inline">\(X = 0\)</span> or <span class="math inline">\(Y = 0\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Applied.</strong> <span class="math inline">\(P(\text{cancelled}) = 0.375\)</span>; <span class="math inline">\(P(\text{cancelled} \mid 2+) = 0.214\)</span>; <span class="math inline">\(E(XY) = 0.119\)</span>, <span class="math inline">\(E(X) = 0.544\)</span>, so <span class="math inline">\(\text{Cov} = -0.085\)</span>. If you work from the rounded table on the slide you get 0.211 and -0.086: the small gap is rounding, not a mistake.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>req <span class="ot">&lt;-</span> hotels<span class="sc">$</span>total_of_special_requests</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>req[req <span class="sc">&gt;</span> <span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(hotels)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>requests <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>p_stayed <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">3</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>p_cancelled <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">3</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  p_stayed[i]    <span class="ot">&lt;-</span> <span class="fu">sum</span>(req <span class="sc">==</span> requests[i] <span class="sc">&amp;</span> hotels<span class="sc">$</span>is_canceled <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">/</span> n</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  p_cancelled[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(req <span class="sc">==</span> requests[i] <span class="sc">&amp;</span> hotels<span class="sc">$</span>is_canceled <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> n</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p_cancelled)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>p_cancelled[<span class="dv">3</span>] <span class="sc">/</span> (p_stayed[<span class="dv">3</span>] <span class="sc">+</span> p_cancelled[<span class="dv">3</span>])</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>e_xy <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">*</span> p_cancelled[<span class="dv">2</span>] <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> p_cancelled[<span class="dv">3</span>]</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>e_xy <span class="sc">-</span> <span class="fu">mean</span>(req) <span class="sc">*</span> <span class="fu">sum</span>(p_cancelled)               <span class="co"># by hand: E(XY) - E(X)E(Y)</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(req, hotels<span class="sc">$</span>is_canceled)                      <span class="co"># R's cov(): the same to four decimals</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -512,7 +419,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDUuNiDCtyBZb3VyIHRp
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -521,33 +428,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDUuNiDCtyBZb3VyIHRp
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>run the code below: its loop finds <span class="math inline">\(r\)</span> inside each segment. For no deposit: <code>rows &lt;- hotels$deposit_type == "No Deposit"</code>, then <code>cor(hotels$lead_time[rows], hotels$is_canceled[rows])</code>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Challenge.</strong> Online TA 0.223; Offline TA/TO 0.200; Groups 0.276; Direct 0.124; Corporate 0.293; no deposit 0.149. Positive everywhere, smaller without deposits: segment and deposit explain part of the link, not all. Observed data still cannot show that booking early causes cancelling.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>segments <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Online TA"</span>, <span class="st">"Offline TA/TO"</span>, <span class="st">"Groups"</span>, <span class="st">"Direct"</span>, <span class="st">"Corporate"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (s <span class="cf">in</span> segments) {</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  rows <span class="ot">&lt;-</span> hotels<span class="sc">$</span>market_segment <span class="sc">==</span> s</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">cor</span>(hotels<span class="sc">$</span>lead_time[rows], hotels<span class="sc">$</span>is_canceled[rows])</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(s, <span class="st">": r ="</span>, <span class="fu">round</span>(r, <span class="dv">3</span>)))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>nd <span class="ot">&lt;-</span> hotels<span class="sc">$</span>deposit_type <span class="sc">==</span> <span class="st">"No Deposit"</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(hotels<span class="sc">$</span>lead_time[nd], hotels<span class="sc">$</span>is_canceled[nd])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -561,22 +444,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDUuNiDCtyBZb3VyIHRp
 <script type="webr-15-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDUuNiDCtyBZb3VyIHRpZXI6IFN0cmV0Y2ggKHN0YXJ0aW5nIGNvZGUpXG4jIEZvdXIgc21hbGwgZGF0YSBzZXRzIHRoYXQgY29tZSB3aXRoIFI6IHZlcnkgZGlmZmVyZW50IHBpY3R1cmVzLCB0aGUgc2FtZSBjb3JyZWxhdGlvbi5cbmNvcihhbnNjb21iZSR4MSwgYW5zY29tYmUkeTEpXG5jb3IoYW5zY29tYmUkeDIsIGFuc2NvbWJlJHkyKVxuY29yKGFuc2NvbWJlJHgzLCBhbnNjb21iZSR5MylcbmNvcihhbnNjb21iZSR4NCwgYW5zY29tYmUkeTQpIn0=
 </script>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Answer (try first)">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Answer (try first)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Stretch.</strong> All four have <span class="math inline">\(r\)</span> about 0.816, but only the first is a straight-line cloud: the others are a curve, a line with one outlier, and a vertical stack with one far point. Always plot.</p>
-</div>
-</div>
 </div>
 </div>
 </section>
