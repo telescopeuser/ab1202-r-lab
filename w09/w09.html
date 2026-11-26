@@ -183,7 +183,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBS
 </script>
 </div>
 <div class="phase">
-<p>In class · block 3 · the worked example: run these with your lecturer</p>
+<p>In class · block 3 · with your lecturer: run these together</p>
 </div>
 </section>
 <section id="r-9.1-load-the-data-two-samples-1" class="level2">
@@ -419,7 +419,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>copy R 9.7 and change 2000 to 500 (in both places). Inside the outer loop, make the 20 p-values; <code>any(p &lt; 0.05)</code> and <code>any(p &lt; 0.05 / 20)</code> record a false discovery; <code>mean()</code> of each list gives the shares.</p>
+<p>make two empty lists of 500 (<code>numeric(500)</code>). In a loop of 500 batches, make 20 p-values from tests on pure noise (two samples drawn from the same numbers); <code>any(p &lt; 0.05)</code> and <code>any(p &lt; 0.05 / 20)</code> record whether the batch had a false discovery. <code>mean()</code> of each list gives the shares.</p>
 </div>
 </div>
 </div>
