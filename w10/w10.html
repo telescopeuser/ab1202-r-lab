@@ -122,7 +122,7 @@ html{scroll-padding-top:64px}
   <li><a href="#r-10.4-booking-by-booking-guests-and-dummies-1" id="toc-r-10.4-booking-by-booking-guests-and-dummies-1" class="nav-link" data-scroll-target="#r-10.4-booking-by-booking-guests-and-dummies-1">R 10.4 · Booking by booking: guests and dummies</a></li>
   <li><a href="#r-10.5-significant-yet-explains-almost-nothing" id="toc-r-10.5-significant-yet-explains-almost-nothing" class="nav-link" data-scroll-target="#r-10.5-significant-yet-explains-almost-nothing">R 10.5 · Significant, yet explains almost nothing</a></li>
   <li><a href="#r-10.6-your-tier-1" id="toc-r-10.6-your-tier-1" class="nav-link" data-scroll-target="#r-10.6-your-tier-1">R 10.6 · Your tier</a></li>
-  <li><a href="#r-10.7-the-slope-varies-from-sample-to-sample-1" id="toc-r-10.7-the-slope-varies-from-sample-to-sample-1" class="nav-link" data-scroll-target="#r-10.7-the-slope-varies-from-sample-to-sample-1">R 10.7 · The slope varies from sample to sample</a></li>
+  <li><a href="#r-10.7-simulate-to-check-can-any-line-beat-least-squares-1" id="toc-r-10.7-simulate-to-check-can-any-line-beat-least-squares-1" class="nav-link" data-scroll-target="#r-10.7-simulate-to-check-can-any-line-beat-least-squares-1">R 10.7 · Simulate to check: can any line beat least squares?</a></li>
   <li><a href="#check-your-ai-assistant-5-min" id="toc-check-your-ai-assistant-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-5-min">Check your AI assistant (5 min)</a></li>
   <li><a href="#commands-to-know" id="toc-commands-to-know" class="nav-link" data-scroll-target="#commands-to-know">Commands to know</a></li>
   </ul>
@@ -187,13 +187,13 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBS
 </section>
 <section id="r-10.1-load-the-data-the-busy-month-scatter-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-10.1-load-the-data-the-busy-month-scatter-1">R 10.1 · Load the data; the busy-month scatter</h2>
-<p><em>With your lecturer</em></p>
+<p><em>With your lecturer: the set-up makes the 26 months; run it as it is</em></p>
 <div>
 <div id="webr-3" class="exercise-cell">
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjEgwrcgTG9hZCB0aGUgZGF0YTsgdGhlIGJ1c3ktbW9udGggc2NhdHRlclxuIyBGb3IgZWFjaCBtb250aDogaG93IGJ1c3kgd2FzIHRoZSBDaXR5IEhvdGVsXG4jICh4KSwgYW5kIHdoYXQgd2FzIGl0cyBhdmVyYWdlIHJhdGUgKHkpP1xuIyBjaXR5IGJvb2tpbmdzIHRoYXQgc3RheWVkXG5jaXR5IDwtIGhvdGVsc1tob3RlbHMkaG90ZWwgPT0gXCJDaXR5IEhvdGVsXCIgJlxuICAgIGhvdGVscyRpc19jYW5jZWxlZCA9PSAwLCBdXG4jIEEgbW9udGggY29kZSBzdWNoIGFzIDIwMTUwNyAoSnVseVxuIyAyMDE1KTogeWVhciB4IDEwMCArIG1vbnRoIG51bWJlci5cbmNpdHkkbW9udGhfbnVtYmVyIDwtIDBcbmZvciAobSBpbiAxOjEyKSB7XG4gIGNpdHkkbW9udGhfbnVtYmVyW2NpdHkkYXJyaXZhbF9kYXRlX21vbnRoID09IG1vbnRoLm5hbWVbbV1dIDwtIG1cbn1cbmNpdHkkbW9udGggPC0gY2l0eSRhcnJpdmFsX2RhdGVfeWVhciAqIDEwMCArIGNpdHkkbW9udGhfbnVtYmVyXG4jIGV2ZXJ5IG1vbnRoIGluIHRoZSBkYXRhLCBpbiBvcmRlclxubW9udGhzIDwtIHNvcnQodW5pcXVlKGNpdHkkbW9udGgpKVxuIyB4OiBib29raW5ncyB0aGF0IHN0YXllZCwgZWFjaCBtb250aFxuYnVzeSA8LSBudW1lcmljKGxlbmd0aChtb250aHMpKVxuIyB5OiB0aGUgYXZlcmFnZSByYXRlLCBlYWNoIG1vbnRoXG5yYXRlIDwtIG51bWVyaWMobGVuZ3RoKG1vbnRocykpXG5mb3IgKGkgaW4gMTpsZW5ndGgobW9udGhzKSkge1xuICBpbl9tb250aCA8LSBjaXR5JG1vbnRoID09IG1vbnRoc1tpXVxuICAjIGNvdW50IHRoZSBzdGF5cyB0aGF0IG1vbnRoXG4gIGJ1c3lbaV0gPC0gc3VtKGluX21vbnRoKVxuICAjIHRoZWlyIGF2ZXJhZ2UgcmF0ZVxuICByYXRlW2ldIDwtIG1lYW4oY2l0eSRhZHJbaW5fbW9udGhdKVxufVxucGxvdChidXN5LCByYXRlLCBwY2ggPSAxOSwgeGxhYiA9IFwiU3RheXMgaW4gdGhlIG1vbnRoXCIsXG4gICAgeWxhYiA9IFwiQXZlcmFnZSByYXRlIChldXJvcylcIikifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjEgwrcgTG9hZCB0aGUgZGF0YTsgdGhlIGJ1c3ktbW9udGggc2NhdHRlclxuIyBUaGUgQ2l0eSBIb3RlbCdzIDI2IG1vbnRocywgSnVseSAyMDE1IHRvIEF1Z3VzdCAyMDE3LCB0eXBlZCBpblxuIyBmcm9tIHRoZSBkYXRhOiBob3cgYnVzeSBlYWNoIG1vbnRoXG4jIHdhcyAoeCkgYW5kIGl0cyBhdmVyYWdlIHJhdGUgKHkpLlxuIyBidXN5OiB0aGUgbnVtYmVyIG9mIGJvb2tpbmdzIHRoYXQgc3RheWVkIGluIHRoZSBtb250aFxuYnVzeSA8LSBjKDQyMSwgMTE3NywgMTkxNiwgMjAwMCwgOTA0LCA5MDksIDg5NSwgMTQwOCwgMTkwMSwgMTk4NyxcbiAgICAyMTc1LCAyMTY5LCAyMDUxLCAyMTA2LCAyMjY2LCAyMjE4LCAxNzA5LCAxMzY5LCAxMzAwLCAxNTgxLFxuICAgIDIwODgsIDE5NjksIDIzMDMsIDIxMjYsIDIyMTQsIDE5ODcpXG4jIHJhdGU6IHRoZSBhdmVyYWdlIHJvb20gcmF0ZSBvZiB0aG9zZSBzdGF5cywgaW4gZXVyb3NcbnJhdGUgPC0gYyg4MC4yMywgODYuNjcsIDEwNy4zMiwgOTUuMTQsIDczLjc1LCA4My45NiwgNzcuOTEsIDg0LjAwLFxuICAgIDg5LjUyLCAxMDEuMTUsIDExMi4yMSwgMTA4LjYzLCAxMTYuNDAsIDEyMy4zMSwgMTIyLjQzLCAxMTMuMTYsXG4gICAgOTcuNDQsIDk3Ljc2LCA4OC44MiwgOTIuMjEsIDk0LjM1LCAxMjYuMDEsIDEzMy41MCwgMTMwLjg5LFxuICAgIDEyNi41MiwgMTM4LjYzKVxucGxvdChidXN5LCByYXRlLCBwY2ggPSAxOSwgeGxhYiA9IFwiU3RheXMgaW4gdGhlIG1vbnRoXCIsXG4gICAgeWxhYiA9IFwiQXZlcmFnZSByYXRlIChldXJvcylcIikifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -218,7 +218,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjEgwrcgTG9hZCB0
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjIgwrcgQSBsaW5lIGJ5IGV5ZSwgdGhlbiBsZWFzdCBzcXVhcmVzXG4jIFJ1biBSIDEwLjEgZmlyc3QuIEEgdGVhbSdzIGxpbmU6XG4jIHJhdGUgPSBhICsgYiAqIGJ1c3kuIEhvdyBnb29kIGlzIGl0P1xuYSA8LSA1MCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdGhlIGludGVyY2VwdFxuYiA8LSAwLjAzICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgdGhlIHNsb3BlXG4jIGl0cyBzdW0gb2Ygc3F1YXJlZCBlcnJvcnM6IHNtYWxsZXIgaXMgYmV0dGVyXG5jYXQoXCJpdHMgc3VtIG9mIHNxdWFyZWQgZXJyb3JzOlwiLFxuICAgIHN1bSgocmF0ZSAtIChhICsgYiAqIGJ1c3kpKV4yKSwgXCJcXG5cIikifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjIgwrcgQSBsaW5lIGJ5IGV5ZSwgdGhlbiBsZWFzdCBzcXVhcmVzXG4jIFJ1biBSIDEwLjEgZmlyc3QuIEEgdGVhbSdzIGxpbmU6XG4jIHJhdGUgPSBhICsgYiAqIGJ1c3kuIEhvdyBnb29kIGlzIGl0P1xuIyB0aGUgaW50ZXJjZXB0IGEgYW5kIHRoZSBzbG9wZSBiXG5hIDwtIDUwXG5iIDwtIDAuMDNcbiMgaXRzIHN1bSBvZiBzcXVhcmVkIGVycm9yczogc21hbGxlciBpcyBiZXR0ZXJcbmNhdChcIml0cyBzdW0gb2Ygc3F1YXJlZCBlcnJvcnM6XCIsXG4gICAgc3VtKChyYXRlIC0gKGEgKyBiICogYnVzeSkpXjIpLCBcIlxcblwiKSJ9
 </script>
 </div>
 <div>
@@ -226,7 +226,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjIgwrcgQSBsaW5l
 
 </div>
 <script type="webr-5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjIgwrcgQSBsaW5lIGJ5IGV5ZSwgdGhlbiBsZWFzdCBzcXVhcmVzXG4jIFJ1biBSIDEwLjEgZmlyc3QuIFRoZSBsZWFzdC1zcXVhcmVzIGxpbmU6IHRoZVxuIyBvbmUgd2l0aCB0aGUgc21hbGxlc3Qgc3VtIG9mIHNxdWFyZWQgZXJyb3JzLlxuIyBORVc6IGxtKCkgZml0cyB0aGUgbGluZS4gUmVhZCBcInJhdGVcbiMgfiBidXN5XCIgYXMgXCJyYXRlIGV4cGxhaW5lZCBieSBidXN5XCIuXG5maXQgPC0gbG0ocmF0ZSB+IGJ1c3kpXG4jIE5FVzogY29lZigpIGdpdmVzIGEgbW9kZWwncyBjb2VmZmljaWVudHM6XG4jIHRoZSBpbnRlcmNlcHQgYW5kIHRoZSBzbG9wZShzKVxuIyBpbnRlcmNlcHQgYW5kIHNsb3BlXG5jYXQoXCJjb2VmZmljaWVudHMgKGludGVyY2VwdCwgc2xvcGUpOlxcblwiKVxucHJpbnQoY29lZihmaXQpKVxuY2F0KFwic2xvcGUgYnkgaGFuZDpcIiwgY29yKGJ1c3ksIHJhdGUpICogc2QocmF0ZSkgLyBzZChidXN5KSwgXCJcXG5cIilcbiMgTkVXOiByZXNpZCgpIGdpdmVzIGVhY2ggcG9pbnQncyByZXNpZHVhbDogYWN0dWFsIG1pbnVzIHByZWRpY3RlZFxuIyB0aGUgc21hbGxlc3QgcG9zc2libGVcbmNhdChcInN1bSBvZiBzcXVhcmVkIGVycm9ycywgbGVhc3Qgc3F1YXJlczpcIixcbiAgICBzdW0ocmVzaWQoZml0KV4yKSwgXCJcXG5cIikifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjIgwrcgQSBsaW5lIGJ5IGV5ZSwgdGhlbiBsZWFzdCBzcXVhcmVzXG4jIFJ1biBSIDEwLjEgZmlyc3QuIFRoZSBsZWFzdC1zcXVhcmVzIGxpbmU6IHRoZVxuIyBvbmUgd2l0aCB0aGUgc21hbGxlc3Qgc3VtIG9mIHNxdWFyZWQgZXJyb3JzLlxuIyBORVc6IGxtKCkgZml0cyB0aGUgbGluZS4gUmVhZCBcInJhdGVcbiMgfiBidXN5XCIgYXMgXCJyYXRlIGV4cGxhaW5lZCBieSBidXN5XCIuXG5maXQgPC0gbG0ocmF0ZSB+IGJ1c3kpXG4jIE5FVzogY29lZigpIGdpdmVzIGEgbW9kZWwncyBjb2VmZmljaWVudHM6XG4jIHRoZSBpbnRlcmNlcHQsIHRoZW4gdGhlIHNsb3BlKHMpXG5jYXQoXCJjb2VmZmljaWVudHMgKGludGVyY2VwdCwgc2xvcGUpOlxcblwiKVxucHJpbnQoY29lZihmaXQpKVxuIyBORVc6IHJlc2lkKCkgZ2l2ZXMgZWFjaCBwb2ludCdzIHJlc2lkdWFsOiBhY3R1YWwgbWludXNcbiMgcHJlZGljdGVkLiBMZWFzdCBzcXVhcmVzIG1ha2VzIHRoZWlyIHNxdWFyZXMgc21hbGxlc3QuXG5jYXQoXCJzdW0gb2Ygc3F1YXJlZCBlcnJvcnMsIGxlYXN0IHNxdWFyZXM6XCIsXG4gICAgc3VtKHJlc2lkKGZpdCleMiksIFwiXFxuXCIpIn0=
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -239,7 +239,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjIgwrcgQSBsaW5l
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Try your own <code>a</code> and <code>b</code>: no line beats <code>lm()</code>’s sum of squared errors. The slope by hand, <span class="math inline">\(r\,s_y/s_x\)</span>, equals <code>lm()</code>’s.</p>
+<p>Try your own <code>a</code> and <code>b</code>: no line beats <code>lm()</code>’s sum of squared errors. The slope: each extra stay goes with about 0.0287 euros more on the month’s average rate (about €2.87 per 100 stays).</p>
 </div>
 </div>
 </section>
@@ -320,7 +320,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjQgwrcgQm9va2lu
 
 </div>
 <script type="webr-10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjUgwrcgU2lnbmlmaWNhbnQsIHlldCBleHBsYWlucyBhbG1vc3Qgbm90aGluZ1xuIyBMZWFkIHRpbWUgYW5kIHRoZSByYXRlOiBcInNpZ25pZmljYW50XCIgaXMgbm90IHRoZSBzYW1lIGFzIFwidXNlZnVsXCIuXG5tX2xlYWQgPC0gbG0oYWRyIH4gbGVhZF90aW1lLCBkYXRhID0gaG90ZWxzKVxuY2F0KFwiYSB0aW55IHAtdmFsdWUgKHRoZSBsYXN0IGNvbHVtbikgLi4uOlxcblwiKVxucHJpbnQoc3VtbWFyeShtX2xlYWQpJGNvZWZmaWNpZW50cylcbmNhdChcIi4uLiB5ZXQgbGVhZCB0aW1lIGV4cGxhaW5zIGFsbW9zdCBub3RoaW5nOlwiLFxuICAgIHN1bW1hcnkobV9sZWFkKSRyLnNxdWFyZWQsIFwiXFxuXCIpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjUgwrcgU2lnbmlmaWNhbnQsIHlldCBleHBsYWlucyBhbG1vc3Qgbm90aGluZ1xuIyBMZWFkIHRpbWUgYW5kIHRoZSByYXRlOiBcInNpZ25pZmljYW50XCIgaXMgbm90IHRoZSBzYW1lIGFzIFwidXNlZnVsXCIuXG5tX2xlYWQgPC0gbG0oYWRyIH4gbGVhZF90aW1lLCBkYXRhID0gaG90ZWxzKVxuIyBORVc6IHN1bW1hcnkoZml0KSRjb2VmZmljaWVudHMgaXMgdGhlIHRhYmxlIFIgcHJpbnRzIGZvclxuIyBldmVyeSBtb2RlbCwgb25lIHJvdyBwZXIgY29lZmZpY2llbnQ6IHRoZSBlc3RpbWF0ZSwgaXRzXG4jIHN0YW5kYXJkIGVycm9yLCB0IHZhbHVlID0gZXN0aW1hdGUgLyBzdGFuZGFyZCBlcnJvciwgYW5kXG4jIHRoZSBwLXZhbHVlIGZvciBIMDogdGhpcyBjb2VmZmljaWVudCBpcyAwIChXZWVrcyA4IGFuZCA5KVxuY2F0KFwiYSB0aW55IHAtdmFsdWUgKHRoZSBsYXN0IGNvbHVtbikgLi4uOlxcblwiKVxucHJpbnQoc3VtbWFyeShtX2xlYWQpJGNvZWZmaWNpZW50cylcbmNhdChcIi4uLiB5ZXQgbGVhZCB0aW1lIGV4cGxhaW5zIGFsbW9zdCBub3RoaW5nOlwiLFxuICAgIHN1bW1hcnkobV9sZWFkKSRyLnNxdWFyZWQsIFwiXFxuXCIpIn0=
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -342,7 +342,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjUgwrcgU2lnbmlm
 <p><em>In pairs</em></p>
 <p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: the answers are at the end of your R handout (Week Pack). <strong>Weeks 9–12:</strong> Core still has starting code; Applied gives the steps in words; Challenge gives the question only. Hints and full answers are still there.</p>
 <div class="tier-core">
-<p><strong>Core.</strong> <code>lm(adr ~ guests)</code> (R 10.4): the intercept, the slope and <span class="math inline">\(R^2\)</span>, then predictions for 2 and 4 guests.</p>
+<p><strong>Core.</strong> <code>lm(adr ~ guests)</code> (R 10.4): the intercept, the slope and <span class="math inline">\(R^2\)</span>, then predictions for 2 and 4 guests (euros to 2 decimal places, <span class="math inline">\(R^2\)</span> to 3).</p>
 <div>
 <div id="webr-11" class="exercise-cell">
 
@@ -369,7 +369,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoibTEgPC0gbG0oYWRyIH4gZ3Vl
 </div>
 </div>
 <div class="tier-applied">
-<p><strong>Applied.</strong> The model with guests, the hotel and summer (R 10.4): interpret each coefficient, then quote 3 guests at the resort in August.</p>
+<p><strong>Applied.</strong> The model with guests, the hotel and summer (R 10.4): interpret each coefficient, then quote 3 guests at the resort in August (euros to 2 decimal places).</p>
 <p><strong>Your steps:</strong></p>
 <ol type="1">
 <li>Fit the model with guests, the hotel and summer (R 10.4’s <code>m3</code>).</li>
@@ -402,7 +402,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </div>
 </div>
 <div class="tier-challenge">
-<p><strong>Challenge.</strong> Simulate the guests slope from 2,000 samples of 50 bookings and of 200 (<code>set.seed(10)</code> before each). Compare the SDs of the slopes.</p>
+<p><strong>Challenge.</strong> Add a third dummy to R 10.4’s model: half board (<code>meal</code> is <code>"HB"</code>: breakfast and dinner). By how many euros a night does half board go with, holding the guests, the hotel and the season fixed? How much does <span class="math inline">\(R^2\)</span> rise? Then quote 2 guests at the city hotel in summer, on half board (euros to 2 decimal places, <span class="math inline">\(R^2\)</span> to 3).</p>
 <p>No starting code here: write it from the question. The hint above points the way, and the full answer is at the end of this handout.</p>
 <div>
 <div id="webr-13" class="exercise-cell">
@@ -424,13 +424,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>make an empty list of 2,000 slopes (<code>numeric(2000)</code>). In a loop: pick 50 random rows (<code>sample(nrow(hotels), 50)</code>), fit <code>lm(adr ~ guests)</code> on them and keep the slope (<code>coef(...)[2]</code>). Then <code>sd()</code> of the list. Do it again with 200 rows and compare the two SDs.</p>
+<p>make the dummy as R 10.4 makes <code>summer</code> (a TRUE/FALSE column with <code>==</code>), add it after <code>summer</code> inside <code>lm()</code>, and give <code>predict()</code> a one-row data frame with all four columns.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="tier-challenge">
-<p><strong>Stretch (any tier, if you finish early).</strong> After R 10.3, run <code>plot(resid(fit), type = "h")</code>: which months sit furthest above the line?</p>
+<p><strong>Stretch (any tier, if you finish early).</strong> After R 10.3, predict the average rate for a month with 4,000 stays (2 decimal places). Would you trust it? (Look at the scatter: how busy was the busiest month?)</p>
 <div>
 <div id="webr-14" class="exercise-cell">
 
@@ -444,15 +444,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 <p>In class · block 5 · the decision, and simulate to check</p>
 </div>
 </section>
-<section id="r-10.7-the-slope-varies-from-sample-to-sample-1" class="level2">
-<h2 class="anchored" data-anchor-id="r-10.7-the-slope-varies-from-sample-to-sample-1">R 10.7 · The slope varies from sample to sample</h2>
+<section id="r-10.7-simulate-to-check-can-any-line-beat-least-squares-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-10.7-simulate-to-check-can-any-line-beat-least-squares-1">R 10.7 · Simulate to check: can any line beat least squares?</h2>
 <p><em>With the class</em></p>
 <div>
 <div id="webr-15" class="exercise-cell">
 
 </div>
 <script type="webr-15-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjcgwrcgVGhlIHNsb3BlIHZhcmllcyBmcm9tIHNhbXBsZSB0byBzYW1wbGVcbiMgUnVuIFIgMTAuNCBmaXJzdC4gVGhlIHNsb3BlIGNoYW5nZXMgZnJvbSBzYW1wbGUgdG9cbiMgc2FtcGxlOiBmaXQgaXQgb24gMiwwMDAgc2FtcGxlcyBvZiA1MCBib29raW5ncy5cbnNldC5zZWVkKDEwKVxuc2xvcGVzIDwtIG51bWVyaWMoMjAwMClcbmZvciAoaSBpbiAxOjIwMDApIHtcbiAgIyA1MCByYW5kb20gcm93IG51bWJlcnNcbiAgcm93cyA8LSBzYW1wbGUobnJvdyhob3RlbHMpLCA1MClcbiAgb25lX3NhbXBsZSA8LSBob3RlbHNbcm93cywgXSAgICAgICAgICAgICAgICAgICAjIHRob3NlIDUwIGJvb2tpbmdzXG4gICMgWzJdIHBpY2tzIHRoZSBzbG9wZSAodGhlIDJuZCBjb2VmZmljaWVudClcbiAgc2xvcGVzW2ldIDwtIGNvZWYobG0oYWRyIH4gZ3Vlc3RzLCBkYXRhID0gb25lX3NhbXBsZSkpWzJdXG59XG5jYXQoXCJjZW50cmVkIG9uIHRoZSBmdWxsLWRhdGEgc2xvcGU6XCIsIG1lYW4oc2xvcGVzKSwgXCJcXG5cIilcbmNhdChcIml0cyBTRCBpcyB0aGUgc2xvcGUncyBzdGFuZGFyZCBlcnJvcjpcIiwgc2Qoc2xvcGVzKSwgXCJcXG5cIilcbiMgTkVXOiBzdW1tYXJ5KGZpdCkkY29lZmZpY2llbnRzIGlzIHRoZSB0YWJsZSBSXG4jIHByaW50cyBmb3IgZXZlcnkgbW9kZWwuIE9uZSByb3cgcGVyIGNvZWZmaWNpZW50OlxuIyB0aGUgZXN0aW1hdGUsIGl0cyBzdGFuZGFyZCBlcnJvciwgdCB2YWx1ZSA9IGVzdGltYXRlIC9cbiMgc3RhbmRhcmQgZXJyb3IsIGFuZCB0aGUgcC12YWx1ZSBmb3IgSDA6IHRoaXMgY29lZmZpY2llbnQgaXMgMFxuIyB0aGUgbGFzdCBvZiB0aGUgMiwwMDAgc2FtcGxlcyBvZiA1MFxub25lX2ZpdCA8LSBsbShhZHIgfiBndWVzdHMsIGRhdGEgPSBvbmVfc2FtcGxlKVxuY2F0KFwiY29lZmZpY2llbnQgdGFibGUsIHRoZSBsYXN0IHNhbXBsZSBvZiA1MDpcXG5cIilcbnByaW50KHJvdW5kKHN1bW1hcnkob25lX2ZpdCkkY29lZmZpY2llbnRzLCA0KSkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjcgwrcgU2ltdWxhdGUgdG8gY2hlY2s6IGNhbiBhbnkgbGluZSBiZWF0IGxlYXN0IHNxdWFyZXM/XG4jIFJ1biBSIDEwLjIgZmlyc3QuIDEsMDAwIHJhbmRvbSBsaW5lcywgbGlrZSAxLDAwMCB0ZWFtc1xuIyBkcmF3aW5nIGJ5IGV5ZTogZG9lcyBhbnkgaGF2ZSBhIHNtYWxsZXIgc3VtIG9mIHNxdWFyZWRcbiMgZXJyb3JzIHRoYW4gbG0oKSdzIGxpbmU/XG5zZXQuc2VlZCgxMClcbnJ1bnMgPC0gMTAwMFxuIyBhbiBlbXB0eSBsaXN0OiBvbmUgc3VtIG9mIHNxdWFyZWQgZXJyb3JzIHBlciBsaW5lXG5yZXN1bHRzIDwtIG51bWVyaWMocnVucylcbmZvciAoaSBpbiAxOnJ1bnMpIHtcbiAgIyBvbmUgcmFuZG9tIGxpbmU6IGFuIGludGVyY2VwdCBhbmQgYSBzbG9wZVxuICAjIE5FVzogcnVuaWYoMSwgMCwgMTAwKSBpcyBvbmUgcmFuZG9tIG51bWJlciBmcm9tIDAgdG8gMTAwXG4gIGEgPC0gcnVuaWYoMSwgMCwgMTAwKVxuICBiIDwtIHJ1bmlmKDEsIDAsIDAuMDYpXG4gICMgaXRzIHN1bSBvZiBzcXVhcmVkIGVycm9ycywgYXMgaW4gUiAxMC4yXG4gIHJlc3VsdHNbaV0gPC0gc3VtKChyYXRlIC0gKGEgKyBiICogYnVzeSkpXjIpXG59XG5jYXQoXCJsZWFzdCBzcXVhcmVzLCBsbSgpOlwiLCBzdW0ocmVzaWQoZml0KV4yKSwgXCJcXG5cIilcbiMgY291bnQgdGhlIHJhbmRvbSBsaW5lcyB0aGF0IGJlYXQgaXQgKGEgc21hbGxlciBzdW0pXG5jYXQoXCJyYW5kb20gbGluZXMgdGhhdCBiZWF0IGxtKCk6XCIsXG4gICAgc3VtKHJlc3VsdHMgPCBzdW0ocmVzaWQoZml0KV4yKSksIFwiXFxuXCIpIn0=
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -465,7 +465,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjcgwrcgVGhlIHNs
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Samples of 50 bookings give slopes spread widely around the full-data slope: a slope is a statistic, with a standard error. The last lines read R’s coefficient table for one sample of 50: in the <code>guests</code> row, the standard error is close to the SD of your 2,000 slopes, the t value is the estimate divided by it (Week 8’s test statistic), and the p-value tests <span class="math inline">\(H_0\)</span>: the slope is 0 (Week 9). Behind the data we imagine a true line, <span class="math inline">\(y = \beta_0 + \beta_1 x + \text{error}\)</span>; <span class="math inline">\(b_0\)</span> and <span class="math inline">\(b_1\)</span> are the sample’s estimates of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p>
+<p>1,000 random lines, like 1,000 teams drawing by eye, and not one beats <code>lm()</code>: least squares is the line with the smallest sum of squared errors. Some come close, as a good line by eye can, but none is better.</p>
 </div>
 </div>
 </section>
@@ -490,7 +490,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjcgwrcgVGhlIHNs
 </section>
 <section id="commands-to-know" class="level2">
 <h2 class="anchored" data-anchor-id="commands-to-know">Commands to know</h2>
-<p>These can be assessed in the quiz: <code>lm(y ~ x, data = d)</code>, <code>coef()</code>, <code>summary()</code> (coefficients and <span class="math inline">\(R^2\)</span>), <code>predict(fit, data.frame(...))</code>, <code>resid()</code>, and making a 0/1 dummy with <code>==</code> and <code>|</code> (or): <code>hotels$arrival_date_month == "July" | hotels$arrival_date_month == "August"</code>. Remember: each coefficient holds the others fixed; <span class="math inline">\(R^2\)</span> is the share of the variation explained.</p>
+<p>In scope (you run them in this week’s tasks and sets): <code>lm(adr ~ guests, data = hotels)</code>, <code>coef(m1)</code>, <code>summary(m1)$r.squared</code>, <code>summary(m_lead)$coefficients</code> (estimate, standard error, t value, p-value), <code>predict(m1, data.frame(guests = c(2, 4)))</code>, <code>resid(fit)</code>, <code>sigma(m3)</code>, and making a 0/1 dummy with <code>==</code> and <code>|</code> (or): <code>hotels$arrival_date_month == "July" | hotels$arrival_date_month == "August"</code>. Remember: each coefficient holds the others fixed; <span class="math inline">\(R^2\)</span> is the share of the variation explained.</p>
 <script type="webr-data">
 eyJvcHRpb25zIjp7ImJhc2VVcmwiOiIuLi93ZWJyLyJ9LCJwYWNrYWdlcyI6eyJwa2dzIjpbImV2YWx1YXRlIiwia25pdHIiLCJodG1sdG9vbHMiXSwicmVwb3MiOlsiLi4vd2Vici1yZXBvIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
 </script>

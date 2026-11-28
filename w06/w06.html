@@ -119,10 +119,9 @@ html{scroll-padding-top:64px}
   <li><a href="#r-6.1-load-the-data-the-population-one-sample-1" id="toc-r-6.1-load-the-data-the-population-one-sample-1" class="nav-link" data-scroll-target="#r-6.1-load-the-data-the-population-one-sample-1">R 6.1 · Load the data; the population; one sample</a></li>
   <li><a href="#r-6.2-many-samples-the-sampling-distribution-1" id="toc-r-6.2-many-samples-the-sampling-distribution-1" class="nav-link" data-scroll-target="#r-6.2-many-samples-the-sampling-distribution-1">R 6.2 · Many samples: the sampling distribution</a></li>
   <li><a href="#r-6.3-the-standard-error-and-a-probability-1" id="toc-r-6.3-the-standard-error-and-a-probability-1" class="nav-link" data-scroll-target="#r-6.3-the-standard-error-and-a-probability-1">R 6.3 · The standard error and a probability</a></li>
-  <li><a href="#r-6.4-the-central-limit-theorem-with-a-for-loop" id="toc-r-6.4-the-central-limit-theorem-with-a-for-loop" class="nav-link" data-scroll-target="#r-6.4-the-central-limit-theorem-with-a-for-loop">R 6.4 · The central limit theorem with a <code>for</code> loop</a></li>
-  <li><a href="#r-6.5-bigger-is-not-better-if-biased-1" id="toc-r-6.5-bigger-is-not-better-if-biased-1" class="nav-link" data-scroll-target="#r-6.5-bigger-is-not-better-if-biased-1">R 6.5 · Bigger is not better if biased</a></li>
-  <li><a href="#r-6.6-your-tier-1" id="toc-r-6.6-your-tier-1" class="nav-link" data-scroll-target="#r-6.6-your-tier-1">R 6.6 · Your tier</a></li>
-  <li><a href="#r-6.7-week-1s-promise-why-divide-by-n-1-1" id="toc-r-6.7-week-1s-promise-why-divide-by-n-1-1" class="nav-link" data-scroll-target="#r-6.7-week-1s-promise-why-divide-by-n-1-1">R 6.7 · Week 1’s promise: why divide by n − 1?</a></li>
+  <li><a href="#r-6.4-the-central-limit-theorem" id="toc-r-6.4-the-central-limit-theorem" class="nav-link" data-scroll-target="#r-6.4-the-central-limit-theorem">R 6.4 · The central limit theorem</a></li>
+  <li><a href="#r-6.5-your-tier-1" id="toc-r-6.5-your-tier-1" class="nav-link" data-scroll-target="#r-6.5-your-tier-1">R 6.5 · Your tier</a></li>
+  <li><a href="#r-6.6-bigger-is-not-better-if-biased-1" id="toc-r-6.6-bigger-is-not-better-if-biased-1" class="nav-link" data-scroll-target="#r-6.6-bigger-is-not-better-if-biased-1">R 6.6 · Bigger is not better if biased</a></li>
   <li><a href="#check-your-ai-assistant-5-min" id="toc-check-your-ai-assistant-5-min" class="nav-link" data-scroll-target="#check-your-ai-assistant-5-min">Check your AI assistant (5 min)</a></li>
   <li><a href="#commands-to-know" id="toc-commands-to-know" class="nav-link" data-scroll-target="#commands-to-know">Commands to know</a></li>
   </ul>
@@ -162,7 +161,7 @@ html{scroll-padding-top:64px}
 <ul>
 <li>Press <strong>Run Code</strong> on each cell. Change the code and run it again; you cannot break anything.</li>
 <li><strong>Step 1 is always the same line:</strong> <code>hotels &lt;- read.csv("hotels.csv")</code>. On this page it runs by itself when the page opens; wait for the first cell to show the size of the data.</li>
-<li>The tasks are the same as in your R handout, with the same numbers (R 6.1, R 6.2, …) and the same words. Your tier is R 6.6: <strong>Core</strong>, <strong>Applied</strong> or <strong>Challenge</strong>, same data, same idea, different depth.</li>
+<li>The tasks are the same as in your R handout, with the same numbers (R 6.1, R 6.2, …) and the same words. Your tier is R 6.5: <strong>Core</strong>, <strong>Applied</strong> or <strong>Challenge</strong>, same data, same idea, different depth.</li>
 <li>Stuck on a tier task? Open its <strong>Hint</strong>, then try again. The answers are at the end of your R handout (Part 2 of the Week Pack).</li>
 </ul>
 <div>
@@ -201,7 +200,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMSDCtyBMb2FkIHRo
 
 </div>
 <script type="webr-4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMSDCtyBMb2FkIHRoZSBkYXRhOyB0aGUgcG9wdWxhdGlvbjsgb25lIHNhbXBsZVxuIyBPbmUgcmFuZG9tIHNhbXBsZSBvZiAzMCByb29tIHJhdGVzLCBhbmQgaXRzIGF2ZXJhZ2UuXG4jIG1ha2VzIHlvdXIgcmFuZG9tIG51bWJlcnMgdGhlIHNhbWUgYXMgZXZlcnlvbmUgZWxzZSdzXG5zZXQuc2VlZCgxKVxuIyBhIHJhbmRvbSBzYW1wbGUgb2YgMzAgcm9vbSByYXRlc1xueCA8LSBzYW1wbGUoaG90ZWxzJGFkciwgMzApXG4jIGl0cyBhdmVyYWdlOiBjbG9zZSB0byBtdSwgYnV0IG5vdCBlcXVhbFxuY2F0KFwiaXRzIGF2ZXJhZ2U6XCIsIG1lYW4oeCksIFwiXFxuXCIpXG5jYXQoXCJhbm90aGVyIHNhbXBsZSwgYW5vdGhlciBhdmVyYWdlOlwiLFxuICAgIG1lYW4oc2FtcGxlKGhvdGVscyRhZHIsIDMwKSksIFwiXFxuXCIpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMSDCtyBMb2FkIHRoZSBkYXRhOyB0aGUgcG9wdWxhdGlvbjsgb25lIHNhbXBsZVxuIyBPbmUgcmFuZG9tIHNhbXBsZSBvZiAzMCByb29tIHJhdGVzLCBhbmQgaXRzIGF2ZXJhZ2UuXG4jIG1ha2VzIHlvdXIgcmFuZG9tIG51bWJlcnMgdGhlIHNhbWUgYXMgZXZlcnlvbmUgZWxzZSdzXG5zZXQuc2VlZCgxKVxuIyBzYW1wbGUoKSBkcmF3cyAzMCByYXRlcyBhdCByYW5kb207IG1lYW4oKSBhdmVyYWdlcyB0aGVtXG5jYXQoXCJ0aGUgYXZlcmFnZSBvZiBvbmUgc2FtcGxlIG9mIDMwOlwiLFxuICAgIG1lYW4oc2FtcGxlKGhvdGVscyRhZHIsIDMwKSksIFwiXFxuXCIpXG5jYXQoXCJhbm90aGVyIHNhbXBsZSwgYW5vdGhlciBhdmVyYWdlOlwiLFxuICAgIG1lYW4oc2FtcGxlKGhvdGVscyRhZHIsIDMwKSksIFwiXFxuXCIpIn0=
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -226,7 +225,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMSDCtyBMb2FkIHRo
 
 </div>
 <script type="webr-5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMiDCtyBNYW55IHNhbXBsZXM6IHRoZSBzYW1wbGluZyBkaXN0cmlidXRpb25cbiMgUnVuIFIgNi4xIGZpcnN0LiBUYWtlIDEwLDAwMCBzYW1wbGVzXG4jIG9mIDMwIGFuZCBrZWVwIGVhY2ggc2FtcGxlJ3MgYXZlcmFnZS5cbnNldC5zZWVkKDYpXG5ydW5zIDwtIDEwMDAwXG5tZWFucyA8LSBudW1lcmljKHJ1bnMpICAgICAgICAgICAgICAjIG9uZSBhdmVyYWdlIHBlciBzYW1wbGVcbmZvciAoaSBpbiAxOnJ1bnMpIHtcbiAgb25lX3NhbXBsZSA8LSBzYW1wbGUoaG90ZWxzJGFkciwgMzApXG4gIG1lYW5zW2ldIDwtIG1lYW4ob25lX3NhbXBsZSlcbn1cbiMgdGhlIGF2ZXJhZ2Ugb2YgdGhlIDEwLDAwMCBhdmVyYWdlczogY2xvc2UgdG8gbXVcbmNhdChcInRoZSBhdmVyYWdlIG9mIHRoZSAxMCwwMDAgYXZlcmFnZXM6XCIsIG1lYW4obWVhbnMpLCBcIlxcblwiKVxuY2F0KFwiaG93IG11Y2ggdGhlIGF2ZXJhZ2VzIHZhcnk6XCIsIHNkKG1lYW5zKSwgXCJcXG5cIilcbiMgLi4uIGFuZCB3aGF0IHRoZSBmb3JtdWxhIHNheXM6IHNpZ21hXG4jIGRpdmlkZWQgYnkgdGhlIHNxdWFyZSByb290IG9mIG5cbmNhdChcIi4uLiBhbmQgd2hhdCB0aGUgZm9ybXVsYSBzYXlzOlwiLCBzaWdtYSAvIHNxcnQoMzApLCBcIlxcblwiKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMiDCtyBNYW55IHNhbXBsZXM6IHRoZSBzYW1wbGluZyBkaXN0cmlidXRpb25cbiMgUnVuIFIgNi4xIGZpcnN0LiBUYWtlIDEwLDAwMCBzYW1wbGVzXG4jIG9mIDMwIGFuZCBrZWVwIGVhY2ggc2FtcGxlJ3MgYXZlcmFnZS5cbnNldC5zZWVkKDYpXG5ydW5zIDwtIDEwMDAwXG4jIGFuIGVtcHR5IGxpc3Q6IG9uZSBhdmVyYWdlIHBlciBzYW1wbGVcbm1lYW5zIDwtIG51bWVyaWMocnVucylcbmZvciAoaSBpbiAxOnJ1bnMpIHtcbiAgIyBvbmUgc2FtcGxlIG9mIDMwOiBpdHMgYXZlcmFnZSBnb2VzIGluIHBsYWNlIGlcbiAgbWVhbnNbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGFkciwgMzApKVxufVxuIyB0aGUgYXZlcmFnZSBvZiB0aGUgMTAsMDAwIGF2ZXJhZ2VzOiBjbG9zZSB0byBtdVxuY2F0KFwidGhlIGF2ZXJhZ2Ugb2YgdGhlIDEwLDAwMCBhdmVyYWdlczpcIiwgbWVhbihtZWFucyksIFwiXFxuXCIpXG5jYXQoXCJob3cgbXVjaCB0aGUgYXZlcmFnZXMgdmFyeTpcIiwgc2QobWVhbnMpLCBcIlxcblwiKVxuIyAuLi4gYW5kIHdoYXQgdGhlIGZvcm11bGEgc2F5czogc2lnbWFcbiMgZGl2aWRlZCBieSB0aGUgc3F1YXJlIHJvb3Qgb2YgblxuY2F0KFwiLi4uIGFuZCB3aGF0IHRoZSBmb3JtdWxhIHNheXM6XCIsIHNpZ21hIC8gc3FydCgzMCksIFwiXFxuXCIpIn0=
 </script>
 </div>
 <div>
@@ -234,7 +233,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMiDCtyBNYW55IHNh
 
 </div>
 <script type="webr-6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMiDCtyBNYW55IHNhbXBsZXM6IHRoZSBzYW1wbGluZyBkaXN0cmlidXRpb25cbiMgUnVuIHRoZSBjYXJkIGFib3ZlIGZpcnN0LiBUaGUgMTAsMDAwIGF2ZXJhZ2VzLFxuIyB3aXRoIHRoZSBub3JtYWwgY3VydmUgdGhlIENMVCBwcmVkaWN0cy5cbmhpc3QobWVhbnMsIGJyZWFrcyA9IDUwLCBmcmVxID0gRkFMU0UsIGNvbCA9IFwiI0Q5RENFQlwiLFxuICAgIGJvcmRlciA9IFwid2hpdGVcIiwgbWFpbiA9IFwiXCIsXG4gICAgeGxhYiA9IFwiQXZlcmFnZSByb29tIHJhdGUgb2YgYSBzYW1wbGUgb2YgMzAgKGV1cm9zKVwiKVxuIyBjdXJ2ZSgpIGRyYXdzIHRoZSBmb3JtdWxhIGluIHhcbmN1cnZlKGRub3JtKHgsIG11LCBzaWdtYSAvIHNxcnQoMzApKSwgYWRkID0gVFJVRSwgY29sID0gXCIjQzgxMDJFXCIsXG4gICAgbHdkID0gMikifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMiDCtyBNYW55IHNhbXBsZXM6IHRoZSBzYW1wbGluZyBkaXN0cmlidXRpb25cbiMgUnVuIHRoZSBjYXJkIGFib3ZlIGZpcnN0LiBUaGUgMTAsMDAwIGF2ZXJhZ2VzOlxuIyBhIGJlbGwgc2hhcGUgYXJvdW5kIG11LlxuaGlzdChtZWFucywgYnJlYWtzID0gNTAsIGNvbCA9IFwiI0Q5RENFQlwiLCBib3JkZXIgPSBcIndoaXRlXCIsXG4gICAgbWFpbiA9IFwiXCIsIHhsYWIgPSBcIkF2ZXJhZ2Ugcm9vbSByYXRlIG9mIGEgc2FtcGxlIG9mIDMwIChldXJvcylcIikifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -247,7 +246,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMiDCtyBNYW55IHNh
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The averages centre on <span class="math inline">\(\mu\)</span>, and their SD matches the standard error <span class="math inline">\(\sigma/\sqrt{30}\)</span>. The red curve is the normal curve the central limit theorem predicts.</p>
+<p>The averages centre on <span class="math inline">\(\mu\)</span>, and their SD matches the standard error <span class="math inline">\(\sigma/\sqrt{30}\)</span>. The histogram is close to a bell shape: the normal curve the central limit theorem predicts.</p>
 </div>
 </div>
 </section>
@@ -259,7 +258,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMiDCtyBNYW55IHNh
 
 </div>
 <script type="webr-7-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMyDCtyBUaGUgc3RhbmRhcmQgZXJyb3IgYW5kIGEgcHJvYmFiaWxpdHlcbiMgUnVuIFIgNi4xIGZpcnN0LiBUaGUgc3RhbmRhcmQgZXJyb3IgZm9yIGZvdXIgc2FtcGxlIHNpemVzLlxubiA8LSBjKDEwLCAzMCwgMTAwLCA0MDApXG5jYXQoXCJmb3VyIHRpbWVzIHRoZSBzYW1wbGUsIGhhbGYgdGhlIGVycm9yOlxcblwiKVxucHJpbnQocm91bmQoc2lnbWEgLyBzcXJ0KG4pLCAyKSkifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMyDCtyBUaGUgc3RhbmRhcmQgZXJyb3IgYW5kIGEgcHJvYmFiaWxpdHlcbiMgUnVuIFIgNi4xIGZpcnN0LiBUaGUgc3RhbmRhcmQgZXJyb3IsXG4jIHNpZ21hIC8gc3FydChuKSwgZm9yIGZvdXIgc2FtcGxlIHNpemVzLlxuY2F0KFwic3RhbmRhcmQgZXJyb3IgZm9yIG4gPSAxMCwgMzAsIDEwMCBhbmQgNDAwOlxcblwiKVxucHJpbnQocm91bmQoc2lnbWEgLyBzcXJ0KGMoMTAsIDMwLCAxMDAsIDQwMCkpLCAyKSkifQ==
 </script>
 </div>
 <div>
@@ -267,7 +266,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMyDCtyBUaGUgc3Rh
 
 </div>
 <script type="webr-8-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMyDCtyBUaGUgc3RhbmRhcmQgZXJyb3IgYW5kIGEgcHJvYmFiaWxpdHlcbiMgUnVuIFIgNi4yIGZpcnN0LiBUaGUgY2hhbmNlIHRoYXQgYSBzYW1wbGVcbiMgb2YgMzAgYXZlcmFnZXMgbW9yZSB0aGFuIDExMCBldXJvcy5cbnNlIDwtIHNpZ21hIC8gc3FydCgzMCkgICAgICAgICAgICAgICMgdGhlIHN0YW5kYXJkIGVycm9yXG5jYXQoXCJQKHNhbXBsZSBhdmVyYWdlID4gMTEwKSwgZnJvbSB0aGUgQ0xUOlwiLFxuICAgIDEgLSBwbm9ybSgxMTAsIG11LCBzZSksIFwiXFxuXCIpXG4jIGNoZWNrOiB0aGUgc2hhcmUgb2YgdGhlIDEwLDAwMCBzaW11bGF0ZWQgYXZlcmFnZXMgYWJvdmUgMTEwXG5jYXQoXCJjaGVjazpcIiwgbWVhbihtZWFucyA+IDExMCksIFwiXFxuXCIpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMyDCtyBUaGUgc3RhbmRhcmQgZXJyb3IgYW5kIGEgcHJvYmFiaWxpdHlcbiMgUnVuIFIgNi4yIGZpcnN0LiBUaGUgY2hhbmNlIHRoYXQgYSBzYW1wbGVcbiMgb2YgMzAgYXZlcmFnZXMgbW9yZSB0aGFuIDExMCBldXJvcy5cbiMgdGhlIENMVDogYSBub3JtYWwgY3VydmUgd2l0aCBtZWFuIG11LCBTRCBzaWdtYSAvIHNxcnQoMzApXG5jYXQoXCJQKHNhbXBsZSBhdmVyYWdlID4gMTEwKSwgZnJvbSB0aGUgQ0xUOlwiLFxuICAgIDEgLSBwbm9ybSgxMTAsIG11LCBzaWdtYSAvIHNxcnQoMzApKSwgXCJcXG5cIilcbiMgY2hlY2s6IHRoZSBzaGFyZSBvZiB0aGUgMTAsMDAwIHNpbXVsYXRlZCBhdmVyYWdlcyBhYm92ZSAxMTBcbmNhdChcImNoZWNrOlwiLCBtZWFuKG1lYW5zID4gMTEwKSwgXCJcXG5cIikifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -284,43 +283,26 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuMyDCtyBUaGUgc3Rh
 </div>
 </div>
 <div class="phase">
-<p>In class · block 4 · the R lab: R 6.4–6.5, then your tier (R 6.6)</p>
+<p>In class · block 4 · the R lab: R 6.4, then your tier (R 6.5)</p>
 </div>
 </section>
-<section id="r-6.4-the-central-limit-theorem-with-a-for-loop" class="level2">
-<h2 class="anchored" data-anchor-id="r-6.4-the-central-limit-theorem-with-a-for-loop">R 6.4 · The central limit theorem with a <code>for</code> loop</h2>
+<section id="r-6.4-the-central-limit-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="r-6.4-the-central-limit-theorem">R 6.4 · The central limit theorem</h2>
 <p><em>On your own · about 10 minutes</em></p>
 <div>
 <div id="webr-9" class="exercise-cell">
 
 </div>
 <script type="webr-9-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNCDCtyBUaGUgY2VudHJhbCBsaW1pdCB0aGVvcmVtIHdpdGggYSBgZm9yYCBsb29wXG4jIExlYWQgdGltZSBpcyBza2V3ZWQgKG1hbnkgYm9va2luZ3MgbWFkZVxuIyBkYXlzIGFoZWFkLCBhIGZldyBhIHllYXIgb3IgbW9yZSBhaGVhZCkuXG4jIEZvciBlYWNoIHNhbXBsZSBzaXplLCA1LDAwMCBzYW1wbGUgYXZlcmFnZXMsIGRyYXduIGFzIGEgaGlzdG9ncmFtLlxuIyBORVc6IHBhcihtZnJvdyA9IGMoMSwgNCkpIHB1dHMgdGhlIG5leHQgZm91ciBwbG90cyBzaWRlIGJ5IHNpZGVcbiMgcHV0IHRoZSBuZXh0IGZvdXIgcGxvdHMgc2lkZSBieSBzaWRlXG5wYXIobWZyb3cgPSBjKDEsIDQpKVxuIyB0aGUgb3V0ZXIgbG9vcDogb25lIHNhbXBsZSBzaXplIGF0IGEgdGltZVxuZm9yIChuIGluIGMoMSwgNSwgMzAsIDEwMCkpIHtcbiAgbSA8LSBudW1lcmljKDUwMDApXG4gICMgdGhlIGlubmVyIGxvb3A6IDUsMDAwIHNhbXBsZXMgb2YgdGhpcyBzaXplXG4gIGZvciAoaSBpbiAxOjUwMDApIHtcbiAgICBtW2ldIDwtIG1lYW4oc2FtcGxlKGhvdGVscyRsZWFkX3RpbWUsIG4pKVxuICB9XG4gIGhpc3QobSwgYnJlYWtzID0gNDAsIGNvbCA9IFwiIzE4MUM2MlwiLCBib3JkZXIgPSBcIndoaXRlXCIsXG4gICAgICBtYWluID0gcGFzdGUoXCJuID1cIiwgbiksIHhsYWIgPSBcIkF2ZXJhZ2UgbGVhZCB0aW1lIChkYXlzKVwiKVxufSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNCDCtyBUaGUgY2VudHJhbCBsaW1pdCB0aGVvcmVtXG4jIExlYWQgdGltZSBpcyByaWdodC1za2V3ZWQ6IG1hbnkgYm9va2luZ3MgYXJlIG1hZGVcbiMgZGF5cyBhaGVhZCwgYSBmZXcgYSB5ZWFyIG9yIG1vcmUgYWhlYWQuIExvb2sgZmlyc3QuXG5oaXN0KGhvdGVscyRsZWFkX3RpbWUsIGJyZWFrcyA9IDQwLCBjb2wgPSBcIiMxODFDNjJcIixcbiAgICBib3JkZXIgPSBcIndoaXRlXCIsIG1haW4gPSBcIlNpbmdsZSBib29raW5nc1wiLFxuICAgIHhsYWIgPSBcIkxlYWQgdGltZSAoZGF5cylcIikifQ==
 </script>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>You should see
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Single lead times are skewed; averages of 30 and 100 are close to a bell shape, and narrower. Type <code>par(mfrow = c(1, 1))</code> afterwards to go back to one plot at a time.</p>
-</div>
-</div>
-</section>
-<section id="r-6.5-bigger-is-not-better-if-biased-1" class="level2">
-<h2 class="anchored" data-anchor-id="r-6.5-bigger-is-not-better-if-biased-1">R 6.5 · Bigger is not better if biased</h2>
-<p><em>On your own · about 5 minutes</em></p>
 <div>
 <div id="webr-10" class="exercise-cell">
 
 </div>
 <script type="webr-10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBCaWdnZXIgaXMgbm90IGJldHRlciBpZiBiaWFzZWRcbiMgUnVuIFIgNi4xIGZpcnN0LiBBIGh1Z2Ugc2FtcGxlIGZyb20gb25lXG4jIG1vbnRoIG9ubHksIGFnYWluc3Qgc21hbGwgcmFuZG9tIHNhbXBsZXMuXG5hdWcgPC0gaG90ZWxzJGFkcltob3RlbHMkYXJyaXZhbF9kYXRlX21vbnRoID09IFwiQXVndXN0XCJdXG4jIGxlbmd0aCgpIGNvdW50cyB0aGUgdmFsdWVzOiBhIGh1Z2Ugc2FtcGxlIC4uLlxuY2F0KFwiQXVndXN0IGJvb2tpbmdzIChhIGh1Z2Ugc2FtcGxlKTpcIiwgbGVuZ3RoKGF1ZyksIFwiXFxuXCIpXG4jIC4uLiBidXQgaXRzIGF2ZXJhZ2UgaXMgZmFyIGZyb20gLi4uXG5jYXQoXCJ0aGVpciBhdmVyYWdlIHJhdGU6XCIsIG1lYW4oYXVnKSwgXCJcXG5cIilcbmNhdChcInRoZSBwb3B1bGF0aW9uIG1lYW46XCIsIG11LCBcIlxcblwiKVxuc2V0LnNlZWQoNilcbm0xMDAgPC0gbnVtZXJpYygxMDAwMClcbmZvciAoaSBpbiAxOjEwMDAwKSB7XG4gICMgYSByYW5kb20gc2FtcGxlIG9mIGp1c3QgMTAwXG4gIG0xMDBbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGFkciwgMTAwKSlcbn1cbmNhdChcIjk1JSBvZiByYW5kb20gc2FtcGxlcyBsYW5kIGJldHdlZW4gdGhlc2UgdHdvIHZhbHVlczpcXG5cIilcbnByaW50KHF1YW50aWxlKG0xMDAsIGMoMC4wMjUsIDAuOTc1KSkpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNCDCtyBUaGUgY2VudHJhbCBsaW1pdCB0aGVvcmVtXG4jIE5vdyAxMCwwMDAgYXZlcmFnZXMgb2Ygc2FtcGxlcyBvZiAzMCBsZWFkIHRpbWVzLlxuc2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbiMgYW4gZW1wdHkgbGlzdDogb25lIGF2ZXJhZ2UgcGVyIHNhbXBsZVxubGVhZF9tZWFucyA8LSBudW1lcmljKHJ1bnMpXG5mb3IgKGkgaW4gMTpydW5zKSB7XG4gIGxlYWRfbWVhbnNbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGxlYWRfdGltZSwgMzApKVxufVxuaGlzdChsZWFkX21lYW5zLCBicmVha3MgPSA0MCwgY29sID0gXCIjMTgxQzYyXCIsXG4gICAgYm9yZGVyID0gXCJ3aGl0ZVwiLCBtYWluID0gXCJBdmVyYWdlcyBvZiAzMFwiLFxuICAgIHhsYWIgPSBcIkF2ZXJhZ2UgbGVhZCB0aW1lIChkYXlzKVwiKSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -333,28 +315,61 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBCaWdnZXIg
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>August’s bookings are a huge sample, far outside the range of random samples of only 100. The standard error measures chance error; it cannot measure bias.</p>
+<p>Single lead times are right-skewed; averages of 30 are close to a bell shape, and much narrower. Then change one thing: put <code>5</code> in place of <code>30</code> and run the second card again. The averages of 5 are more lopsided: the CLT needs <span class="math inline">\(n\)</span> large enough.</p>
 </div>
 </div>
 </section>
-<section id="r-6.6-your-tier-1" class="level2">
-<h2 class="anchored" data-anchor-id="r-6.6-your-tier-1">R 6.6 · Your tier</h2>
+<section id="r-6.5-your-tier-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-6.5-your-tier-1">R 6.5 · Your tier</h2>
 <p><em>In pairs</em></p>
 <p>Pick one. Same data, same idea, different depth. Write your answers in your own notes; nothing here is submitted. Try first, then check: the answers are at the end of your R handout (Week Pack). <strong>New from Week 5:</strong> the starting code is shorter. You get the steps in words and the first line or two; you write the rest. The hint and the full answer are still there.</p>
 <div class="tier-core">
-<p><strong>Core.</strong> Simulate the sampling distribution of the average rate for samples of 30 (R 6.2), and compare its SD with <span class="math inline">\(\sigma/\sqrt{30}\)</span>. Then do it for samples of 120.</p>
+<p><strong>Core.</strong> Simulate the sampling distribution of the average rate for samples of 30 (R 6.2), and compare its SD with <span class="math inline">\(\sigma/\sqrt{30}\)</span> (2 decimal places). Then do it for samples of 120.</p>
 <p><strong>Your steps:</strong></p>
 <ol type="1">
-<li><code>set.seed(6)</code>, then an empty list of 10,000 filled with the averages of samples of 30 (as in R 6.2), under the name <code>means30</code>.</li>
+<li><code>set.seed(6)</code>, then the one simulation pattern: 10,000 averages of samples of 30, kept in <code>means30</code> (as in R 6.2).</li>
 <li><code>sd()</code> of the list against <code>sigma / sqrt(30)</code>.</li>
-<li><code>set.seed(6)</code> again; the same for samples of 120, under the name <code>means120</code>; compare with <code>sigma / sqrt(120)</code>.</li>
+<li><code>set.seed(6)</code> again; the same for samples of 120, in <code>means120</code>; compare with <code>sigma / sqrt(120)</code>.</li>
 </ol>
 <div>
 <div id="webr-11" class="exercise-cell">
 
 </div>
 <script type="webr-11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5zMzAgPC0gbnVtZXJpYygxMDAwMCkgICAgICAgICAgICAgICAjIG9uZSBhdmVyYWdlIHBlciBzYW1wbGVcbiMgeW91ciBsaW5lcyBmcm9tIGhlcmUifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbm1lYW5zMzAgPC0gbnVtZXJpYyhydW5zKVxuIyB5b3VyIGxpbmVzIGZyb20gaGVyZSJ9
+</script>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>the second time, put <code>120</code> inside <code>sample()</code>, keep the averages in <code>means120</code>, and compare <code>sd(means120)</code> with <code>sigma / sqrt(120)</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tier-applied">
+<p><strong>Applied.</strong> Repeat R 6.4 for samples of <strong>40</strong> lead times. Find <span class="math inline">\(P(\bar X &gt; 120)\)</span> by the CLT and by simulation (3 decimal places).</p>
+<p><strong>Your steps:</strong></p>
+<ol type="1">
+<li><code>set.seed(6)</code>, then the one simulation pattern: 10,000 averages of samples of 40 lead times, kept in <code>lead40</code>; draw their histogram.</li>
+<li><span class="math inline">\(P(\bar X &gt; 120)\)</span> from the CLT, with <code>pnorm()</code>.</li>
+<li>The same share from the simulation.</li>
+</ol>
+<div>
+<div id="webr-12" class="exercise-cell">
+
+</div>
+<script type="webr-12-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbmxlYWQ0MCA8LSBudW1lcmljKHJ1bnMpXG4jIHlvdXIgbGluZXMgZnJvbSBoZXJlOiB0aGUgbG9vcCwgdGhlIGhpc3RvZ3JhbSxcbiMgdGhlbiB0aGUgdHdvIHByb2JhYmlsaXRpZXMifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -369,26 +384,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbm1lYW5z
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>in the second loop, put <code>120</code> inside <code>sample()</code>, and compare <code>sd(means120)</code> with <code>sigma / sqrt(120)</code>.</p>
+<p>the CLT’s normal curve has mean <code>mean(hotels$lead_time)</code> and SD <code>sd(hotels$lead_time) / sqrt(40)</code>; the simulation’s answer is <code>mean(lead40 &gt; 120)</code>.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="tier-applied">
-<p><strong>Applied.</strong> Repeat R 6.4 with a <code>for</code> loop over <span class="math inline">\(n\)</span> = 2, 10 and 40. For <span class="math inline">\(n = 40\)</span>, find <span class="math inline">\(P(\bar X &gt; 120)\)</span> by the CLT and by simulation.</p>
-<p><strong>Your steps:</strong></p>
-<ol type="1">
-<li>A loop over <span class="math inline">\(n\)</span> = 2, 10 and 40. Inside it: 5,000 averages of samples of lead time of size <span class="math inline">\(n\)</span>, kept in <code>m</code>, and a histogram (as in R 6.4).</li>
-<li>The standard error for <span class="math inline">\(n = 40\)</span>: the SD of lead time over <span class="math inline">\(\sqrt{40}\)</span>.</li>
-<li><span class="math inline">\(P(\bar X &gt; 120)\)</span> from the CLT, with <code>pnorm()</code>.</li>
-<li>The same share from the simulation: after the loop, <code>m</code> holds the <span class="math inline">\(n = 40\)</span> averages.</li>
-</ol>
+<div class="tier-challenge">
+<p><strong>Challenge.</strong> The tank game: a rival numbers its bookings 1 to <span class="math inline">\(N\)</span> = 1,437 and you see 5 of them. The code below tries rule 1, the largest number seen. Add rule 2 (twice the average, minus 1) and rule 3 (the largest plus a gap: the largest × 6/5, minus 1) inside the same loop, each in its own empty list. Which rules are unbiased, and which has the smallest spread? Then try 10 numbers seen.</p>
 <div>
-<div id="webr-12" class="exercise-cell">
+<div id="webr-13" class="exercise-cell">
 
 </div>
-<script type="webr-12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAzKSlcbnNldC5zZWVkKDYpXG4jIHlvdXIgbGluZXMgZnJvbSBoZXJlOiB0aGUgbG9vcCBvdmVyIG4sIHRoZW4gdGhlIHR3byBwcm9iYWJpbGl0aWVzIn0=
+<script type="webr-13-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBZb3VyIHRpZXI6IENoYWxsZW5nZSAoc3RhcnRpbmcgY29kZSlcbiMgR3Vlc3MgYSByaXZhbCdzIG51bWJlciBvZiBib29raW5ncyBmcm9tIDUgY29uZmlybWF0aW9uXG4jIG51bWJlcnMuIFJ1bGUgMSwgdGhlIGxhcmdlc3QgbnVtYmVyIHNlZW4sIHRyaWVkIDEwLDAwMCB0aW1lcy5cbiMgdGhlIHJpdmFsJ3Mgc2VjcmV0IG51bWJlciBvZiBib29raW5nc1xuTiA8LSAxNDM3XG5zZXQuc2VlZCg2KVxucnVucyA8LSAxMDAwMFxucnVsZV9tYXggPC0gbnVtZXJpYyhydW5zKVxuZm9yIChpIGluIDE6cnVucykge1xuICAjIDUgY29uZmlybWF0aW9uIG51bWJlcnMgYXQgcmFuZG9tLCBmcm9tIDEgdG8gTlxuICBzZWVuIDwtIHNhbXBsZSgxOk4sIDUpXG4gICMgTkVXOiBtYXgoKSBpcyB0aGUgbGFyZ2VzdCB2YWx1ZVxuICBydWxlX21heFtpXSA8LSBtYXgoc2Vlbilcbn1cbiMgb24gYXZlcmFnZTogY2xvc2UgdG8gMTQzNyAodW5iaWFzZWQpPyBBbmQgaXRzIHNwcmVhZFxuY2F0KFwibGFyZ2VzdC1zZWVuIHJ1bGUsIGF2ZXJhZ2U6XCIsIG1lYW4ocnVsZV9tYXgpLCBcIlxcblwiKVxuY2F0KFwibGFyZ2VzdC1zZWVuIHJ1bGUsIHNwcmVhZDpcIiwgc2QocnVsZV9tYXgpLCBcIlxcblwiKSJ9
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -403,46 +411,19 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoicGFyKG1mcm93ID0gYygxLCAz
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><code>se &lt;- sd(hotels$lead_time) / sqrt(40)</code>, then <code>1 - pnorm(120, mean(hotels$lead_time), se)</code>; after the loop, <code>m</code> holds the <span class="math inline">\(n = 40\)</span> averages, so <code>mean(m &gt; 120)</code>.</p>
+<p>make <code>rule_twice &lt;- numeric(runs)</code> and <code>rule_gap &lt;- numeric(runs)</code> before the loop, and fill <code>rule_twice[i]</code> and <code>rule_gap[i]</code> inside it. For 10 numbers, change <code>5</code> to <code>10</code> and <code>6 / 5</code> to <code>11 / 10</code>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="tier-challenge">
-<p><strong>Challenge.</strong> The tank game: a rival numbers its bookings 1 to <span class="math inline">\(N\)</span> = 1,437 and you see <span class="math inline">\(k\)</span> = 5 of them. Run the code below. Which rule is unbiased, and which has the smallest standard error? Then try <span class="math inline">\(k\)</span> = 10.</p>
-<div>
-<div id="webr-13" class="exercise-cell">
-
-</div>
-<script type="webr-13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBZb3VyIHRpZXI6IENoYWxsZW5nZSAoc3RhcnRpbmcgY29kZSlcbiMgR3Vlc3MgYSByaXZhbCdzIG51bWJlciBvZiBib29raW5ncyBmcm9tIDUgY29uZmlybWF0aW9uXG4jIG51bWJlcnM6IHRocmVlIHJ1bGVzLCB0cmllZCAxMCwwMDAgdGltZXMuXG4jIHRoZSByaXZhbCdzIHNlY3JldCBudW1iZXIgb2YgYm9va2luZ3Ncbk4gPC0gMTQzN1xuayA8LSA1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyB5b3Ugc2VlIDUgY29uZmlybWF0aW9uIG51bWJlcnNcbnNldC5zZWVkKDYpXG4jIHJ1bGUgMTogdGhlIGxhcmdlc3QgbnVtYmVyIHNlZW5cbnJ1bGVfbWF4ICAgPC0gbnVtZXJpYygxMDAwMClcbiMgcnVsZSAyOiB0d2ljZSB0aGUgYXZlcmFnZSwgbWludXMgMVxucnVsZV90d2ljZSA8LSBudW1lcmljKDEwMDAwKVxuIyBydWxlIDM6IHRoZSBsYXJnZXN0LCBwbHVzIHRoZSBhdmVyYWdlIGdhcFxucnVsZV9nYXAgICA8LSBudW1lcmljKDEwMDAwKVxuZm9yIChpIGluIDE6MTAwMDApIHtcbiAgIyA1IGNvbmZpcm1hdGlvbiBudW1iZXJzIGF0IHJhbmRvbVxuICBzIDwtIHNhbXBsZSgxOk4sIGspXG4gICMgTkVXOiBtYXgoKSBpcyB0aGUgbGFyZ2VzdCB2YWx1ZVxuICBydWxlX21heFtpXSAgIDwtIG1heChzKVxuICBydWxlX3R3aWNlW2ldIDwtIDIgKiBtZWFuKHMpIC0gMVxuICBydWxlX2dhcFtpXSAgIDwtIG1heChzKSAqICgxICsgMSAvIGspIC0gMVxufVxuIyBvbiBhdmVyYWdlOiBpcyBlYWNoIHJ1bGUgdW5iaWFzZWQgKGNsb3NlIHRvIDE0MzcpP1xuY2F0KFwibGFyZ2VzdC1zZWVuIHJ1bGUsIGF2ZXJhZ2U6XCIsIG1lYW4ocnVsZV9tYXgpLCBcIlxcblwiKVxuY2F0KFwidHdpY2UtdGhlLW1lYW4gcnVsZSwgYXZlcmFnZTpcIiwgbWVhbihydWxlX3R3aWNlKSwgXCJcXG5cIilcbmNhdChcImdhcCBydWxlLCBhdmVyYWdlOlwiLCBtZWFuKHJ1bGVfZ2FwKSwgXCJcXG5cIilcbiMgc3ByZWFkOiB0aGUgc3RhbmRhcmQgZXJyb3Igb2YgZWFjaCBydWxlXG5jYXQoXCJsYXJnZXN0LXNlZW4gcnVsZSwgc3ByZWFkOlwiLCBzZChydWxlX21heCksIFwiXFxuXCIpXG5jYXQoXCJ0d2ljZS10aGUtbWVhbiBydWxlLCBzcHJlYWQ6XCIsIHNkKHJ1bGVfdHdpY2UpLCBcIlxcblwiKVxuY2F0KFwiZ2FwIHJ1bGUsIHNwcmVhZDpcIiwgc2QocnVsZV9nYXApLCBcIlxcblwiKSJ9
-</script>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>the three <code>mean()</code> lines show the average estimate of each rule; the three <code>sd()</code> lines show each one’s spread. Change <code>k &lt;- 5</code> to <code>k &lt;- 10</code> and run the card again.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="tier-challenge">
-<p><strong>Stretch (any tier, if you finish early).</strong> A proportion is a mean of 0s and 1s. Run the code below: compare the SD of the share cancelled in 10,000 samples of 100 with <span class="math inline">\(\sqrt{p(1 - p)/100}\)</span>.</p>
+<p><strong>Stretch (any tier, if you finish early).</strong> A proportion is a mean of 0s and 1s. Run the code below: compare the SD of the share cancelled in 10,000 samples of 100 with <span class="math inline">\(\sqrt{p(1 - p)/100}\)</span> (4 decimal places).</p>
 <div>
 <div id="webr-14" class="exercise-cell">
 
 </div>
 <script type="webr-14-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBZb3VyIHRpZXI6IFN0cmV0Y2ggKHN0YXJ0aW5nIGNvZGUpXG4jIEEgcHJvcG9ydGlvbiBpcyB0aGUgbWVhbiBvZiAwcyBhbmRcbiMgMXM6IGl0cyBzYW1wbGVzIGJlaGF2ZSB0aGUgc2FtZSB3YXkuXG5wIDwtIG1lYW4oaG90ZWxzJGlzX2NhbmNlbGVkKVxuc2V0LnNlZWQoNilcbnBoYXQgPC0gbnVtZXJpYygxMDAwMClcbmZvciAoaSBpbiAxOjEwMDAwKSB7XG4gICMgdGhlIHNoYXJlIGNhbmNlbGxlZCBpbiBhIHNhbXBsZSBvZiAxMDBcbiAgcGhhdFtpXSA8LSBtZWFuKHNhbXBsZShob3RlbHMkaXNfY2FuY2VsZWQsIDEwMCkpXG59XG5jYXQoXCJ0aGUgcG9wdWxhdGlvbiBwcm9wb3J0aW9uOlwiLCBwLCBcIlxcblwiKVxuIyBob3cgbXVjaCB0aGUgc2FtcGxlIHNoYXJlcyB2YXJ5IC4uLlxuY2F0KFwiaG93IG11Y2ggdGhlIHNhbXBsZSBzaGFyZXMgdmFyeTpcIiwgc2QocGhhdCksIFwiXFxuXCIpXG5jYXQoXCIuLi4gYW5kIHRoZSBmb3JtdWxhOlwiLCBzcXJ0KHAgKiAoMSAtIHApIC8gMTAwKSwgXCJcXG5cIikifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBZb3VyIHRpZXI6IFN0cmV0Y2ggKHN0YXJ0aW5nIGNvZGUpXG4jIEEgcHJvcG9ydGlvbiBpcyB0aGUgbWVhbiBvZiAwcyBhbmRcbiMgMXM6IGl0cyBzYW1wbGVzIGJlaGF2ZSB0aGUgc2FtZSB3YXkuXG5wIDwtIG1lYW4oaG90ZWxzJGlzX2NhbmNlbGVkKVxuc2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbnBoYXQgPC0gbnVtZXJpYyhydW5zKVxuZm9yIChpIGluIDE6cnVucykge1xuICAjIHRoZSBzaGFyZSBjYW5jZWxsZWQgaW4gYSBzYW1wbGUgb2YgMTAwXG4gIHBoYXRbaV0gPC0gbWVhbihzYW1wbGUoaG90ZWxzJGlzX2NhbmNlbGVkLCAxMDApKVxufVxuY2F0KFwidGhlIHBvcHVsYXRpb24gcHJvcG9ydGlvbjpcIiwgcCwgXCJcXG5cIilcbmNhdChcImhvdyBtdWNoIHRoZSBzYW1wbGUgc2hhcmVzIHZhcnk6XCIsIHNkKHBoYXQpLCBcIlxcblwiKVxuY2F0KFwiLi4uIGFuZCB0aGUgZm9ybXVsYTpcIiwgc3FydChwICogKDEgLSBwKSAvIDEwMCksIFwiXFxuXCIpIn0=
 </script>
 </div>
 </div>
@@ -450,15 +431,15 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBZb3VyIHRp
 <p>In class · block 5 · the decision, and simulate to check</p>
 </div>
 </section>
-<section id="r-6.7-week-1s-promise-why-divide-by-n-1-1" class="level2">
-<h2 class="anchored" data-anchor-id="r-6.7-week-1s-promise-why-divide-by-n-1-1">R 6.7 · Week 1’s promise: why divide by n − 1?</h2>
+<section id="r-6.6-bigger-is-not-better-if-biased-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-6.6-bigger-is-not-better-if-biased-1">R 6.6 · Bigger is not better if biased</h2>
 <p><em>With the class</em></p>
 <div>
 <div id="webr-15" class="exercise-cell">
 
 </div>
 <script type="webr-15-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNyDCtyBXZWVrIDEncyBwcm9taXNlOiB3aHkgZGl2aWRlIGJ5IG4g4oiSIDE/XG4jIFdoeSBkaXZpZGUgYnkgbiAtIDE/IENvbXBhcmUgdHdvIHdheXMgb2ZcbiMgbWVhc3VyaW5nIHRoZSB2YXJpYW5jZSBvZiBzbWFsbCBzYW1wbGVzLlxuc2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbnZhcl9uX21pbnVzXzEgPC0gbnVtZXJpYyhydW5zKSAgICAgICMgdmFyKCkgZGl2aWRlcyBieSBuIC0gMVxudmFyX24gICAgICAgICA8LSBudW1lcmljKHJ1bnMpICAgICAgIyBkaXZpZGluZyBieSBuIGluc3RlYWRcbmZvciAoaSBpbiAxOnJ1bnMpIHtcbiAgeCA8LSBzYW1wbGUoaG90ZWxzJGFkciwgNSkgICAgICAgICMgYSBzbWFsbCBzYW1wbGUgb2YgNSByYXRlc1xuICB2YXJfbl9taW51c18xW2ldIDwtIHZhcih4KVxuICB2YXJfbltpXSAgICAgICAgIDwtIHZhcih4KSAqIDQgLyA1XG59XG4jIHRoZSBhdmVyYWdlIG9mIGVhY2gga2luZCBvZiBzYW1wbGUgdmFyaWFuY2UgLi4uXG5jYXQoXCJhdmVyYWdlIHNhbXBsZSB2YXJpYW5jZSwgZGl2aWRpbmcgYnkgbiAtIDE6XCIsXG4gICAgbWVhbih2YXJfbl9taW51c18xKSwgXCJcXG5cIilcbmNhdChcImF2ZXJhZ2Ugc2FtcGxlIHZhcmlhbmNlLCBkaXZpZGluZyBieSBuOlwiLCBtZWFuKHZhcl9uKSwgXCJcXG5cIilcbmNhdChcIi4uLiBhZ2FpbnN0IHRoZSBwb3B1bGF0aW9uIHZhcmlhbmNlOlwiLCB2YXIoaG90ZWxzJGFkciksIFwiXFxuXCIpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBCaWdnZXIgaXMgbm90IGJldHRlciBpZiBiaWFzZWRcbiMgUnVuIFIgNi4xIGZpcnN0LiBBIGh1Z2Ugc2FtcGxlIGZyb20gb25lXG4jIG1vbnRoIG9ubHksIGFnYWluc3Qgc21hbGwgcmFuZG9tIHNhbXBsZXMuXG5hdWcgPC0gaG90ZWxzJGFkcltob3RlbHMkYXJyaXZhbF9kYXRlX21vbnRoID09IFwiQXVndXN0XCJdXG4jIE5FVzogbGVuZ3RoKCkgY291bnRzIHRoZSB2YWx1ZXM6IGEgaHVnZSBzYW1wbGUgLi4uXG5jYXQoXCJBdWd1c3QgYm9va2luZ3MgKGEgaHVnZSBzYW1wbGUpOlwiLCBsZW5ndGgoYXVnKSwgXCJcXG5cIilcbiMgLi4uIGJ1dCBpdHMgYXZlcmFnZSBpcyBmYXIgZnJvbSB0aGUgcG9wdWxhdGlvbiBtZWFuXG5jYXQoXCJ0aGVpciBhdmVyYWdlIHJhdGU6XCIsIG1lYW4oYXVnKSwgXCJcXG5cIilcbmNhdChcInRoZSBwb3B1bGF0aW9uIG1lYW46XCIsIG11LCBcIlxcblwiKVxuc2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbm0xMDAgPC0gbnVtZXJpYyhydW5zKVxuZm9yIChpIGluIDE6cnVucykge1xuICAjIGEgcmFuZG9tIHNhbXBsZSBvZiBqdXN0IDEwMFxuICBtMTAwW2ldIDwtIG1lYW4oc2FtcGxlKGhvdGVscyRhZHIsIDEwMCkpXG59XG4jIE5FVzogcXVhbnRpbGUoeCwgYygwLjAyNSwgMC45NzUpKSBjdXRzIG9mZiB0aGUgbG93ZXN0XG4jIGFuZCBoaWdoZXN0IDIuNSU6IHRoZSBtaWRkbGUgOTUlIGxpZXMgYmV0d2VlblxuY2F0KFwiOTUlIG9mIHJhbmRvbSBzYW1wbGVzIGxhbmQgYmV0d2VlbiB0aGVzZSB0d28gdmFsdWVzOlxcblwiKVxucHJpbnQocXVhbnRpbGUobTEwMCwgYygwLjAyNSwgMC45NzUpKSkifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
@@ -471,7 +452,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNyDCtyBXZWVrIDEn
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Dividing by <span class="math inline">\(n - 1\)</span> is right on average; dividing by <span class="math inline">\(n\)</span> is about 4/5 of the truth for samples of 5.</p>
+<p>August’s bookings are a huge sample, far outside the range of random samples of only 100. The standard error measures chance error; it cannot measure bias.</p>
 </div>
 </div>
 </section>
@@ -489,14 +470,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNyDCtyBXZWVrIDEn
 </div>
 <div class="callout-body-container callout-body">
 <p>“Does the central limit theorem mean that my data become normal when I collect a large sample?”</p>
-<p>“Room rates have an SD of 46.71 euros. What is the standard error of the average of 400 bookings?”</p>
+<p>“Room rates have an SD of 46.71 euros. What is the standard error of the average of 400 bookings? Give 2 decimal places.”</p>
 </div>
 </div>
-<p>Check the first answer: the CLT is about the distribution of the <strong>average</strong>, not the data (R 6.4: single lead times stay skewed). Check the second: <span class="math inline">\(46.71/\sqrt{400} = 2.34\)</span>, which <code>sigma / sqrt(400)</code> confirms. <strong>AI says, R checks.</strong></p>
+<p>Check the first answer: the CLT is about the distribution of the <strong>average</strong>, not the data (R 6.4: single lead times stay right-skewed). Check the second: <span class="math inline">\(46.71/\sqrt{400} = 2.34\)</span>, which <code>sigma / sqrt(400)</code> confirms. <strong>AI says, R checks.</strong></p>
 </section>
 <section id="commands-to-know" class="level2">
 <h2 class="anchored" data-anchor-id="commands-to-know">Commands to know</h2>
-<p>These can be assessed in the quiz: <code>set.seed()</code>, <code>sample(x, n)</code>, <code>numeric(10000)</code> with a <code>for</code> loop that fills it, <code>sd(x) / sqrt(n)</code>, <code>hist()</code>, <code>dnorm()</code> for the normal curve, and <code>pnorm()</code> for a probability about an average. Remember: the standard error is for an <strong>average</strong>; a big biased sample is still biased.</p>
+<p>In scope (you run them in this week’s tasks and sets): <code>set.seed()</code>, <code>sample(x, n)</code>, the simulation pattern (<code>runs &lt;- 10000</code>, an empty list with <code>numeric(runs)</code>, and <code>for (i in 1:runs) {</code> filling place <code>i</code>), <code>sigma / sqrt(n)</code> for the standard error, <code>hist()</code>, <code>pnorm()</code> for a probability about an average, <code>quantile()</code> and <code>length()</code>. Remember: the standard error is for an <strong>average</strong>; a big biased sample is still biased.</p>
 <script type="webr-data">
 eyJvcHRpb25zIjp7ImJhc2VVcmwiOiIuLi93ZWJyLyJ9LCJwYWNrYWdlcyI6eyJwa2dzIjpbImV2YWx1YXRlIiwia25pdHIiLCJodG1sdG9vbHMiXSwicmVwb3MiOlsiLi4vd2Vici1yZXBvIl19LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
 </script>
