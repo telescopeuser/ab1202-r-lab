@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="w04_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="w04_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="w04_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="w04_files/libs/bootstrap/bootstrap-55469fb56ffc22816ffcf4733cb4648f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="w04_files/libs/bootstrap/bootstrap-99759f1773580fd6d177836f859495f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="w04_files/libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="w04_files/libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <style>
@@ -406,7 +406,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSdW4gUiA0LjEgZmlyc3Qg
 </div>
 </div>
 <div class="tier-challenge">
-<p><strong>Challenge.</strong> A deposit at the resort. For a 20% and a 30% deposit, find the gain per booking (euros, 2 decimal places) and the break-even walk-away share (3 decimal places). Which would you test first?</p>
+<p><strong>Challenge.</strong> A deposit at the resort. For a 20% and a 30% deposit, find the gain per booking (euros, 2 decimal places) and the break-even walk-away share (3 decimal places). What would you advise the resort’s manager, and what would you want to know first?</p>
 <div>
 <div id="webr-11" class="exercise-cell">
 
@@ -433,7 +433,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSdW4gUiA0LjEgZmlyc3Qg
 </div>
 </div>
 <div class="tier-challenge">
-<p><strong>Stretch (any tier, if you finish early; not in the quiz).</strong> Find the best pastry order without trying every order: order the smallest number <span class="math inline">\(q\)</span> for which <span class="math inline">\(P(\text{demand} \le q) \ge (5 - 1)/5\)</span>. Check it with <code>mean(days &lt;= 80)</code> and <code>mean(days &lt;= 90)</code> (3 decimal places): first run the first card of R 4.7, which makes <code>days</code>, 10,000 simulated mornings’ demand (you will meet it in block 5).</p>
+<p><strong>Stretch (any tier, if you finish early; not in the quiz).</strong> Find the best pastry order without trying every order: order the smallest number <span class="math inline">\(q\)</span> for which <span class="math inline">\(P(\text{demand} \le q) \ge (5 - 1)/5\)</span>. Find <span class="math inline">\(P(\text{demand} \le q)\)</span> with <code>mean(days &lt;= q)</code> for a few orders <span class="math inline">\(q\)</span> (3 decimal places): first run the first card of R 4.7, which makes <code>days</code>, 10,000 simulated mornings’ demand (you will meet it in block 5).</p>
 <div>
 <div id="webr-12" class="exercise-cell">
 
@@ -450,6 +450,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 <section id="r-4.7-simulate-to-check-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-4.7-simulate-to-check-1">R 4.7 · Simulate to check</h2>
 <p><em>With the class</em></p>
+<p><strong>Run it in class.</strong> Predict the result first; then your own output is the check. Your lecturer shows what it means.</p>
 <p><strong>The simulation pattern.</strong> The next card has the course’s first loop. You will use the same four parts in every simulation to Week 12:</p>
 <ol type="1">
 <li><code>runs &lt;- 10000</code>: how many times to repeat.</li>
@@ -457,6 +458,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 <li><code>for (i in 1:runs) { ... }</code>: R runs the lines inside the braces once for each <code>i</code> from 1 to <code>runs</code>.</li>
 <li><code>results[i] &lt;- ...</code>: each run’s result goes in its own place, <code>i</code>. After the loop, <code>mean(results)</code> and <code>sd(results)</code> summarise all the runs.</li>
 </ol>
+<p><strong>Run it in class.</strong> Predict the result first; then your own output is the check. Your lecturer shows what it means.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Change one thing">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -486,32 +488,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDQuNyDCtyBTaW11bGF0
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDQuNyDCtyBTaW11bGF0ZSB0byBjaGVja1xuIyBSdW4gUiA0LjEgZmlyc3QuIENoZWNrIHRoZSBydWxlcyBmb3IgdG90YWxzIHdpdGggcmVhbFxuIyBib29raW5nczogMTAsMDAwIG5pZ2h0cyBvZiAyMCBjaXR5IGJvb2tpbmdzIGVhY2guXG5zZXQuc2VlZCg2KVxuIyB3aGF0IGVhY2ggY2l0eSBib29raW5nIGFjdHVhbGx5IGJyb3VnaHQgaW4gKDAgaWYgaXQgY2FuY2VsbGVkKVxucmVhbCA8LSBjaXR5JHJldmVudWUgKiAoMSAtIGNpdHkkaXNfY2FuY2VsZWQpXG4jIE5FVzogdGhlIHNpbXVsYXRpb24gcGF0dGVybi4gWW91IHdpbGwgdXNlIGl0IHRvIFdlZWsgMTIuXG4jIFBhcnQgMTogaG93IG1hbnkgdGltZXMgdG8gcmVwZWF0XG5ydW5zIDwtIDEwMDAwXG4jIFBhcnQgMi4gTkVXOiBudW1lcmljKHJ1bnMpIG1ha2VzIGFuIGVtcHR5IHZlY3RvciBvZiBudW1iZXJzLFxuIyBvbmUgcGxhY2UgcGVyIHJ1biAoYWxsIDAgZm9yIG5vdylcbnJlc3VsdHMgPC0gbnVtZXJpYyhydW5zKVxuIyBQYXJ0IDMuIE5FVzogZm9yIChpIGluIDE6cnVucykgeyAuLi4gfSBydW5zIHRoZSBsaW5lcyBpbnNpZGVcbiMgdGhlIGJyYWNlcyBhZ2FpbiBhbmQgYWdhaW4sIHdpdGggaSA9IDEsIHRoZW4gMiwgLi4uLCB1cCB0byBydW5zXG5mb3IgKGkgaW4gMTpydW5zKSB7XG4gICMgb25lIHJ1bjogYSBuaWdodCBvZiAyMCByZWFsIGNpdHkgYm9va2luZ3MsIHBpY2tlZCBhdCByYW5kb21cbiAgdG9uaWdodCA8LSBzYW1wbGUocmVhbCwgMjApXG4gICMgUGFydCA0OiB0aGlzIHJ1bidzIHJlc3VsdCBnb2VzIGluIHBsYWNlIGkgb2YgcmVzdWx0c1xuICByZXN1bHRzW2ldIDwtIHN1bSh0b25pZ2h0KVxufVxuIyBhbGwgMTAsMDAwIHRvdGFscyBhcmUgbm93IGluIHJlc3VsdHM6IHN1bW1hcmlzZSB0aGVtXG5jYXQoXCJzaW11bGF0ZWQgbWVhbiBvZiBhIG5pZ2h0J3MgdG90YWw6XCIsIG1lYW4ocmVzdWx0cyksIFwiXFxuXCIpXG5jYXQoXCJ0aGUgcnVsZSwgMjAgeCB0aGUgbWVhbjpcIiwgMjAgKiBtZWFuKHJlYWwpLCBcIlxcblwiKVxuY2F0KFwic2ltdWxhdGVkIFNEIG9mIGEgbmlnaHQncyB0b3RhbDpcIiwgc2QocmVzdWx0cyksIFwiXFxuXCIpXG5jYXQoXCJ0aGUgcnVsZSwgc3F1YXJlIHJvb3Qgb2YgMjAgeCB0aGUgU0Q6XCIsXG4gICAgc3FydCgyMCkgKiBzZChyZWFsKSwgXCJcXG5cIikifQ==
 </script>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>You should see
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ordering 90 earns more on average than ordering the average demand, 70: running out costs 4 euros of profit, a leftover only 1.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>You should see
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For real nights, the simulated mean and SD match 20 times the mean and the square root of 20 times the SD: the rules for totals hold. The SD here (€1,028.96) is larger than R 4.5’s €714.59 because real bookings vary more than R 4.5’s two-value model: that model gives every guest who comes the same revenue, <code>R</code>, but real bookings differ in nights and room rate.</p>
-</div>
-</div>
 </section>
 <section id="check-your-ai-assistant-5-min" class="level2">
 <h2 class="anchored" data-anchor-id="check-your-ai-assistant-5-min">Check your AI assistant (5 min)</h2>
@@ -530,7 +506,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDQuNyDCtyBTaW11bGF0
 <p>“Explain in three sentences why someone might rationally buy insurance with a negative expected value.”</p>
 </div>
 </div>
-<p>Check the first answer: mean <span class="math inline">\(20 \times 187 = 3{,}740\)</span>; SD <span class="math inline">\(\sqrt{20} \times 160 = 715.54\)</span>. If it says <span class="math inline">\(20 \times 160 = 3{,}200\)</span>, it has added the SDs. <strong>AI says, R checks.</strong></p>
+<p>Check the first answer: mean <span class="math inline">\(20 \times 187 = \text{3,740}\)</span>; SD <span class="math inline">\(\sqrt{20} \times 160 = 715.54\)</span>. If it says <span class="math inline">\(20 \times 160 = \text{3,200}\)</span>, it has added the SDs. <strong>AI says, R checks.</strong></p>
 </section>
 <section id="commands-to-know" class="level2">
 <h2 class="anchored" data-anchor-id="commands-to-know">Commands to know</h2>

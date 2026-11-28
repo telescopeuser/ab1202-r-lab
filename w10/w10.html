@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="w10_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="w10_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="w10_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="w10_files/libs/bootstrap/bootstrap-55469fb56ffc22816ffcf4733cb4648f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="w10_files/libs/bootstrap/bootstrap-99759f1773580fd6d177836f859495f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="w10_files/libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="w10_files/libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <style>
@@ -239,7 +239,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjIgwrcgQSBsaW5l
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Try your own <code>a</code> and <code>b</code>: no line beats <code>lm()</code>’s sum of squared errors. The slope: each extra stay goes with about 0.0287 euros more on the month’s average rate (about €2.87 per 100 stays).</p>
+<p>Try your own <code>a</code> and <code>b</code>: can any line beat <code>lm()</code>’s sum of squared errors? The slope: each extra stay goes with about 0.0287 euros more on the month’s average rate (about €2.87 per 100 stays).</p>
 </div>
 </div>
 </section>
@@ -469,6 +469,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 <section id="r-10.7-simulate-to-check-can-any-line-beat-least-squares-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-10.7-simulate-to-check-can-any-line-beat-least-squares-1">R 10.7 · Simulate to check: can any line beat least squares?</h2>
 <p><em>With the class</em></p>
+<p><strong>Run it in class.</strong> Predict the result first; then your own output is the check. Your lecturer shows what it means.</p>
 <div>
 <div id="webr-16" class="exercise-cell">
 
@@ -476,19 +477,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 <script type="webr-16-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDEwLjcgwrcgU2ltdWxhdGUgdG8gY2hlY2s6IGNhbiBhbnkgbGluZSBiZWF0IGxlYXN0IHNxdWFyZXM/XG4jIFJ1biBSIDEwLjIgZmlyc3QuIDEsMDAwIHJhbmRvbSBsaW5lcywgbGlrZSAxLDAwMCB0ZWFtc1xuIyBkcmF3aW5nIGJ5IGV5ZTogZG9lcyBhbnkgaGF2ZSBhIHNtYWxsZXIgc3VtIG9mIHNxdWFyZWRcbiMgZXJyb3JzIHRoYW4gbG0oKSdzIGxpbmU/XG5zZXQuc2VlZCgxMClcbnJ1bnMgPC0gMTAwMFxuIyBhbiBlbXB0eSB2ZWN0b3I6IG9uZSBzdW0gb2Ygc3F1YXJlZCBlcnJvcnMgcGVyIGxpbmVcbnJlc3VsdHMgPC0gbnVtZXJpYyhydW5zKVxuZm9yIChpIGluIDE6cnVucykge1xuICAjIG9uZSByYW5kb20gbGluZTogYW4gaW50ZXJjZXB0IGFuZCBhIHNsb3BlXG4gICMgTkVXOiBydW5pZigxLCAwLCAxMDApIGlzIG9uZSByYW5kb20gbnVtYmVyIGZyb20gMCB0byAxMDBcbiAgYSA8LSBydW5pZigxLCAwLCAxMDApXG4gIGIgPC0gcnVuaWYoMSwgMCwgMC4wNilcbiAgIyBpdHMgc3VtIG9mIHNxdWFyZWQgZXJyb3JzLCBhcyBpbiBSIDEwLjJcbiAgcmVzdWx0c1tpXSA8LSBzdW0oKHJhdGUgLSAoYSArIGIgKiBidXN5KSleMilcbn1cbmNhdChcImxlYXN0IHNxdWFyZXMsIGxtKCk6XCIsIHN1bShyZXNpZChmaXQpXjIpLCBcIlxcblwiKVxuIyBjb3VudCB0aGUgcmFuZG9tIGxpbmVzIHRoYXQgYmVhdCBpdCAoYSBzbWFsbGVyIHN1bSlcbmNhdChcInJhbmRvbSBsaW5lcyB0aGF0IGJlYXQgbG0oKTpcIixcbiAgICBzdW0ocmVzdWx0cyA8IHN1bShyZXNpZChmaXQpXjIpKSwgXCJcXG5cIikifQ==
 </script>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>You should see
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>1,000 random lines, like 1,000 teams drawing by eye, and not one beats <code>lm()</code>: least squares is the line with the smallest sum of squared errors. Some come close, as a good line by eye can, but none is better.</p>
-</div>
 </div>
 </section>
 <section id="check-your-ai-assistant-5-min" class="level2">

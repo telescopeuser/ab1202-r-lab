@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="w09_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="w09_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="w09_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="w09_files/libs/bootstrap/bootstrap-55469fb56ffc22816ffcf4733cb4648f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="w09_files/libs/bootstrap/bootstrap-99759f1773580fd6d177836f859495f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="w09_files/libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="w09_files/libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <style>
@@ -325,7 +325,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDkuNSDCtyBUd2VudHkg
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Nothing works, by design. Run it again without <code>set.seed(9)</code>: often at least one test is “significant”. In 20 tests, that happens 64% of the time.</p>
+<p>Nothing works, by design. Run it again a few times without <code>set.seed(9)</code>: how often is at least one of the 20 tests “significant”? Keep your count for block 5 (R 9.7).</p>
 </div>
 </div>
 </section>
@@ -440,6 +440,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyB5b3VyIFIgaGVyZSJ9
 <section id="r-9.7-an-ab-test-and-many-tests-at-once-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-9.7-an-ab-test-and-many-tests-at-once-1">R 9.7 · An A/B test, and many tests at once</h2>
 <p><em>With the class</em></p>
+<p><strong>Run it in class.</strong> Predict the result first; then your own output is the check. Your lecturer shows what it means.</p>
+<p><strong>Run it in class.</strong> Predict the result first; then your own output is the check. Your lecturer shows what it means.</p>
 <div>
 <div id="webr-14" class="exercise-cell">
 
@@ -455,32 +457,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDkuNyDCtyBBbiBBL0Ig
 <script type="webr-15-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDkuNyDCtyBBbiBBL0IgdGVzdCwgYW5kIG1hbnkgdGVzdHMgYXQgb25jZVxuIyBZb3VyIGxlY3R1cmVyIHJ1bnMgdGhpcyBvbmUuIFJlcGVhdCBSIDkuNSdzIDIwIHVzZWxlc3NcbiMgdGVzdHMgMTAsMDAwIHRpbWVzOiBob3cgb2Z0ZW4gaXMgdGhlcmUgYXQgbGVhc3Qgb25lXG4jIGZhbHNlIFwiZGlzY292ZXJ5XCI/IFdoZW4gbm90aGluZyB3b3JrcywgYSBwLXZhbHVlIGlzXG4jIGVxdWFsbHkgbGlrZWx5IHRvIGJlIGFueXdoZXJlIGZyb20gMCB0byAxLCBzbyBlYWNoIHJ1blxuIyBkcmF3cyBpdHMgMjAgcC12YWx1ZXMgaW4gb25lIGxpbmUuXG5zZXQuc2VlZCg5KVxucnVucyA8LSAxMDAwMFxuIyBhbiBlbXB0eSB2ZWN0b3I6IDEgaWYgdGhlIHJ1biBoYWQgYSBmYWxzZSBhbGFybSwgZWxzZSAwXG5yZXN1bHRzIDwtIG51bWVyaWMocnVucylcbmZvciAoaSBpbiAxOnJ1bnMpIHtcbiAgIyBORVc6IHJ1bmlmKDIwKSBkcmF3cyAyMCByYW5kb20gbnVtYmVycyBiZXR3ZWVuIDAgYW5kIDFcbiAgcF92YWx1ZXMgPC0gcnVuaWYoMjApXG4gICMgYW55KCkgaXMgVFJVRSBpZiBhdCBsZWFzdCBvbmUgcC12YWx1ZSBpcyBiZWxvdyAwLjA1XG4gIHJlc3VsdHNbaV0gPC0gYW55KHBfdmFsdWVzIDwgMC4wNSlcbn1cbmNhdChcInNoYXJlIG9mIHJ1bnMgd2l0aCBhIGZhbHNlICdkaXNjb3ZlcnknOlwiLCBtZWFuKHJlc3VsdHMpLCBcIlxcblwiKVxuY2F0KFwidGhlIHRoZW9yeSwgMSAtIDAuOTVeMjA6XCIsIDEgLSAwLjk1XjIwLCBcIlxcblwiKSJ9
 </script>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>You should see
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The deposit significantly lowers bookings, but the walk-away share is at most about 9%, below Week 4’s 12.7% break-even: the deposit still pays. The numbers are illustrative (simulated).</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>You should see
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>About 64% of runs of 20 useless tests “find” at least one winner, as <span class="math inline">\(1 - 0.95^{20}\)</span> says. Test a winner again on fresh data before you act on it.</p>
-</div>
 </div>
 </section>
 <section id="check-your-ai-assistant-5-min" class="level2">
@@ -500,7 +476,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDkuNyDCtyBBbiBBL0Ig
 <p>“I tested 20 website changes at the 5% level and one was significant. Should I launch it?”</p>
 </div>
 </div>
-<p>Check the first answer: a p-value is not the probability that <span class="math inline">\(H_0\)</span> (or <span class="math inline">\(H_1\)</span>) is true. Check the second: with 20 useless changes, at least one “significant” result turns up 64% of the time (R 9.5); test the winner again on fresh visitors. <strong>AI says, R checks.</strong></p>
+<p>Check the first answer: a p-value is not the probability that <span class="math inline">\(H_0\)</span> (or <span class="math inline">\(H_1\)</span>) is true. Check the second: with 20 changes that do nothing, a “significant” one can turn up by luck alone (R 9.5 shows how; R 9.7 counts how often); test the winner again on fresh visitors. <strong>AI says, R checks.</strong></p>
 </section>
 <section id="commands-to-know" class="level2">
 <h2 class="anchored" data-anchor-id="commands-to-know">Commands to know</h2>

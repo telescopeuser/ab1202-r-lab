@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="w06_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="w06_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="w06_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="w06_files/libs/bootstrap/bootstrap-55469fb56ffc22816ffcf4733cb4648f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="w06_files/libs/bootstrap/bootstrap-99759f1773580fd6d177836f859495f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="w06_files/libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="w06_files/libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <style>
@@ -390,13 +390,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoic2V0LnNlZWQoNilcbnJ1bnMg
 </div>
 </div>
 <div class="tier-challenge">
-<p><strong>Challenge.</strong> The tank game: a rival numbers its bookings 1 to <span class="math inline">\(N\)</span> = 1,437 and you see 5 of them. The code below tries rule 1, the largest number seen. Add rule 2 (twice the average, minus 1) and rule 3 (the largest plus a gap: the largest × 6/5, minus 1) inside the same loop, each in its own empty vector. Which rules are unbiased, and which has the smallest spread? Then try 10 numbers seen.</p>
+<p><strong>Challenge.</strong> The tank game, after class: another rival numbers its bookings 1 to <span class="math inline">\(N\)</span> = 2,000 and you see 5 of them. The code below tries rule 1, the largest number seen. Add rule 2 (twice the average, minus 1) and rule 3 (the largest plus a gap: the largest × 6/5, minus 1) inside the same loop, each in its own empty vector. Which rules are unbiased, and which has the smallest spread? Then try 10 numbers seen.</p>
 <div>
 <div id="webr-13" class="exercise-cell">
 
 </div>
 <script type="webr-13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBZb3VyIHRpZXI6IENoYWxsZW5nZSAoc3RhcnRpbmcgY29kZSlcbiMgR3Vlc3MgYSByaXZhbCdzIG51bWJlciBvZiBib29raW5ncyBmcm9tIDUgY29uZmlybWF0aW9uXG4jIG51bWJlcnMuIFJ1bGUgMSwgdGhlIGxhcmdlc3QgbnVtYmVyIHNlZW4sIHRyaWVkIDEwLDAwMCB0aW1lcy5cbiMgdGhlIHJpdmFsJ3Mgc2VjcmV0IG51bWJlciBvZiBib29raW5nc1xuTiA8LSAxNDM3XG5zZXQuc2VlZCg2KVxucnVucyA8LSAxMDAwMFxucnVsZV9tYXggPC0gbnVtZXJpYyhydW5zKVxuZm9yIChpIGluIDE6cnVucykge1xuICAjIDUgY29uZmlybWF0aW9uIG51bWJlcnMgYXQgcmFuZG9tLCBmcm9tIDEgdG8gTlxuICBzZWVuIDwtIHNhbXBsZSgxOk4sIDUpXG4gICMgTkVXOiBtYXgoKSBpcyB0aGUgbGFyZ2VzdCB2YWx1ZVxuICBydWxlX21heFtpXSA8LSBtYXgoc2Vlbilcbn1cbiMgb24gYXZlcmFnZTogY2xvc2UgdG8gMTQzNyAodW5iaWFzZWQpPyBBbmQgaXRzIHNwcmVhZFxuY2F0KFwibGFyZ2VzdC1zZWVuIHJ1bGUsIGF2ZXJhZ2U6XCIsIG1lYW4ocnVsZV9tYXgpLCBcIlxcblwiKVxuY2F0KFwibGFyZ2VzdC1zZWVuIHJ1bGUsIHNwcmVhZDpcIiwgc2QocnVsZV9tYXgpLCBcIlxcblwiKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBZb3VyIHRpZXI6IENoYWxsZW5nZSAoc3RhcnRpbmcgY29kZSlcbiMgR3Vlc3MgYSByaXZhbCdzIG51bWJlciBvZiBib29raW5ncyBmcm9tIDUgY29uZmlybWF0aW9uXG4jIG51bWJlcnMuIFJ1bGUgMSwgdGhlIGxhcmdlc3QgbnVtYmVyIHNlZW4sIHRyaWVkIDEwLDAwMCB0aW1lcy5cbiMgdGhlIHJpdmFsJ3MgYm9va2luZ3MgKGtub3duIGhlcmUsIHRvIGNoZWNrIGVhY2ggcnVsZSlcbk4gPC0gMjAwMFxuc2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbnJ1bGVfbWF4IDwtIG51bWVyaWMocnVucylcbmZvciAoaSBpbiAxOnJ1bnMpIHtcbiAgIyA1IGNvbmZpcm1hdGlvbiBudW1iZXJzIGF0IHJhbmRvbSwgZnJvbSAxIHRvIE5cbiAgc2VlbiA8LSBzYW1wbGUoMTpOLCA1KVxuICAjIE5FVzogbWF4KCkgaXMgdGhlIGxhcmdlc3QgdmFsdWVcbiAgcnVsZV9tYXhbaV0gPC0gbWF4KHNlZW4pXG59XG4jIG9uIGF2ZXJhZ2U6IGNsb3NlIHRvIDIwMDAgKHVuYmlhc2VkKT8gQW5kIGl0cyBzcHJlYWRcbmNhdChcImxhcmdlc3Qtc2VlbiBydWxlLCBhdmVyYWdlOlwiLCBtZWFuKHJ1bGVfbWF4KSwgXCJcXG5cIilcbmNhdChcImxhcmdlc3Qtc2VlbiBydWxlLCBzcHJlYWQ6XCIsIHNkKHJ1bGVfbWF4KSwgXCJcXG5cIikifQ==
 </script>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Hint">
@@ -434,6 +434,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBZb3VyIHRp
 <section id="r-6.6-bigger-is-not-better-if-biased-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-6.6-bigger-is-not-better-if-biased-1">R 6.6 · Bigger is not better if biased</h2>
 <p><em>With the class</em></p>
+<p><strong>Run it in class.</strong> Predict the result first; then your own output is the check. Your lecturer shows what it means.</p>
 <div>
 <div id="webr-15" class="exercise-cell">
 
@@ -441,19 +442,6 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNSDCtyBZb3VyIHRp
 <script type="webr-15-contents">
 eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBSIDYuNiDCtyBCaWdnZXIgaXMgbm90IGJldHRlciBpZiBiaWFzZWRcbiMgUnVuIFIgNi4xIGZpcnN0LiBBIGh1Z2Ugc2FtcGxlIGZyb20gb25lXG4jIG1vbnRoIG9ubHksIGFnYWluc3Qgc21hbGwgcmFuZG9tIHNhbXBsZXMuXG5hdWcgPC0gaG90ZWxzJGFkcltob3RlbHMkYXJyaXZhbF9kYXRlX21vbnRoID09IFwiQXVndXN0XCJdXG4jIE5FVzogbGVuZ3RoKCkgY291bnRzIHRoZSB2YWx1ZXM6IGEgaHVnZSBzYW1wbGUgLi4uXG5jYXQoXCJBdWd1c3QgYm9va2luZ3MgKGEgaHVnZSBzYW1wbGUpOlwiLCBsZW5ndGgoYXVnKSwgXCJcXG5cIilcbiMgLi4uIGJ1dCBpdHMgYXZlcmFnZSBpcyBmYXIgZnJvbSB0aGUgcG9wdWxhdGlvbiBtZWFuXG5jYXQoXCJ0aGVpciBhdmVyYWdlIHJhdGU6XCIsIG1lYW4oYXVnKSwgXCJcXG5cIilcbmNhdChcInRoZSBwb3B1bGF0aW9uIG1lYW46XCIsIG11LCBcIlxcblwiKVxuc2V0LnNlZWQoNilcbnJ1bnMgPC0gMTAwMDBcbm0xMDAgPC0gbnVtZXJpYyhydW5zKVxuZm9yIChpIGluIDE6cnVucykge1xuICAjIGEgcmFuZG9tIHNhbXBsZSBvZiBqdXN0IDEwMFxuICBtMTAwW2ldIDwtIG1lYW4oc2FtcGxlKGhvdGVscyRhZHIsIDEwMCkpXG59XG4jIE5FVzogcXVhbnRpbGUoeCwgYygwLjAyNSwgMC45NzUpKSBjdXRzIG9mZiB0aGUgbG93ZXN0XG4jIGFuZCBoaWdoZXN0IDIuNSU6IHRoZSBtaWRkbGUgOTUlIGxpZXMgYmV0d2VlblxuY2F0KFwiOTUlIG9mIHJhbmRvbSBzYW1wbGVzIGxhbmQgYmV0d2VlbiB0aGVzZSB0d28gdmFsdWVzOlxcblwiKVxucHJpbnQocXVhbnRpbGUobTEwMCwgYygwLjAyNSwgMC45NzUpKSkifQ==
 </script>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="You should see">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>You should see
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>August’s bookings are a huge sample, far outside the range of random samples of only 100. The standard error measures chance error; it cannot measure bias.</p>
-</div>
 </div>
 </section>
 <section id="check-your-ai-assistant-5-min" class="level2">
